@@ -17,7 +17,13 @@
                         </ul>
                     </div>
                 @endif
+                @if(session('message'))
+                <div class="alert alert-success text-center">
 
+                    {{session('message')}}
+
+                </div>
+                @endif
                 <form class="card p-5 shadow" action="{{ route('article.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
 
