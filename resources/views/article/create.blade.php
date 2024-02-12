@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid p-5 bg-info text-center text-white">
+    <div class="container-fluid p-5 bg-transparent text-center text-white">
         <div class="row justify-content-center">
             <h1 class="display-1">Inserisci un articolo</h1>
         </div>
@@ -59,6 +59,12 @@
                     <div class="mt-3">
                         <button class="btn btn-info text-white">Inserisci un articolo</button>
                         <a class="btn btn-outline-info" href="{{ route('homepage') }}">Torna alla home</a>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tags" class="form-label">Tags:</label>
+                        <input name="tags" id="tags" class="form-control" value="{{old('tags')}}">
+                        <span class="small fst-italic">Dividi ogni tag con una virgola</span>
                     </div>
                 </form>
             </div>

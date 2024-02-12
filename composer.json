@@ -11,8 +11,11 @@
         "laravel/framework": "^10.10",
         "laravel/jetstream": "^4.1",
         "laravel/sanctum": "^3.3",
+        "laravel/scout": "^10.8",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.0",
+        "teamtnt/laravel-scout-tntsearch-driver": "^13.2",
+        "teamtnt/tntsearch": "^4.2",
         "twbs/bootstrap": "^5.3"
     },
     "require-dev": {

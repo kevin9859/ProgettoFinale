@@ -1,4 +1,397 @@
-#title{
-    color:brown
+/* Modifica il colore di sfondo e del testo */
+.btn {
+    background-color: #fff; /* Colore di sfondo bianco */
+    color: #00bcd4; /* Colore del testo */
+    font-size: auto;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s;
+    padding: 6px 16px; /* Riduci il padding verticale */
+}
+
+/* Aggiungi effetto al passaggio del mouse */
+.btn:hover {
+    background-color:#e8d4a7; /* Cambia il colore di sfondo al passaggio del mouse */
+}
+
+
+.span-custom{
+    margin-right: 40px; /* Aggiungi spazio a destra del testo se necessario */
+}
+
+body {
+    background-image: url('/public/images/sfondo-spiaggia5.jpg');
+    background-size: cover; /* Adatta l'immagine alla dimensione del body */
+    background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+    background-position: center center; /* Posiziona l'immagine al centro del body */
+    color: #fff; /* Colore del testo */
+    font-family: 'Helvetica Neue', sans-serif; /* Tipo di carattere del testo */
+}
+
+
+/* Aggiungi stili agli h2 */
+
+/* CSS per l'h1 che assomiglia al sito di riferimento */
+.h1 {
+    font-family: 'Poppins', sans-serif; /* Scegli il font appropriato */
+    font-size: 3rem; /* Imposta la dimensione del font */
+    font-weight: 700; /* Imposta il peso del font */
+    color: #000000; /* Imposta il colore del testo */
+    text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+    margin-bottom: 20px; /* Aggiungi margine inferiore */
+}
+
+
+p {
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 24px;
+    text-align: center;
+}
+
+a {
+    color: #e8d4a7;
+    text-decoration: none;
+    text-align: right;
+    padding: 15px;
+    font-size: 20px;
+}
+.h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold; 
+    color: #fff; 
+    text-align: center; 
+    margin-top: 30px; 
+    margin-bottom: 20px;
+}
+
+span{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300; /* Imposta il peso del font */
+    color:#f8f9fa; /* Imposta il colore del testo */
+    text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+  
+}
+/**/
+.opacity-75 {
+    opacity: 0.75;
+}
+
+
+.text-outline {
+    -webkit-text-stroke-width: 2px; /* Aumenta lo spessore del contorno */
+    -webkit-text-stroke-color: black;
+    color: white;
+}
+
+.bg-articolo {
+    background-color:cornflowerblue;
+}
+
+.bg-yellow {
+    background-color:gold;
+}
+
+/* Rimuovi i pallini per i li */
+.custom-nav-item {
+    list-style-type: none; /* Rimuovi i pallini */
+}
+
+/* Modifica il posizionamento del testo e del pallino */
+.custom-nav-link {
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    color: #fff; /* Colore del testo */
+    display: inline-block; /* Mostra il testo come blocco */
+    position: relative; /* Posizione relativa per il testo */
+    padding-left: 10px; /* Aggiungi del padding a sinistra per separare il testo dal bordo sinistro */
+    padding-right: 20px;
+}
+
+
+
+/* Aggiungi effetto al passaggio del mouse */
+.custom-nav-link:hover::before {
+    width: 100%; /* Espandi il pallino al passaggio del mouse */
+}
+
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+.navbar-toggler {
+    border: none;
+}
+
+
+
+.dropdown-menu {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+.dropdown-menu a.dropdown-item {
+    color: #333;
+    transition: color 0.3s ease;
+    font-size: 14px; /* Riduci la dimensione del testo */
+    padding: 8px 20px; /* Aggiungi spazio interno */
+}
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+/* BG*/
+.bg-dark {
+    background-color: #000000; /* Set the background color to black */
+}
+
+.bg-gradient {
+    
+    background-color:brown;
+}
+
+.bg-black{
+    background-color:#000;
+}
+.bg-orange{
+    background-color:coral;
+}
+
+
+.bg-red{
+    background-color:red;
+}
+.bg-info {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+}
+
+
+.navbar-brand {
+    display: flex; /* Permette all'immagine di stare accanto al testo */
+    align-items: center; /* Allinea verticalmente il testo e l'immagine */
+}
+
+
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px; /* Aggiunto margine per separare il logo dal testo */
+}
+
+
+.card {
+    border: none; /* Rimuovi il bordo */
+    border-radius: 15px; /* Imposta il bordo rotondo */
+    overflow: hidden; /* Nascondi il contenuto che sfora */
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-15px); /* Sposta la card leggermente verso l'alto al passaggio del mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aggiungi un'ombra più evidente */
+}
+
+.card-img-top {
+    height: 180px; /* Imposta un'altezza inferiore per l'immagine */
+    object-fit: cover; /* Mantieni l'immagine proporzionata all'interno del suo contenitore */
+}
+
+.card-body {
+    background-color: #f8f9fa; /* Colore dello sfondo */
+    border-bottom-left-radius: 15px; /* Bordi arrotondati solo nella parte inferiore */
+    border-bottom-right-radius: 15px;
+    height: 100px; /* Imposta un'altezza fissa */
+    overflow: auto;
+}
+
+.card-footer {
+    border-bottom-left-radius: 15px; /* Bordi arrotondati solo nella parte inferiore */
+    border-bottom-right-radius: 15px;
+}
+
+.card-footer a.btn {
+    margin-top: 0.5rem; /* Spazio superiore tra i pulsanti nel footer */
+}
+.custom-card {
+    background-color: #f8f9fa; /* Colore dello sfondo */
+        height: 600px; /* Imposta un'altezza fissa */
+        border: none; /* Rimuovi il bordo */
+        border-radius: 15px; /* Imposta il bordo rotondo */
+        overflow: hidden; /* Nascondi il contenuto che sfora */
+  
+}
+.card-title {
+    font-family: 'Roboto', sans-serif; /* Utilizza il font Roboto */
+    color:#000;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-family: 'Roboto', sans-serif; /* Utilizza il font Roboto */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+/*------------------------------------------------ FOOTER-------------------------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+.footer {
+    font-family: "Poppins", sans-serif;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0; /* Rimuovi completamente il padding */
+    margin: 0; /* Rimuovi il margine esterno */
+    color: #333;
+    font-size: 14px; /* Riduci la dimensione del testo */
+    line-height: 1.2; /* Riduci l'altezza delle righe di testo */
+    height: 60px; /* Imposta un'altezza diretta per il footer */
+}
+
+
+.container {
+    min-height: 150vh; /* Imposta l'altezza minima al 100% dell'altezza della finestra visibile */
+}
+
+.footer h3 {
+    color: #000; /* Colore del titolo */
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+    margin-top:10px;
+}
+
+.footer ul li a {
+    color:rgba(0, 0, 0, 0.7); /* Colore dei link */
+    text-decoration: none;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
+}
+
+/* -----------------------------------------------------------------Footer prova-----------------------------------------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+footer.body {
+  display: flex;
+  background: #333;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 50vh;
 
 }
+
+.footer {
+  position: relative;
+  width: 100%;
+  background:transparent;
+  min-height: 10px;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon,
+.menu {
+    color:#000000;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2.5rem;
+  color:black;
+  margin: 10px 30px;
+  display: inline-block;
+  transition: 0.5s;
+  margin-top: 20px;
+  
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 0px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+
+
+
