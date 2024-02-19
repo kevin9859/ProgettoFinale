@@ -26,12 +26,20 @@ class ArticleController extends Controller
         $this->middleware('auth')->except('index', 'show');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(4)->get();
+        $date = $request->input('date');
+    
+        $query = Article::where('is_accepted', true);
+    
+        if ($date) {
+            $query->whereDate('created_at', $date);
+        }
+    
+        $articles = $query->orderBy('created_at', 'desc')->get();
+    
         return view('article.index', compact('articles'));
     }
-
     public function create()
     {
         return view('article.create');
@@ -47,27 +55,36 @@ class ArticleController extends Controller
             'category' => 'required',
             'tags' => 'required',
         ]);
-
+    
+        $imagePath = $request->file('image')->store('', 'public');
+    
         $article = Article::create([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
             'body' => $request->body,
-            'image' => $request->file('image')->store('public/images'),
+            'image' => $imagePath,
             'category_id' => $request->category,
             'user_id' => Auth::user()->id,
             'slug' => Str::slug($request->title),
         ]);
+    
+        // ...
+ 
 
-        $tags = explode(', ', $request->tags);
-        foreach ($tags as $tag) {
-            $newTag = Tag::updateOrCreate([
-                'name' => $tag,
-            ]);
-            $article->tags()->attach($newTag);
-        }
-
-        return redirect(route('homepage'))->with('message', 'Articolo creato con successo');
+    $tags = explode(', ', $request->tags);
+    foreach ($tags as $tag) {
+        $newTag = Tag::updateOrCreate([
+            'name' => $tag,
+        ]);
+        $article->tags()->attach($newTag);
     }
+
+  
+    return redirect(route('homepage'))->with('message', 'Articolo creato con successo');
+} 
+  
+
+    
 
     public function show($articleId)
 {
@@ -149,4 +166,12 @@ class ArticleController extends Controller
 
         return view('article.search-index', compact('articles', 'query'));
     }
+
+    public function articleCareers()
+{
+   
+    return view('article.careers'); // replace 'data' with your actual data
 }
+}
+
+

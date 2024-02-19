@@ -13,7 +13,7 @@
     </div>
     @endif
 
-    <div class="container my-2">
+    <div class="container-2 my-2">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>Richieste per ruolo di amministratore</h2>
@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-    <div class="container my-2">
+    <div class="container-2 my-2">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>Richieste per ruolo di revisore</h2>
@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-    <div class="container my-2">
+    <div class="container-2 my-2">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>Richieste per ruolo di redattore</h2>
@@ -39,7 +39,7 @@
     </div>
 
     <hr>
-    <div class="container my-5">
+    <div class="container-2 my-5">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>I tags della piattaforma</h2>
@@ -47,14 +47,14 @@
             </div>
         </div>
     </div>
-    <div class="container my-5">
+    <div class="container-2 my-5">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>Le categorie della piattaforma</h2>
                 <x-metainfo-table :metaInfos="$categories" metaType="categorie"></x-metainfo-table>
-                <form class="d-flex"action="{{route('admin.storeCategory')}}" method="POST">
+                <form class="d-flex ml-auto" style="max-width: 500px;" action="{{route('admin.storeCategory')}}" method="POST">
                     @csrf
-                    <input type="text" name="name" class="fprm-control me-2" placeholder="Inserisci una nuova categoria">
+                    <input type="text" name="name" class="form-control me-2" placeholder="Crea una categoria">
                     <button type="submit" class="btn btn-success text-white">Aggiungi</button>
                 </form>
             </div>

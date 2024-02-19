@@ -55,8 +55,9 @@ Route::post('/article/store', [ArticleController::class, 'store'])->name('articl
 Route::get('/writer/dashboard', [ArticleController::class, 'dashboard'])->name('writer.dashboard');
 Route::get('/article/{article}/edit', [ArticleController::class, 'edit'])->name('article.edit');
 Route::put('/article/{article}/update', [ArticleController::class, 'update'])->name('article.update');
-
 Route::delete('/article/{article}/destroy', [ArticleController::class, 'destroy'])->name('article.destroy');
+
 });
 Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name('article.search');
+Route::get('/article/careers', [ArticleController::class, 'articleCareers'])->name('article.careers');
 Route::get('article/byUser/{user}', [ArticleController::class, 'byUser'])->name('article.byUser');

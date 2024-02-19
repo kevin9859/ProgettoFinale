@@ -1,22 +1,32 @@
 <x-layout>
-    <div class="container-fluid p-5 hg-info text-center text-white">
-        <div class="row justify-content-center">
-            <h1 class="display-1">
-                Lavora con noi
-            </h1>
-        </div>
-    </div>
+</style>
 
-    <div class="container my-5">
-        <div class="row justify-content-centerr align-items-center border rounded p-2 shadow">
-            <div class="col-12 col-md-6">
-                <h2>Lavora come Amministratore</h2>
-                <p>Cosa farai:</p>
-                <h2>Lavora come Revisore</h2>
-                <p>Cosa farai:</p>
-                <h2>Lavora come Redattore</h2>
-                <p>Cosa farai:</p>
+<div class="container-fluid p-5 hg-info text-center text-white">
+    <div class="row justify-content-center">
+        <h1 class="display-1">
+            Lavora con noi
+        </h1>
+    </div>
+</div>
+
+<div class="container my-5 ">
+    <div class="row justify-content-center bg-white align-items-center border rounded p-2 shadow">
+        <div class="col-12 col-md-6">
+            <div class="role revisor">
+                <h2 class="role-title">Admin</h2>
+                <p class="role-description">Cosa farai: Gestione del sito, supervisione delle operazioni, ecc.</p>
             </div>
+            
+            <div class="role revisor">
+                <h2 class="role-title">Revisor</h2>
+                <p class="role-description">Cosa farai: Revisione dei contenuti, controllo della qualità, ecc.</p>
+            </div>
+            
+            <div class="role writer">
+                <h2 class="role-title">Writer</h2>
+                <p class="role-description">Cosa farai: Scrittura e modifica di contenuti, ricerca, ecc.</p>
+            </div>
+        </div>
             <div class="col-12 col-md-6">
                 @if($errors->any())
                 <div class="alert alert-danger">

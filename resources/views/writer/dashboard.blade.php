@@ -1,7 +1,7 @@
 <x-layout>
-    <div class="container-fluid netflix-bg p-5 text-white">
+    <div class="container-fluid p-5 text-center text-white">
         <div class="row justify-content-center">
-            <h1 id="dashboard-title"class="display-1">
+            <h1 class="display-1">
                 Bentornato, Redattore
             </h1>
         </div>
@@ -12,7 +12,7 @@
     </div>
     @endif
 
-    <div class="container my-5">
+    <div class="container-2 my-5">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2 class="dashboard-h2">Articoli in fase di revisione</h2>
@@ -20,7 +20,7 @@
             </div>
         </div>
     </div>
-    <div class="container my-5">
+    <div class="container-2 my-5">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2 class="netflix-text">Articoli pubblicati</h2>
@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="container my-5">
+    <div class="container-2 my-5">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2 class="netflix-text">Articoli respinti</h2>

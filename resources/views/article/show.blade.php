@@ -1,34 +1,22 @@
 <x-layout>
-    <div class="container-fluid p-5 bg-dark text-white">
-        <div class="row justify-content-center">
-            <h1 class="display-1 h1"> {{ $article->title }} </h1>
-        </div>
-    </div>
-
     <div class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="custom-card">
-                    <img src="{{ asset(Storage::url($article->image)) }}" class="card-img-top" alt="...">
-                    <div class="custom-card-body">
-                        <h2 class="card-title">{{ $article->subtitle }}</h2>
-                        <p class="card-text text-muted fst-italic">
-                            Redatto da {{ $article->user->name }} il {{ $article->created_at->format('d/m/Y') }}
-                        </p>
-                        <hr>
-                        <p class="card-text">{{ $article->body }}</p>
+            <div class="col-md-12">
+                <div class="bg-white p-5 rounded shadow">
+                    <h1 class="display-4 mb-3 article-title">{{ $article->title }}</h1>
+                    <img src="{{ asset(Storage::url($article->image)) }}" class="article-image img-fluid rounded mb-4" alt="...">
+                    <h2 class="h4 mb-3 text-muted article-subtitle">{{ $article->subtitle }}</h2>
+                    <p class="text-muted fst-italic mb-4">
+                        Redatto da {{ $article->user->name }} il {{ $article->created_at->format('d/m/Y') }}
+                    </p>
+                    <p class="text-dark article-body">{{ $article->body }}</p>
+                    @if(Auth::user() && Auth::user()->is_revisor)  
+                    <div class="mt-5 article-details">
+                        <a href="{{route('revisor.acceptArticle', ['article' => $article->id])}}" class="btn btn-success text-white my-2">Accetta articolo</a>
+                        <a href="{{route('revisor.rejectArticle', ['article' => $article->id])}}" class="btn btn-danger text-white my-2">Rifiuta articolo</a>
+                        <a href="{{ route('article.index') }}" class="btn btn-info text-white my-2">Torna indietro</a>
                     </div>
-                    <div class="card-footer bg-dark d-flex justify-content-between">
-                        @if(Auth::user() && Auth::user()->is_revisor)
-                            <div>
-                                <a href="{{route('revisor.acceptArticle', ['article' => $article->id])}}" class="btn btn-success text-white my-2">Accetta articolo</a>
-                                <a href="{{route('revisor.rejectArticle', ['article' => $article->id])}}" class="btn btn-danger text-white my-2">Rifiuta articolo</a>
-                            </div>
-                            <div>
-                                <a href="{{ route('article.index') }}" class="btn btn-info text-white my-2">Torna indietro</a>
-                            </div>
-                        @endif
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>

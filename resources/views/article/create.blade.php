@@ -57,8 +57,8 @@
                     </div>
 
                     <div class="mt-3">
-                        <button class="btn btn-info text-white">Inserisci un articolo</button>
-                        <a class="btn btn-outline-info" href="{{ route('homepage') }}">Torna alla home</a>
+                        <button class="btn btn-modify btn-info text-white">Inserisci un articolo</button>
+                        <a class="btn btn-delete btn-outline-info" href="{{ route('homepage') }}">Torna alla home</a>
                     </div>
 
                     <div class="mb-3">

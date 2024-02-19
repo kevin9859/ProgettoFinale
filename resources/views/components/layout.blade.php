@@ -1,18 +1,15 @@
+         
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
 
-
-
-    
-
-    @vite(['resources/css/app.css','resources/js/app.js'])
+    @vite(['public/css/app.css','public/js/app.js',])
 
     <title>The Aulab Post</title>
 </head>
@@ -24,8 +21,7 @@
         {{$slot}}
     </div>
     
-    <body>
-        <footer class="footer">
+   <footer class="footer">
           <ul class="social-icon">
             <li class="social-icon__item"><a class="social-icon__link" href="#">
                 <ion-icon name="logo-facebook"></ion-icon>
@@ -48,12 +44,10 @@
             <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
       
           </ul>
-          <p>&copy;2021 Nadine Coelho | All Rights Reserved</p>
+          <p>&copy;2024 Kevin Lapi  | All Rights Reserved</p>
         </footer>
+
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-      </body>
 </body>
-
-
 </html>

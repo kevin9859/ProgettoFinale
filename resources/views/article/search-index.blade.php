@@ -1,12 +1,11 @@
 
 <x-layout>
-<div class="container-fluid p-5 bg-orange text-center text-white">
+<div class="container-fluid p-5 bg-transparent text-center text-white">
     <div class="row justify-content-center">
-        <div class="display-1">
-            <h1 class="h1">
+        <h1 class="display-1">
                 Tutti gli articoli per:  {{ $query }}
-            </h1>
-        </div>
+
+        <h1>
     </div>
 </div>
 
@@ -16,7 +15,9 @@
         <div class="col-12 col-md-4 my-2">
             <div class="card">
                 <div class="card-img">
-                    <img src="{{ asset(Storage::url($article->image)) }}" class="card-img-top" alt="...">
+                    <img src="{{ Storage::url($article->image) }}" class="card-img-top" alt="...">
+
+
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ $article->title }}</h5>

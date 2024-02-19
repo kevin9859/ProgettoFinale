@@ -25,12 +25,12 @@
             <td>{{$article->created_at->format('d/m/Y')}}</td>
             <td >
                
-                <a href="{{route('article.show', ['article' => $article->id])}}" class="btn btn-info text-white">Leggi l'articolo</a>
-                <a href="{{route('article.edit', ['article' => $article->id])}}" class="btn btn-warning text-white">Modifica l'articolo</a>
-                <form action="{{route('article.destroy', ['article' => $article->id])}}"method="post" class="d-inline">
+                <a href="{{route('article.show', ['article' => $article->id])}}" class="btn btn-read text-white">Leggi l'articolo</a>
+                <a href="{{route('article.edit', ['article' => $article->id])}}" class="btn btn-modify btn-warning text-white">Modifica l'articolo</a>
+                <form action="{{route('article.destroy', ['article' => $article->id])}}" method="post" class="d-inline">
                     @csrf
                     @method('delete')
-                    <button type="submit" class="btn btn-danger">Elimina articolo</button>
+                    <button type="submit" class="btn btn-delete btn-danger">Elimina articolo</button>
                 </form>
             </td>
         </tr>

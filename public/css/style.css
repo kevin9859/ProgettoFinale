@@ -1,0 +1,640 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+/* Modifica il colore di sfondo e del testo */
+.welcome-guest{
+    margin-top: 250px;
+}
+
+.btn {
+    
+    
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 1s ease;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+
+}
+.btn-read{
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 1s ease;
+    margin-top: 10px;
+}
+.btn-modify{
+    background: linear-gradient(135deg, green 50%,  darkgreen 100%);
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+
+}
+.btn-delete{
+    background: linear-gradient(135deg, brown 10%, red 100%);
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 1s ease;
+    margin-top: 10px;
+
+
+}
+/* Aggiungi effetto al passaggio del mouse */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: orange;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: scale(0.98);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+#brand-text {
+    font-size: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: 600px;
+    object-fit: cover;
+}
+.span-custom{
+    margin-right: 40px; /* Aggiungi spazio a destra del testo se necessario */
+}
+
+
+
+body {
+    background-image: url('/public/images/sfondo-spiaggia5.jpg');
+    background-size: cover; /* Adatta l'immagine alla dimensione del body */
+    background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+    background-position: center center; /* Posiziona l'immagine al centro del body */
+    font-family: 'Helvetica Neue', sans-serif; /* Tipo di carattere del testo */
+    display: flex;
+    flex-direction: column;
+    max-height: auto;
+    min-height: 100vh; /* Imposta l'altezza minima al 100% dell'altezza della finestra visibile */
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    overflow: auto; /* Aggiunto per permettere lo scrolling */
+}
+.half-background{
+    background-image: url('/public/images/sfondo-spiaggia5.jpg');
+    border-radius: 10px;
+    margin-bottom: 1em;
+    padding: 1em;
+    padding-top: 2em;
+    min-height: 150px;
+}
+
+.article-title {
+    color: #000;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+.article-subtitle {
+    font-family: 'Arial', sans-serif;
+    font-style: italic;
+}
+
+.article-details {
+    font-size: 0.9em;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.article-body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+}
+.article-h1{
+    color: #000;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+}
+.article-image{
+    width: 900px;
+    height: 500px;
+    margin: 20px auto;
+    display: block;
+}
+
+.role {
+    background: linear-gradient(135deg, #f9f9f9 0%, #fff 100%);
+    border-radius: 10px;
+    margin-bottom: 1em;
+    padding: 1em;
+    padding-top: 2em;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    min-height: 150px;
+
+}
+
+.role-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+.role-description {
+    font-size: 1.2em;
+    color: #666;
+   
+    transition: opacity 0.3s ease;
+    
+}
+.role-description.visible {
+    opacity: 1;
+}
+
+.role:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+
+/* CSS per l'h1 che assomiglia al sito di riferimento */
+.h1 {
+    font-family: 'Poppins', sans-serif; /* Scegli il font appropriato */
+    font-size: 3rem; /* Imposta la dimensione del font */
+    font-weight: 700; /* Imposta il peso del font */
+    color: #000000; /* Imposta il colore del testo */
+    text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+    margin-bottom: 20px; /* Aggiungi margine inferiore */
+}
+
+
+p {
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 24px;
+    text-align: center;
+   
+}
+
+a {
+    color: #e8d4a7;
+    text-decoration: none;
+    text-align: right;
+    padding: 15px;
+    font-size: 20px;
+}
+.h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold; 
+    color: #fff; 
+    text-align: center; 
+    margin-top: 30px; 
+    margin-bottom: 20px;
+}
+
+span{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300; /* Imposta il peso del font */
+    color:#f8f9fa; /* Imposta il colore del testo */
+    text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+  
+}
+/**/
+.opacity-75 {
+    opacity: 0.75;
+}
+
+
+.text-outline {
+    -webkit-text-stroke-width: 2px; /* Aumenta lo spessore del contorno */
+    -webkit-text-stroke-color: black;
+    color: white;
+}
+
+
+
+.bg-yellow {
+    background-color:gold;
+}
+
+/* Rimuovi i pallini per i li */
+.custom-nav-item {
+    list-style-type: none; /* Rimuovi i pallini */
+}
+/* Modifica il posizionamento del testo e del pallino */
+.custom-nav-link {
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    color: #fff; /* Colore del testo */
+    display: inline-block; /* Mostra il testo come blocco */;
+    position: relative; /* Posizione relativa per il testo */
+    padding-left: auto; /* Aggiungi del padding a sinistra per separare il testo dal bordo sinistro */
+    padding-right:auto;
+    max-width: 50%;
+
+}
+
+
+
+/* Aggiungi effetto al passaggio del mouse */
+.custom-nav-link:hover::before {
+    width: 100%; /* Espandi il pallino al passaggio del mouse */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-nav {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    padding-right: 20px;
+
+}
+.navbar-collapse {
+    flex: 1;
+    max-width: 60%; /* Adjust this value to give more space to the search bar */
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+.navbar-toggler {
+    border: none;
+}
+.nav-item {
+    transition: all 0.3s ease; /* Smooth transition for all changes */
+    display: flex;
+}
+
+.nav-item:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+    transform: scale(0.95); /* Slightly reduce size on hover to mimic click */
+    border-radius: 10%; /* Make the item round on hover */
+}
+
+/* CSS */
+@keyframes clickAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+.custom-nav-link.clicked {
+    animation: clickAnimation 0.3s ease;
+}
+.custom-nav-item {
+    margin: 0 10px; /* Add space between items */
+}
+
+.custom-nav-link {
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.menu-open{
+    color: #000;
+}
+.search-form {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Take up the full width of its parent */
+    max-width: 2100px; /* But don't get bigger than this */
+    flex: 1;
+    max-width: 100%;
+    width: 500px;
+    
+    
+}
+.pr-30{
+    padding-right: 150px;
+
+}
+.ml-auto {
+    margin-left: auto;
+}
+
+.dropdown-menu {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+.dropdown-menu a.dropdown-item {
+    color: #333;
+    transition: color 0.3s ease;
+    font-size: 14px; /* Riduci la dimensione del testo */
+    padding: 8px 20px; /* Aggiungi spazio interno */
+}
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+/* BG*/
+.bg-dark {
+    background-color: #000000; /* Set the background color to black */
+}
+
+.bg-gradient {
+    
+    background-color:brown;
+}
+
+.bg-black{
+    background-color:#000;
+}
+.bg-orange{
+    background-color:coral;
+}
+
+
+.bg-red{
+    background-color:red;
+}
+.bg-info {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+}
+
+
+.navbar-brand {
+    display: flex; /* Permette all'immagine di stare accanto al testo */
+    align-items: center; /* Allinea verticalmente il testo e l'immagine */
+}
+
+
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px; /* Aggiunto margine per separare il logo dal testo */
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiungi transizione all'ombra */
+    
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+    
+}
+.offcanvas {
+    width: 300px;
+}
+
+.card-body {
+    background-color: #f8f9fa;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 150px;
+    width: 400px;
+    overflow: auto;
+    transition: background-color 0.3s ease; /* Aggiungi transizione al colore dello sfondo */
+}
+
+.card-body:hover {
+    background-color: #e9ecef; /* Cambia il colore dello sfondo al passaggio del mouse */
+}
+
+.card-footer {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: background-color 0.3s ease; /* Aggiungi transizione al colore dello sfondo */
+    height: auto;
+    display: flex; /* Usa Flexbox */
+    flex-direction: column; /* Organizza i figli in verticale */
+    justify-content: space-between; /* Distribuisce lo spazio uniformemente tra i figli */
+    align-items: center; /* Centra i figli orizzontalmente */
+    padding: 0.5rem; /* Aggiungi un po' di padding per evitare che il contenuto tocchi i bordi */
+    color: #000;
+}
+
+
+.card-footer:hover {
+    background-color: #e9ecef; /* Cambia il colore dello sfondo al passaggio del mouse */
+}
+.card-btn{
+    color:coral
+}
+
+.card-footer a.btn {
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Aggiungi transizione al colore e al colore dello sfondo */
+}
+
+.card-footer a.btn:hover {
+    background-color:coral; /* Cambia il colore dello sfondo al passaggio del mouse */
+    color: #fff; /* Cambia il colore del testo al passaggio del mouse */
+}
+
+
+
+.card-title {
+    font-family: 'Roboto', sans-serif;
+    color:#000;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.card-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+/*------------------------------------------------ FOOTER-------------------------------------------*/
+
+
+
+.footer {
+    font-family: "Poppins", sans-serif;
+    position: static; /* Cambia da absolute a static */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0; /* Rimuovi completamente il padding */
+    margin-top: 20px; /* Aggiungi un margine superiore */
+    color: #333;
+    font-size: 14px; /* Riduci la dimensione del testo */
+    width: 100%;
+    height: auto; /* Cambia da 100px a auto */
+}
+.min-vh-100{
+    padding-bottom:100px;
+      flex-grow: 1
+}
+
+.container {
+    min-height: 100vh; /* Imposta l'altezza minima al 100% dell'altezza della finestra visibile */
+    
+}
+.container-2 {
+    min-height: 10vh; /* Imposta l'altezza minima al 100% dell'altezza della finestra visibile */
+    margin-left: auto;
+    margin-right: auto;
+}
+.container-2 .col-12 {
+    padding-left: 20%; /* Adatta il padding in base alla larghezza della finestra */
+    padding-right: 20%; /* Adatta il padding in base alla larghezza della finestra */
+}
+
+
+
+.footer h3 {
+    color: #000; /* Colore del titolo */
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+    margin-top:10px;
+}
+
+.footer ul li a {
+    color:rgba(0, 0, 0, 0.7); /* Colore dei link */
+    text-decoration: none;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
+}
+
+/* -----------------------------------------------------------------Footer prova-----------------------------------------------------------------------------------------------*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+footer.body {
+  display: flex;
+  background: #333;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 50vh;
+
+}
+span{
+    color: black;
+   
+}
+
+
+
+.social-icon,
+.menu {
+    color:#000000;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2.5rem;
+  color:black;
+  margin: 10px 30px;
+  display: inline-block;
+  transition: 0.5s;
+  margin-top: 20px;
+  
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+

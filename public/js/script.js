@@ -1,14 +1,5 @@
 
-// Aggiungi il gestore dell'evento al click del bottone del navbar-toggler
-document.getElementById('navbarToggler').addEventListener('click', function() {
-    // Se il dropdown menu è visibile, nascondilo, altrimenti mostralo
-    var dropdownMenu = document.getElementById('navbarNavDropdown');
-    if (dropdownMenu.classList.contains('show')) {
-        dropdownMenu.classList.remove('show');
-    } else {
-        dropdownMenu.classList.add('show');
-    }
-});
+
 
 // Chiudi il dropdown menu quando si fa clic fuori
 window.addEventListener('click', function(event) {
@@ -58,3 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+
+

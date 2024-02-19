@@ -2,7 +2,7 @@
 
     <div class="container-fluid p-5 bg-green text-center text-white">
         <div class="row justify-content-center">
-            <h1 class="display-1 text-outline">
+            <h1 class="display-1">
                 Bentornato, Revisore
             </h1>
         </div>
@@ -13,7 +13,7 @@
     </div>
     @endif
 
-    <div class="container my-5">
+    <div class="container-2 my-5">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>Articoli da revisionare</h2>
@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-    <div class="container my-5">
+    <div class="container-2 my-5">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>Articoli revisionati</h2>
@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-    <div class="container my-5">
+    <div class="container-2 my-5">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>Articoli respinti</h2>
