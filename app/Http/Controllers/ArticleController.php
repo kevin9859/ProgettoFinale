@@ -92,10 +92,11 @@ class ArticleController extends Controller
     return view('article.show', compact('article'));
 }
 
-    public function edit(Article $article)
-    {
-        return view('article.edit', compact('article'));
-    }
+public function edit(Article $article)
+{   
+    $categories = Category::all();
+    return view('article.edit', compact('article', 'categories'));
+}
 
     public function update(Request $request, Article $article)
     {

@@ -4,10 +4,8 @@
 .welcome-guest{
     margin-top: 250px;
 }
-
-.btn {
-    
-    
+.btn{
+    background: linear-gradient(135deg, #bf00ff 0%, #9200b3 100%);
     color: #fff;
     padding: 0.5em 1em;
     border: none;
@@ -15,8 +13,6 @@
     cursor: pointer;
     transition: background 1s ease;
     margin-top: 10px;
-    transition: all 0.3s ease;
-
 }
 .btn-read{
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
@@ -51,15 +47,15 @@
 
 }
 /* Aggiungi effetto al passaggio del mouse */
-.btn {
-    transition: all 0.3s ease;
-}
-
 .btn:hover {
     background: orange;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+button:hover {
+    background: orange;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
 .btn:active {
     transform: scale(0.98);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
@@ -68,7 +64,9 @@
     font-size: 20px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
-
+.ml2{
+    margin-left: 1em;
+}
 .img-center {
     display: block;
     margin-left: auto;
@@ -131,6 +129,7 @@ body {
 .article-body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
+    font-size: 20px;
 }
 .article-h1{
     color: #000;
@@ -242,7 +241,10 @@ span{
     -webkit-text-stroke-color: black;
     color: white;
 }
-
+.search-button{
+    width: 70px;
+   
+}
 
 
 .bg-yellow {
@@ -263,6 +265,8 @@ span{
     padding-left: auto; /* Aggiungi del padding a sinistra per separare il testo dal bordo sinistro */
     padding-right:auto;
     max-width: 50%;
+    z-index: 1000 !important;
+    height:45px
 
 }
 
@@ -298,12 +302,18 @@ span{
 .nav-item {
     transition: all 0.3s ease; /* Smooth transition for all changes */
     display: flex;
+    color:white;
+    z-index: 1000 !important;
+    margin-right:50px;
+    padding: 1px 15px; /* Aumenta lo spazio intorno alle voci del menu */
+
 }
 
 .nav-item:hover {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
     transform: scale(0.95); /* Slightly reduce size on hover to mimic click */
     border-radius: 10%; /* Make the item round on hover */
+
 }
 
 /* CSS */
@@ -322,6 +332,9 @@ span{
 
 .custom-nav-link {
     transition: color 0.3s ease; /* Smooth color transition */
+}
+.custom-div {
+    z-index: 1; /* Imposta un valore di z-index basso per il div */
 }
 
 .menu-open{
@@ -357,9 +370,15 @@ span{
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 1000;
+    z-index: 1000 !important;
+    width: 250px;
 }
-
+.dropdown-item {
+    white-space: normal; /* Permette al testo di andare a capo */
+}
+.dropdown-item:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Aggiunge un'ombra quando il mouse passa sopra */
+}
 .dropdown-menu a.dropdown-item {
     color: #333;
     transition: color 0.3s ease;
@@ -369,6 +388,7 @@ span{
 .dropdown-menu.show {
     opacity: 1;
     transform: translateY(0);
+    z-index: 999;
 }
 
 
@@ -636,5 +656,31 @@ span{
 
 
 
-
-
+/* -----------------------------------------------------------------prova-----------------------------------------------------------------------------------------------*/
+.alert-saturn {
+    background: linear-gradient(90deg,#5d79ee,#863dba);
+    color: white;
+    text-transform: uppercase;
+    border: 0px !important;
+    border-radius: 5px !important;
+}
+.alert {
+    
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+   
+}
+.custom-div {
+    margin-top: 10px; /* Riduci il margine superiore a 10px */
+    margin-bottom: 5px; /* Riduci il margine inferiore a 10px */
+    height: auto; /* Imposta l'altezza automaticamente in base al contenuto */
+    min-height: 20px; /* Imposta un'altezza minima per assicurarti che il div non sia troppo piccolo */
+}
+.custom-alert {
+    padding: 5px; /* Riduci il padding a 5px */
+}
+.custom-div, .custom-div * {
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 999;
+}

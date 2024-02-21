@@ -15,9 +15,16 @@
     </div>
     @endif
 
-    <form class="card p-5 shadow" action="{{ route('article.update', $article->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
+    @if (session('message'))
+    <div class="alert alert-success" id="success-alert">
+        {{ session('message') }}
+    </div>
+    @endif
+
+    <div class="d-flex align-items-center justify-content-center vh-100">
+        <form class="card p-5 shadow w-50" action="{{ route('article.update', $article->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
 
         <div class="mb-3">
             <label for="title" class="form-label">Titolo</label>
@@ -56,8 +63,8 @@
 
         <div class="mt-2">
             <button type="submit" class="btn btn-info text-white">Aggiorna articolo</button>
-            <a href="{{ route('home') }}" class="btn btn-outline-info">Torna alla home</a>
+            <a href="{{ route('homepage') }}" class="btn btn-outline-info">Torna alla home</a>
         </div>
     </form>
+</div>
 </x-layout>
-

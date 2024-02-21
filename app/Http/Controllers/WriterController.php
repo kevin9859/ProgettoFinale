@@ -28,5 +28,10 @@ public function destroy(Article $article)
 
     return redirect(route('writer.dashboard'))->with('message', 'Hai correttamente cancellato l\'articolo scelto');
 }
+
+public function edit(Article $article)
+{
+    return view('article.edit', compact('article'));
+}
    
 }

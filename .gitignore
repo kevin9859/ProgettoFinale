@@ -4,7 +4,6 @@
 /public/storage
 /storage/*.key
 /vendor
-/node_modules
 npm-debug.log
 /storage/*.index
 
@@ -27,7 +26,4 @@ Vagrantfile
 .env.*.local
 
 # Database
-*.sqlite
-*.sqlite3
-*.db
-*.sql
+

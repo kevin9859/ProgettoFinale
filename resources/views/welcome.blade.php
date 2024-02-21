@@ -11,15 +11,16 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700&display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
-    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         @vite(['public/css/app.css','public/js/app.js'])
     
         <title>The Aulab Post</title>
     </head>
-    
+
+ 
     <body class="{{ Auth::check() ? '' : 'half-background' }}">
         <x-navbar/>
-    
+ 
         <div class="min-vh-100">
             
     @guest
@@ -98,7 +99,7 @@
               </ul>
               <p>&copy;2024 Kevin Lapi  | All Rights Reserved</p>
             </footer>
-    
+
             <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
             <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </body>
