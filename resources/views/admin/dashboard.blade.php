@@ -55,7 +55,7 @@
                 <form class="d-flex ml-auto" style="max-width: 500px;" action="{{route('admin.storeCategory')}}" method="POST">
                     @csrf
                     <input type="text" name="name" class="form-control me-2" placeholder="Crea una categoria">
-                    <button type="submit" class="btn btn-success text-white">Aggiungi</button>
+                    <button type="submit" class="btn-modify text-white">Aggiungi</button>
                 </form>
             </div>
         </div>

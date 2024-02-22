@@ -12,9 +12,9 @@
                     <p class="text-dark article-body">{{ $article->body }}</p>
                     @if(Auth::user() && Auth::user()->is_revisor)  
                     <div class="mt-5 article-details">
-                        <a href="{{route('revisor.acceptArticle', ['article' => $article->id])}}" class="btn btn-success text-white my-2">Accetta articolo</a>
-                        <a href="{{route('revisor.rejectArticle', ['article' => $article->id])}}" class="btn btn-danger text-white my-2">Rifiuta articolo</a>
-                        <a href="{{ route('article.index') }}" class="btn btn-info text-white my-2">Torna indietro</a>
+                        <a href="{{route('revisor.acceptArticle', ['article' => $article->id])}}" class="btn-modify text-white my-2">Accetta articolo</a>
+                        <a href="{{route('revisor.rejectArticle', ['article' => $article->id])}}" class="btn-delete text-white my-2">Rifiuta articolo</a>
+                        <a href="{{ route('article.index') }}" class=" btn-read text-white my-2">Torna indietro</a>
                     </div>
                     @endif
                 </div>

@@ -18,7 +18,7 @@
     </head>
 
  
-    <body class="{{ Auth::check() ? '' : 'half-background' }}">
+    <body class="">
         <x-navbar/>
  
         <div class="min-vh-100">
@@ -56,11 +56,12 @@
                             <div class="footer-content">
                                 <p>Redatto il {{ $article->created_at->format('d/m/Y') }} da {{$article->user->name}}</p>
                                 <p class="small fst-italic text-capitalize text-muted">Tempo di lettura: {{ $article->readDuration() }} minuti</p>
-                                <p class="small text-muted fst-italic text-capitalize">{{$article->category->name}}</p>
+                               
                                 <div class="small fst-italic text-capitalize">
                                     @foreach($article->tags as $tag)
                                         {{$tag->name}}
-                                    @endforeach
+                                    @endforeach 
+                                <p class="small text-muted fst-italic text-capitalize">{{$article->category->name}}</p>
                                 </div>
                             </div>
                         </div>
