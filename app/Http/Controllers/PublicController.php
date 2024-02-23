@@ -12,11 +12,17 @@ use App\Models\User;
 
 class PublicController extends Controller
 {
-    public function homepage()
-    {
-        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(3)->get();
-        return view('welcome', compact('articles'));
+  public function homepage()
+{
+    $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(3)->get();
+
+   /* */ // Set the confetti session here
+    if (Auth::check() && !session('confetti')) {
+        session(['confetti' => true]);
     }
+
+    return view('welcome', compact('articles'));
+}
 
     public function __construct()
     {

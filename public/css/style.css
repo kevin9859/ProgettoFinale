@@ -1,19 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 /* Modifica il colore di sfondo e del testo */
+
+html {
+    scroll-behavior: smooth;
+}
 .welcome-guest{
+
     margin-top: 250px;
+}
+.welcome-text {
+    transition: color 0.3s ease;
+    color: white;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-size: 17px;
+    justify-content: right;
 }
 
 .btn{
-    background: linear-gradient(135deg, #bf00ff 0%, #9200b3 100%);
+    background: linear-gradient(240deg, rgb(24, 65, 188), rgb(4, 66, 191));
     color: #fff;
     padding: 0.5em 1em;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background 1s ease;
-    margin-top: 10px;
+    font-weight: bold; /* Aggiunto per rendere il testo più marcato */
+    transition: transform 0.7s ease;
 }
 .btn-read{
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
@@ -44,25 +57,30 @@
     cursor: pointer;
     transition: background 1s ease;
     margin-top: 10px;
-
-
+    font-weight: bold; /* Aggiunto per rendere il testo più marcato */
+    transition: transform 0.7s ease;
+    margin-left: 15px;
+}
+.btn-delete:hover {
+    background: linear-gradient(240deg, rgb(245, 87, 25), rgb(236, 62, 14));
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1); /* Aumenta le dimensioni del bottone del 10% */
 }
 /* Aggiungi effetto al passaggio del mouse */
 .btn:hover {
-    background: orange;
+    font:black;
+    background: linear-gradient(240deg, rgb(20, 177, 67), rgb(35, 186, 24));
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1); /* Aumenta le dimensioni del bottone del 10% */
 }
 
-.btn:active {
-    transform: scale(0.98);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-}
+
 #brand-text {
     font-size: 20px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
 .ml2{
-    margin-left: 1em;
+    margin-left: 2em;
 }
 .img-center {
     display: block;
@@ -75,16 +93,16 @@
 .span-custom{
     margin-right: 40px; /* Aggiungi spazio a destra del testo se necessario */
 }
-
-
-
+p.small.flex-align {
+    align-items: center; /* Allinea verticalmente il testo e il link */
+}
 
 body {
-    background-image: url('/public/images/sfondo-spiaggia5.jpg');
-    background-size: cover; /* Adatta l'immagine alla dimensione del body */
+    background-image: url('/public/images/sfondo2.jpg');
+    background-size: auto; /* Mantieni le dimensioni originali dell'immagine */
     background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
     background-position: center center; /* Posiziona l'immagine al centro del body */
-    font-family: 'Helvetica Neue', sans-serif; /* Tipo di carattere del testo */
+    font-family: 'Roboto', 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
     max-height: auto;
@@ -95,7 +113,6 @@ body {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    overflow: auto; /* Aggiunto per permettere lo scrolling */
 }
 .article-title {
     color: #000;
@@ -337,6 +354,7 @@ span{
     100% { transform: scale(1); }
 }
 
+
 .custom-nav-link.clicked {
     animation: clickAnimation 0.3s ease;
 }
@@ -368,7 +386,7 @@ span{
     margin-left: auto;
 }
 .custom-font {
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .dropdown-menu {
@@ -415,7 +433,7 @@ span{
     justify-content: center; /* Allinea gli elementi in alto */
     height: 100%;
     width: 0; /* Da 0 a 240px */
-    position: fixed;
+    position:fixed;
     top: 0;
     right: 0; /* Da destra a sinistra */
     z-index: 2;
@@ -425,8 +443,9 @@ span{
     box-shadow: 8px 0px 16px rgba(0,0,0,0.4); /* Aumenta l'ombra */
     transition: box-shadow 0.3s ease; /* Aggiunge una transizione all'ombra */
     /*background: linear-gradient(90deg, rgba(93,121,238,0.7), rgba(134,61,186,0.7)); VIOLA*/
-    background: linear-gradient(90deg, rgba(47, 168, 193, 0.355), rgba(166, 73, 202, 0.984));
+    /*background: linear-gradient(90deg, rgba(47, 168, 193, 0.355), rgba(166, 73, 202, 0.984));
     /*background: linear-gradient(90deg, rgba(132, 241, 255, 0.7), rgba(228, 230, 231, 0.773)); prova*/
+    background: linear-gradient(90deg, rgba(70, 218, 247, 0.771), rgba(224, 106, 22, 0.984));
     -webkit-backdrop-filter: blur(10px); /* Aggiunge un effetto sfocato per Safari */
     backdrop-filter: blur(3px); /* Aggiunge un effetto sfocato */
 }
@@ -447,80 +466,72 @@ span{
     color:black ;
    
 }
+#navbarMenuButton {
+    background-color: transparent;
+    border: none;
+    transition: box-shadow 0.3s ease;
+}
 
+.openbtn {
+    background-color: #444;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.openbtn:hover {
+    background-color: #555;
+}
+
+.openbtn:hover .menu-lines {
+    transform: scale(1.2);
+}
 .closebtn {
     cursor: pointer;
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
-    font-size: 36px;
-    margin-left: 50px;
-    color: #818181;
+    font-size: 50px;
+    color: white;
     background-color: transparent; /* Imposta lo sfondo trasparente */
-    transition: 0.3s;
+    transition: 0.7s;
 }
-
 .closebtn:hover {
     color: #f1f1f1;
-    transform: rotate(180deg); /* Fai ruotare la X quando il mouse passa sopra */
+    transform: rotate(90deg); /* Fai ruotare la X quando il mouse passa sopra */
 }
 
 .closebtn i {
     font-size: 36px;
-}
-.openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #202020; /* Da #111 a #202020 */
     color: white;
-    padding: 10px 15px;
-    border: none;
+}
+.menu-lines {
+    background: linear-gradient(90deg, rgba(47, 168, 193, 0.355), rgba(201, 75, 53, 0.984));
+    color:white;
+    margin-left: 20px;
+    display: inline-block;
+    transition: transform 2s ease;
 }
 
-.openbtn:hover {
-    background-color: red /* Da #444 a #383838 */
+.line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color:white;
+    margin: 4px 0;
+    transition: transform 0.7s ease, margin 0.3s ease;
+}
+
+.openbtn:hover .line {
+    transform: rotate(180deg);
     
 }
-
-#main {
-    transition: margin-right .5s; /* Da margin-right a margin-left */
-    padding: 16px;
+.offcanvas {
+    width: 300px;
 }
-.menu-item {
-    margin: 6px 0;
-   
-}
-
-
-
-
 /* BG*/
-.bg-dark {
-    background-color: #000000; /* Set the background color to black */
-}
-
-.bg-gradient {
-    
-    background-color:brown;
-}
-
-.bg-black{
-    background-color:#000;
-}
-.bg-orange{
-    background-color:coral;
-}
-
-
-.bg-red{
-    background-color:red;
-}
-.bg-info {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    text-align: center;
-}
-
 
 .navbar-brand {
     display: flex; /* Permette all'immagine di stare accanto al testo */
@@ -544,29 +555,39 @@ span{
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 25%;
+    padding: 0;
+    margin: 3rem;
 }
 
+.card2 {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+   
+}
 .card:hover {
-    transform: translateY(-15px);
+    transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card-img-top {
     height: 120px;
     object-fit: cover;
-}
-
-.offcanvas {
-    width: 300px;
+    
 }
 
 .card-body {
     background-color: #f8f9fa;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    height: 120px; /* Aumentato da 100px */
-    width: 400px;
-    overflow: auto;
+    max-height: 120px; /* Aumentato da 100px */
+    width: auto;
+    overflow: hidden;
     transition: background-color 0.3s ease;
 }
 
@@ -599,24 +620,6 @@ span{
     align-items: start; /* Allinea gli elementi all'inizio del contenitore */
 }
 
-.card-footer:hover {
-    background-color: #e9ecef;
-}
-
-.card-btn{
-    color:coral
-}
-
-.card-footer a.btn {
-    margin-top: 0.5rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.card-footer a.btn:hover {
-    background-color:coral;
-    color: #fff;
-}
-
 .card-title {
     font-family: 'Roboto', sans-serif;
     color:#000;
@@ -624,6 +627,7 @@ span{
     font-weight: bold;
     margin-bottom: 5px; /* Ridotto da 10px */
     margin-top: 10px; /* Ridotto da 15px */
+    
 }
 
 .card-text {
@@ -632,6 +636,7 @@ span{
     line-height: 1.6;
     color: #333;
 }
+
 /*------------------------------------------------ FOOTER-------------------------------------------*/
 
 
@@ -759,7 +764,8 @@ span{
 
 /* -----------------------------------------------------------------prova-----------------------------------------------------------------------------------------------*/
 .alert-saturn {
-    background: linear-gradient(90deg,#5d79ee,#863dba);
+    /*background: linear-gradient(90deg,#5d79ee,#863dba);*/
+    background: linear-gradient(90deg, rgb(0, 213, 255), rgba(163, 24, 222, 0.984));
     color: white;
     text-transform: uppercase;
     border: 0px !important;
@@ -785,3 +791,16 @@ span{
     padding: 0 !important;
 }
 
+#confetti-canvas {
+ 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+
+
+/* -----------------------------------------------------------------prova-----------------------------------------------------------------------------------------------*/

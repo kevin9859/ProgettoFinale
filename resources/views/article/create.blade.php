@@ -24,7 +24,7 @@
 
                 </div>
                 @endif
-                <form class="card p-5 shadow" action="{{ route('article.store') }}" method="post" enctype="multipart/form-data">
+                <form class="card2 p-5 shadow" action="{{ route('article.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-3">
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="mt-3">
-                        <button class="btn-read text-white mb-1">Inserisci un articolo</button>
+                        <button class="btn text-white mb-1">Inserisci un articolo</button>
                         <button class="btn-delete text-white mb-1" href="{{ route('homepage') }}">Torna alla home</button>
                     </div>
 

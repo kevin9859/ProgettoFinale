@@ -1,108 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.3"></script>
+    <!-- Il resto del tuo codice -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.3"></script>
+
+    @vite(['public/css/app.css', 'public/js/app.js'])
+
+    <title>The Aulab Post</title>
+    <style></style>
+</head>
 
 
+<body class="">
+    <x-navbar />
 
-         
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700&display=swap">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        @vite(['public/css/app.css','public/js/app.js'])
-    
-        <title>The Aulab Post</title>
-    </head>
+    <div class="min-vh-100">
 
- 
-    <body class="">
-        <x-navbar/>
- 
-        <div class="min-vh-100">
-            
-    @guest
-    <div class="container-fluid p-5 bg-transparent text-center text-white">
-        <div class="row justify-content-center">
-            <h1 class="display-1 welcome-guest">Benvenuto!</h1>
-        </div>
-    @endguest    
+        @guest
+            <div class="container-fluid p-5 bg-transparent text-center text-white">
+                <div class="row justify-content-center">
+                    <h1 class="display-1 welcome-guest">Benvenuto!</h1>
+                    {{-- <div class="embed-responsive embed-responsive-16by9">
+                        <video class="embed-responsive-item" src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
+                    </div> --}}
+                </div>
+            </div>
+
+        @endguest
         @if (Auth::user())
-        <div class="container-fluid p-5 bg-transparent text-center text-white">
-        <div class="row justify-content-center">
-            <h1 class="display-1">Benvenuto!</h1>
-        </div>
-        <div>
-            <h5 class="display-9 mt-4">
-                questi sono gli articoli in primo piano...
-            </h5>
-        </div>
-    </div> <!-- Questo è il tag di chiusura che è stato spostato -->
-    
-    <div class="container my-5">
-        <div class="row justify-content-around">
-            @foreach($articles as $article)
-            <div class="col-12 col-md-6 col-lg-4 my-3">
-                <a href="{{ route('article.show', ['article' => $article->id]) }}" style="text-decoration: none; color: inherit;">
-                    <div class="card">
-                        <img src="{{ Storage::url($article->image) }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$article->title}}</h5>
-                            {{--<p class="card-text">{{$article->subtitle}}</p>--}}
-                        </div>
-                        <div class="card-footer text-muted">
-                            <div class="footer-content">
-                                <p>Redatto il {{ $article->created_at->format('d/m/Y') }} da {{$article->user->name}}</p>
-                                <p class="small fst-italic text-capitalize text-muted">Tempo di lettura: {{ $article->readDuration() }} minuti</p>
-                               
-                                <div class="small fst-italic text-capitalize">
-                                    @foreach($article->tags as $tag)
-                                        {{$tag->name}}
-                                    @endforeach 
-                                <p class="small text-muted fst-italic text-capitalize">{{$article->category->name}}</p>
-                                </div>
-                            </div>
-                        </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="images/politica.jpg" alt="First slide"
+                            style="object-fit: cover; height: 400px;">
                     </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="images/salvini.jpg" alt="Second slide"
+                            style="object-fit: cover; height: 400px;">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="images/politica.jpg" alt="Third slide"
+                            style="object-fit: cover; height: 400px;">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
                 </a>
             </div>
-        @endforeach
-        </div>
+
+            <div class="container my-5">
+                <div class="d-flex justify-content-around">
+                    @foreach ($articles as $article)
+                        <x-card :article="$article" />
+                    @endforeach
+                </div>
+            </div>
         @endif
     </div>
-        </div>
-    <!-- Il resto del tuo codice -->
-        
-       <footer class="footer">
-              <ul class="social-icon">
-                <li class="social-icon__item"><a class="social-icon__link" href="#">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                  </a></li>
-                <li class="social-icon__item"><a class="social-icon__link" href="#">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                  </a></li>
-                <li class="social-icon__item"><a class="social-icon__link" href="#">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                  </a></li>
-                <li class="social-icon__item"><a class="social-icon__link" href="#">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                  </a></li>
-              </ul>
-              <ul class="menu">
-                <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
-          
-              </ul>
-              <p>&copy;2024 Kevin Lapi  | All Rights Reserved</p>
-            </footer>
+    </div>
 
-            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    </body>
-    </html>
-    
+    <script>
+        /*-------CORIANDOLI BENVENUTO---------*/
+        var confettiInterval = setInterval(function() {
+            confetti({
+                particleCount: 10,
+                angle: 90,
+                spread: 45,
+                origin: {
+                    x: Math.random(),
+                    y: 0
+                }, // Randomize x origin for a more natural effect
+                colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'],
+                zIndex: 1000 // Increase zIndex to have confetti fall over other page elements
+            });
+        }, 100);
+
+        setTimeout(function() {
+            clearInterval(confettiInterval);
+        }, 5000); // Stop after 5 seconds
+    </script>
+</body>
+
+</html>
