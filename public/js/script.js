@@ -50,3 +50,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+$(document).ready(function(){
+    $('.carousel').slick({
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        dots: true,
+        infinite: false,
+    });
+});

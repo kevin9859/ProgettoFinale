@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid p-5 bg-info text-center text-white">
+    <div class="container-fluid p-4 text-center text-white">
         <div class="row justify-content-center">
             <h1 class="display-1">Modifica un articolo</h1>
         </div>
@@ -21,8 +21,8 @@
     </div>
     @endif
 
-    <div class="d-flex align-items-center justify-content-center vh-100">
-        <form class="card p-5 shadow w-50" action="{{ route('article.update', $article->id) }}" method="POST" enctype="multipart/form-data">
+    <div class="d-flex align-items-center justify-content-center mt-5">
+        <form class="card2 p-5 shadow"style="width:60%;height:30%;" action="{{ route('article.update', $article->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 

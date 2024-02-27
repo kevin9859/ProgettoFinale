@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-/* Modifica il colore di sfondo e del testo */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+.font-rounded {
+    font-family: 'Quicksand', sans-serif;
+}
 
 html {
     scroll-behavior: smooth;
@@ -9,14 +13,28 @@ html {
 
     margin-top: 250px;
 }
-.welcome-text {
-    transition: color 0.3s ease;
-    color: white;
-    font-family: 'Roboto', 'Arial', sans-serif;
-    font-size: 17px;
-    justify-content: right;
+.my-custom {
+    margin-top: 10rem !important;
+    margin-bottom: 5rem !important;
 }
 
+
+.main-div {
+    background-color: #fff; /* Set background color to white */
+    height: 70vh; /* Increase height */
+}
+
+.welcome-text {
+    text-align: center;
+}
+
+.small-text {
+    font-size: 1em; /* Adjust this value to make the text smaller or larger */
+}
+
+.large-text {
+    font-size: 2em; /* Adjust this value to make the text smaller or larger */
+}
 .btn{
     background: linear-gradient(240deg, rgb(24, 65, 188), rgb(4, 66, 191));
     color: #fff;
@@ -37,6 +55,7 @@ html {
     cursor: pointer;
     transition: background 1s ease;
     margin-top: 10px;
+    transition: transform 0.7s ease;
 }
 .btn-modify{
     background: linear-gradient(135deg, green 50%,  darkgreen 100%);
@@ -45,7 +64,9 @@ html {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
+    transition: background 1s ease;
+    font-weight: bold; /* Aggiunto per rendere il testo più marcato */
+    transition: transform 0.7s ease;
 
 }
 .btn-delete{
@@ -57,24 +78,27 @@ html {
     cursor: pointer;
     transition: background 1s ease;
     margin-top: 10px;
-    font-weight: bold; /* Aggiunto per rendere il testo più marcato */
     transition: transform 0.7s ease;
-    margin-left: 15px;
 }
+
 .btn-delete:hover {
     background: linear-gradient(240deg, rgb(245, 87, 25), rgb(236, 62, 14));
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     transform: scale(1.1); /* Aumenta le dimensioni del bottone del 10% */
 }
 /* Aggiungi effetto al passaggio del mouse */
-.btn:hover {
+.btn-read:hover {
     font:black;
     background: linear-gradient(240deg, rgb(20, 177, 67), rgb(35, 186, 24));
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     transform: scale(1.1); /* Aumenta le dimensioni del bottone del 10% */
 }
-
-
+.btn-modify:hover {
+    background: linear-gradient(240deg, rgb(20, 49, 177), rgb(35, 186, 24));
+    font: black;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1); /* Aumenta le dimensioni del bottone del 10% */
+}
 #brand-text {
     font-size: 20px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
@@ -98,8 +122,8 @@ p.small.flex-align {
 }
 
 body {
-    background-image: url('/public/images/sfondo2.jpg');
-    background-size: auto; /* Mantieni le dimensioni originali dell'immagine */
+    background-image: url('/public/images/orange.jpg');
+    background-size: cover; /* Imposta la grandezza dell'immagine alla grandezza della pagina */
     background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
     background-position: center center; /* Posiziona l'immagine al centro del body */
     font-family: 'Roboto', 'Arial', sans-serif;
@@ -188,7 +212,12 @@ body {
 .form-label {
     font-weight: bold;
 }
-
+.h50{
+    height: 50%;
+}
+.h30{
+    height: 30%;
+}
 
 /* CSS per l'h1 che assomiglia al sito di riferimento */
 .h1 {
@@ -240,8 +269,15 @@ span{
 .opacity-75 {
     opacity: 0.75;
 }
-
-
+.bg-purple {
+    background-color: #800080; /* Sostituisci con il tuo colore viola */
+}
+.ml10 {
+    margin-left: 10px;
+}   
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 .text-outline {
     -webkit-text-stroke-width: 2px; /* Aumenta lo spessore del contorno */
     -webkit-text-stroke-color: black;
@@ -263,17 +299,13 @@ span{
 }
 
 .search-button {
-    border: none; /* Rimuove tutti i bordi */
-    background-color: #863dba;
-    display: flex;
-    align-items: center; /* Centra verticalmente l'icona all'interno del bottone */
-    justify-content: center; /* Centra orizzontalmente l'icona all'interno del bottone */
-    width: 50px; /* Imposta la larghezza del bottone */
-    padding: 0; /* Rimuove il padding per far sì che il bottone sia quadrato */
-    border-top-right-radius: 15px; /* Arrotonda l'angolo in alto a destra */
-    border-bottom-right-radius: 15px; /* Arrotonda l'angolo in basso a destra */
-    border-top-left-radius: 0; /* Arrotonda l'angolo in alto a destra */
-    border-bottom-left-radius: 0; /* Arrotonda l'angolo in basso a destra */
+    background-color: #febd69;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    
 }
 
 
@@ -382,9 +414,7 @@ span{
     padding-right: 150px;
 
 }
-.ml-auto {
-    margin-left: auto;
-}
+
 .custom-font {
     font-size: 20px;
 }
@@ -445,7 +475,7 @@ span{
     /*background: linear-gradient(90deg, rgba(93,121,238,0.7), rgba(134,61,186,0.7)); VIOLA*/
     /*background: linear-gradient(90deg, rgba(47, 168, 193, 0.355), rgba(166, 73, 202, 0.984));
     /*background: linear-gradient(90deg, rgba(132, 241, 255, 0.7), rgba(228, 230, 231, 0.773)); prova*/
-    background: linear-gradient(90deg, rgba(70, 218, 247, 0.771), rgba(224, 106, 22, 0.984));
+    background: linear-gradient(90deg, rgba(135, 13, 235, 0.771), rgba(33, 95, 165, 0.984));
     -webkit-backdrop-filter: blur(10px); /* Aggiunge un effetto sfocato per Safari */
     backdrop-filter: blur(3px); /* Aggiunge un effetto sfocato */
 }
@@ -508,7 +538,7 @@ span{
     color: white;
 }
 .menu-lines {
-    background: linear-gradient(90deg, rgba(47, 168, 193, 0.355), rgba(201, 75, 53, 0.984));
+    
     color:white;
     margin-left: 20px;
     display: inline-block;
@@ -541,8 +571,8 @@ span{
 
 
 .logo {
-    width: 200px;
-    height:60px;
+    width: 230px;
+    height:70px;
     object-fit: contain;
     border-radius: 15px; /* Arrotonda i bordi del logo */
     transition: transform 0.3s ease; /* Aggiunge un'animazione di transizione al logo */
@@ -555,40 +585,55 @@ span{
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 25%;
+    max-width: 330px;
+    min-width: 25%;
     padding: 0;
     margin: 3rem;
+    max-height: 15%;
+    min-height: 15%;
 }
 
-.card2 {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: white;
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-   
+
+@media screen and (max-width: 500px) {
+    .card {
+        min-width: none;
+        width: 80%;
+        height: 80%;
+    }
+    
 }
+
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card-img-top {
-    height: 120px;
+    height: auto;
     object-fit: cover;
+    max-height: 140px;
     
 }
 
 .card-body {
+    max-height: 120px;
     background-color: #f8f9fa;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    max-height: 120px; /* Aumentato da 100px */
-    width: auto;
     overflow: hidden;
+    display: flex;
     transition: background-color 0.3s ease;
+    padding-left: 15px; /* Aggiunto per rimuovere il padding a sinistra */
+    margin-bottom: 0; /* Aggiunto per rimuovere il margine inferiore */
+}
+
+.card-title {
+    font-family: 'Roboto', sans-serif;
+    color:#000;
+    font-size: 20px; /* Ridotto da 24px */
+    font-weight: bold;
+    text-align: left; /* Aggiunto per allineare il testo a sinistra */
+    align-self: flex-start; /* Aggiunto per forzare l'allineamento a sinistra */
+    margin-left: 0; /* Aggiunto per rimuovere il margine a sinistra */
+    margin-bottom: 5px; /* Ridotto da 10px */
 }
 
 .card-body:hover {
@@ -605,6 +650,66 @@ span{
     align-items: center;
     color: #000;
 }
+
+
+.card-title {
+    font-family: 'Roboto', sans-serif;
+    color:#000;
+    font-size: 20px; /* Ridotto da 24px */
+    font-weight: bold;
+    margin-bottom: 5px; /* Ridotto da 10px */
+    margin-top: 10px; /* Ridotto da 15px */
+    margin-right: 0; /* Aggiunto per rimuovere il margine a destra */
+    align-items: flex-start; /* Aggiunto per allineare il contenuto all'inizio del contenitore */
+    
+}
+
+.card-home {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-home .card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-home .card-body,
+.card-home .card-footer {
+    padding: 1rem;
+}
+
+.card-home .footer-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-home .footer-content p,
+.card-home .footer-content .small {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+/*------------------------------------------------ FOOTER-------------------------------------------*/
+
+
+
+.footer {
+    font-family: "Poppins", sans-serif;
+    position: static; /* Cambia da absolute a static */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0; /* Rimuovi completamente il padding */
+    margin-top: auto; /* Aggiungi un margine superiore */
+    color: #333;
+    font-size: 14px; /* Riduci la dimensione del testo */
+    width: 100%;
+    height: auto; /* Cambia da 100px a auto */
+}
 .footer-content p, .footer-content div {
     background: linear-gradient(90deg, rgb(242, 242, 242), rgb(255, 247, 247));
     /*background: linear-gradient(90deg, rgba(132, 241, 255, 0.7), rgba(228, 230, 231, 0.773)); prova*/
@@ -618,41 +723,6 @@ span{
     flex-direction: column; /* Imposta l'orientamento a colonna */
     justify-content: space-between; /* Distribuisce lo spazio in modo uniforme tra gli elementi */
     align-items: start; /* Allinea gli elementi all'inizio del contenitore */
-}
-
-.card-title {
-    font-family: 'Roboto', sans-serif;
-    color:#000;
-    font-size: 20px; /* Ridotto da 24px */
-    font-weight: bold;
-    margin-bottom: 5px; /* Ridotto da 10px */
-    margin-top: 10px; /* Ridotto da 15px */
-    
-}
-
-.card-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-}
-
-/*------------------------------------------------ FOOTER-------------------------------------------*/
-
-
-
-.footer {
-    font-family: "Poppins", sans-serif;
-    position: static; /* Cambia da absolute a static */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 0; /* Rimuovi completamente il padding */
-    margin-top: 20px; /* Aggiungi un margine superiore */
-    color: #333;
-    font-size: 14px; /* Riduci la dimensione del testo */
-    width: 100%;
-    height: auto; /* Cambia da 100px a auto */
 }
 .min-vh-100{
     padding-bottom:100px;
@@ -765,7 +835,7 @@ span{
 /* -----------------------------------------------------------------prova-----------------------------------------------------------------------------------------------*/
 .alert-saturn {
     /*background: linear-gradient(90deg,#5d79ee,#863dba);*/
-    background: linear-gradient(90deg, rgb(0, 213, 255), rgba(163, 24, 222, 0.984));
+    background: linear-gradient(90deg, rgb(0, 213, 255), rgba(177, 59, 228, 0.984));
     color: white;
     text-transform: uppercase;
     border: 0px !important;
@@ -801,6 +871,101 @@ span{
     z-index: 1000;
 }
 
+.smaller-image {
+    width: 70%; /* Adjust this value to make the image smaller or larger */
+    height: 70%; /* This will keep the aspect ratio of the image */
+}
+.social-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100px; /* Adjust this value to change the space between the icons */
+}
 
+.social-icons a {
+    color: #000; /* Change this value to the desired color */
+}
+.responsive-font {
+    font-size: 16px; /* Default font size for small devices */
+}
 
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .responsive-font {
+        font-size: 18px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .responsive-font {
+        font-size: 20px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .responsive-font {
+        font-size: 22px;
+    }
+}
+@media (min-width: 1200px) { 
+    .responsive-font {
+        font-size: 22px;
+    }
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+}
+
+/* When the viewport is less than 1200px, reduce the max width of the images and change the layout of the cards */
+@media (max-width: 1200px) {
+    .img-fluid {
+        max-width: 90%;
+    }
+
+    .card {
+        flex-direction: row;
+    }
+}
+
+/* When the viewport is less than 992px, reduce the max width of the images further and change the layout of the cards */
+@media (max-width: 992px) {
+    .img-fluid {
+        max-width: 80%;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+}
+
+/* When the viewport is less than 768px, reduce the max width of the images further and change the layout of the cards */
+@media (max-width: 768px) {
+    .img-fluid {
+        max-width: 70%;
+    }
+
+    .card {
+        flex-direction: row;
+    }
+}
+
+/* When the viewport is less than 576px, reduce the max width of the images further and change the layout of the cards */
+@media (max-width: 576px) {
+    .img-fluid {
+        max-width: 60%;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+}
 /* -----------------------------------------------------------------prova-----------------------------------------------------------------------------------------------*/

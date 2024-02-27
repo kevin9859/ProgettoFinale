@@ -10,6 +10,7 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 
 class ArticleController extends Controller
 {
@@ -22,6 +23,7 @@ class ArticleController extends Controller
 
         return view('writer.dashboard', compact('unrevisionedArticles', 'acceptedArticles', 'rejectedArticles'));
     }
+    
     public function __construct()
     {
         $this->middleware('auth')->except('index', 'show');
@@ -37,10 +39,20 @@ class ArticleController extends Controller
             $query->whereDate('created_at', $date);
         }
 
-        $articles = $query->orderBy('created_at', 'desc')->get();
+        $articles = $query->orderBy('created_at', 'desc')->paginate(6);
 
         return view('article.index', compact('articles'));
     }
+    public function latest()
+{
+    $articles = Article::where('is_accepted', true)
+        ->orderBy('created_at', 'desc')
+        ->take(4)
+        ->get();
+
+    return view('article.latest', compact('articles'));
+}
+    
     public function create()
     {
         return view('article.create');
@@ -140,6 +152,7 @@ class ArticleController extends Controller
 
     public function destroy(Article $article)
     {
+        Log::info('Destroy method called for article ID: ' . $article->id);
         $article->tags()->detach();
         Storage::delete($article->image);
         $article->delete();
@@ -164,6 +177,7 @@ class ArticleController extends Controller
     public function articleSearch(Request $request)
     {
         $query = $request->input('query');
+
         $articles = Article::search($query)->where('is_accepted', true)->orderBy('created_at', 'desc')->get();
 
         return view('article.search-index', compact('articles', 'query'));
@@ -172,7 +186,7 @@ class ArticleController extends Controller
     public function articleCareers()
     {
 
-        return view('article.careers'); // replace 'data' with your actual data
+        return view('article.careers');
     }
 }
 

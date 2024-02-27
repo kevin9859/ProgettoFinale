@@ -26,11 +26,11 @@
             <td >
                
                 <a href="{{route('article.show', ['article' => $article->id])}}" class="btn btn-read text-white">Leggi l'articolo</a>
-                <a href="{{route('article.edit', ['article' => $article->id])}}" class="btn btn-modify btn-warning text-white">Modifica l'articolo</a>
-                <form action="{{route('article.destroy', ['article' => $article->id])}}" method="post" class="d-inline">
+                <a href="{{route('article.edit', ['article' => $article->id])}}" class="btn  btn-modify text-white">Modifica l'articolo</a>
+                <form action="{{ route('article.destroy', ['article' => $article->id]) }}" method="POST">
                     @csrf
-                    @method('delete')
-                    <button type="submit" class="btn btn-delete btn-danger">Elimina articolo</button>
+                    @method('DELETE')
+                    <button class="btn btn-delete text-white"type="submit">Elimina articolo</button>
                 </form>
             </td>
         </tr>

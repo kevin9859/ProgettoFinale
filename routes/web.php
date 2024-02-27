@@ -4,10 +4,8 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\RevisorController;
-use App\Models\Article;
+use Illuminate\Support\Facades\Session;
 
 
 /*
@@ -28,6 +26,7 @@ Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::get('/careers', [PublicController::class, 'careers'])->name('careers');
 Route::post('/careers/submit', [PublicController::class, 'careersSubmit'])->name('careers.submit');
 
+
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/admin/{user}/set-admin', [AdminController::class, 'setAdmin'])->name('admin.setAdmin');
@@ -46,13 +45,13 @@ Route::middleware('revisor')->group(function () {
     Route::get('/revisor/{article}/reject', [RevisorController::class, 'rejectArticle'])->name('revisor.rejectArticle');
     Route::get('/revisor/{article}/undo', [RevisorController::class, 'undoArticle'])->name('revisor.undoArticle');
 });
-Route::middleware('writer', )->group(function () {
+Route::middleware('writer')->group(function () {
     Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
     Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
     Route::get('/writer/dashboard', [ArticleController::class, 'dashboard'])->name('writer.dashboard');
     Route::get('/article/{article}/edit', [ArticleController::class, 'edit'])->name('article.edit');
     Route::put('/article/{article}/update', [ArticleController::class, 'update'])->name('article.update');
-    Route::delete('/article/{article}/destroy', [ArticleController::class, 'destroy'])->name('article.destroy');
+    Route::delete('/article/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
     
 });
 Route::get('/article.index', [ArticleController::class, 'index'])->name('article.index');
@@ -61,3 +60,8 @@ Route::get('/article/category/{category}', [ArticleController::class, 'byCategor
 Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name('article.search');
 Route::get('/article/careers', [ArticleController::class, 'articleCareers'])->name('article.careers');
 Route::get('article/byUser/{user}', [ArticleController::class, 'byUser'])->name('article.byUser');
+Route::get('/articles/latest', [ArticleController::class, 'latest'])->name('articles.latest');
+Route::get('language/{lang}', function ($lang) {
+    Session::put('applocale', $lang);
+    return redirect()->back();
+})->name('language');

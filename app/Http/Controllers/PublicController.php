@@ -14,7 +14,7 @@ class PublicController extends Controller
 {
   public function homepage()
 {
-    $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(3)->get();
+    $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(6)->get();
 
    /* */ // Set the confetti session here
     if (Auth::check() && !session('confetti')) {
