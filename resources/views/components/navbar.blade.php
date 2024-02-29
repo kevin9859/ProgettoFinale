@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-transparent bg-transparent">
+<nav class="navbar navbar-expand-lg  bg-transparent">
     <div class="container-fluid d-flex ">
         <!-- Logo -->
         <div class="d-flex justify-content-start">
@@ -13,20 +13,19 @@
                 action="{{ route('article.search') }}">
                 <input class="form-control search-input" type="search" name="query" placeholder="Cosa stai cercando?"
                     aria-label="Search" style="flex-grow: 1; border: none; padding: 10px 20px;">
-                <button class="d-flex align-items-center justify-content-center search-button" type="submit"
-                    style="background-color: #febd69; border: none; padding: 10px 20px; cursor: pointer; width: 50px; height: 50px;">
-                    <i class="fa fa-search"></i>
+                <button class="btn btn-primary d-flex align-items-center justify-content-center search-button" type="submit"
+                    style="border: none; padding: 10px 20px; cursor: pointer; width: 50px; height: 50px;">
+                    <i class="fa fa-search" style="font-size: 24px;"></i>
                 </button>
             </form>
         </div>
 
-
-        <form method="GET" style="display: inline;">
+        {{--CAMBIO LINGUA  <form method="GET" style="display: inline;">
             <select name="lang" onchange="this.form.submit()">
                 <option value="en" {{ App::getLocale() == 'en' ? 'selected' : '' }}>English</option>
                 <option value="it" {{ App::getLocale() == 'it' ? 'selected' : '' }}>Italiano</option>
             </select>
-        </form>
+        </form> --}}
         @auth
             <div id="mySidebar" class="sidebar">
                 <span href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</span>

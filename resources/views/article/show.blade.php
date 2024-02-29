@@ -2,8 +2,8 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="bg-white p-5 rounded shadow">
-                    <h1 class="display-4 mb-3 article-title">{{ $article->title }}</h1>
+                <div class="bg-white p-5 rounded shadow ">
+                    <h1 class="display-4 mb-3 article-title text-center">{{ $article->title }}</h1>
                     <img src="{{ asset(Storage::url($article->image)) }}" class="article-image img-fluid rounded mb-4" alt="...">
                     <h2 class="h4 mb-3 text-muted article-subtitle">{{ $article->subtitle }}</h2>
                     <p class="text-muted fst-italic mb-4">

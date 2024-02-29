@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid p-5 bg-transparent text-center text-white">
         <div class="row justify-content-center">
-            <h1 class="display-1">
+            <h1 class="display-1 text-5xl font-bold leading-tight sm:text-5xl lg:text-5xl"style="font-size:30px;">
                 Accedi
             </h1>
         </div>
@@ -21,7 +21,7 @@
                     </div>
                 @endif
 
-                <form class="card2 p-5 shadow" action="{{route('login')}}" method="post">
+                <form class="card2 justify-content-center shadow " action="{{route('login')}}" method="post">
                     @csrf
 
                     <div class="mb-3">
@@ -33,9 +33,9 @@
                         <input name="password" type="password" class="form-control" id="password">
                     </div>
                     <div class="mt-2">
-                        <button class="btn text-white">Accedi</button>
+                        <button class="btn btn-read text-white ">Accedi</button>
                         <div class="align-items">
-                            <p class="small flex-align">Non sei registrato?<a href="{{route('register')}}" class="btn ml2">Clicca qui</a></p>
+                            <p class="small flex-align">Non sei registrato?<a href="{{route('register')}}" class="btn btn-read text-white ml2">Clicca qui</a></p>
                         </div>
                     </div>
                 </form>

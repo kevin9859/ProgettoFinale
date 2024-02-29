@@ -17,13 +17,13 @@
              <title>The Aulab Post</title>
          </head>
 
-         <body>
+         <body class="bg-base">
              <x-navbar />
 
              <div class="min-vh-100">
                  {{ $slot }}
              </div>
-
+             <x-faq/>
              <x-footer />
 
              <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

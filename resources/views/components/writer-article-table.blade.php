@@ -26,11 +26,11 @@
             <td >
                
                 <a href="{{route('article.show', ['article' => $article->id])}}" class="btn btn-read text-white">Leggi l'articolo</a>
-                <a href="{{route('article.edit', ['article' => $article->id])}}" class="btn  btn-modify text-white">Modifica l'articolo</a>
+                <a href="{{route('article.edit', ['article' => $article->id])}}" class="btn  btn-modify text-white mt-2">Modifica l'articolo</a>
                 <form action="{{ route('article.destroy', ['article' => $article->id]) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-delete text-white"type="submit">Elimina articolo</button>
+                    <button class="btn btn-delete text-white mt-2"type="submit">Elimina articolo</button>
                 </form>
             </td>
         </tr>

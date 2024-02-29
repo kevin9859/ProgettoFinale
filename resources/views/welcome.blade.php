@@ -10,25 +10,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Includi Slick Slider CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
-
-    <!-- Includi Slick Slider JS -->
-    <script src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
-
-    <script src="/js/script.js"></script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/65de18eb9131ed19d97256f8/1hnlp2mkm';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/65de18eb9131ed19d97256f8/1hnlp2mkm';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
     </script>
     <!--End of Tawk.to Script-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -46,17 +39,25 @@
 </head>
 
 
-<body class="">
+<body class="bg-welcome">
     <x-navbar />
 
     <div>
 
         @guest
-            <div class="container-fluid p-5 bg-transparent text-center text-white">
-                <div class="row justify-content-center">
-                    <h1 class="display-1 welcome-guest">Benvenuto!</h1>
+        <div class="container-fluid vh-100 p-5 bg-transparent text-center text-white">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col-lg-5 col-md-8 col-sm-10 m-3">
+                    <img src="/images/welcome-image3.png" alt="Descrizione dell'immagine"
+                        class="img-fluid card-3 mb-4" style="max-width: 100%;">
+                </div>
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="font-bold  " style="font-size:100px;">
+                        Benvenuto! 
+                    </h2>
                 </div>
             </div>
+        </div>
 
         @endguest
         @if (Auth::user())
@@ -85,7 +86,7 @@
                         <span class="large-text mx-3"
                             style="font-family: 'Roboto', sans-serif; font-size: 24px; letter-spacing: 1px;">The Aulab
                             Post</span>
-                        
+
                     </div>
                 </div>
             </div>
@@ -94,24 +95,27 @@
 
                     <div style="max-width: 600px;">
                         {{-- <h2 class="font-rounded mb-3 text-center">Benvenuto!</h2> --}}
-                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Entra nella nostra
+                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Entra
+                            nella nostra
                             <strong>comunità giornalistica</strong>, dove ogni parola ha significato e ogni storia trova
                             spazio.
                         </p>
-                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">La tua voce qui è
+                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">La tua
+                            voce qui è
                             preziosa. Scrivi articoli che incantano, stimolano e aprono orizzonti nuovi.</p>
-                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Siediti, prendi la tua
-                            tazza preferita e lasciati trasportare dal potere delle parole mentre esplori, crei e
+                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Siediti
+                             e lasciati trasportare dal potere delle parole mentre esplori, crei e
                             condividi il tuo mondo con il nostro.</p>
-                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Cosa aspetti? Crea il tuo articolo ora!</p>
+                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Cosa
+                            aspetti? Crea un articolo ora!</p>
                     </div>
 
 
                 </div>
 
                 <div class="col-lg-5 col-md-12 d-flex justify-content-center">
-                    <img src="images/ragazzo-pc3.png" alt="Descrizione dell'immagine" class="img-fluid"
-                        style="max-width: 50%;"> <!-- Added inline style to reduce image size -->
+                    <img src="images/welcome-desk.gif" alt="Descrizione dell'immagine" class="img-fluid"
+                        style="max-width: 70%;"> <!-- Added inline style to reduce image size -->
                 </div>
             </div>
 
@@ -127,36 +131,47 @@
                     @endforeach
                 </div>
             </div>
+            <div class="d-flex p-3 h50 main-div justify-content-end">
+                <div class="col-lg-5 col-md-12 d-flex px-5">
+                    <div class="welcome-text justify-content-start" style="padding-left: 20px;">
+                        <span class="small-text"
+                            style="font-family:'Roboto', sans-serif; font-size: 15px; letter-spacing: 1px;">perchè abbiamo</span>
+                        <span class="large-text mx-3"
+                            style="font-family: 'Roboto', sans-serif; font-size: 24px; letter-spacing: 1px;">bisogno di te</span>
 
-            <div class="d-flex justify-content-between bg-dark p-5 mt-5">
-                <div class="col-lg-5 col-md-12 d-flex justify-content-end">
-                    <img style="max-width: 70%;" src="images/ragazza-pc2.jpg" alt="Descrizione dell'immagine" class="img-fluid">
-                </div>
-                <div class="col-lg-7 col-md-12 mb-5 d-flex justify-content-center mt-5 text-white text-center">
-                    <div style="max-width: 600px;">
-                        <h2 class="font-rounded mb-3 responsive-font">Perché Hai un Ruolo Importante?</h2>
-                        <p class="lead text-justify font-rounded mb-4 responsive-font">
-                            La tua voce è unica e preziosa, e crediamo che il tuo contributo possa fare la differenza nel nostro blog.
-                        </p>
-                        <p class="lead text-justify font-rounded mb-4 responsive-font"">
-                            Abbiamo bisogno di te per arricchire le nostre pagine con idee fresche, storie avvincenti e punti di vista originali.
-                        </p>
-                        <p class="lead text-justify font-rounded mb-4">
-                            Sei il talento che stiamo cercando per portare il nostro blog a nuove vette.
-                        </p>
-                        <p class="lead text-justify font-rounded mb-4">
-                            Con il tuo impegno e la tua passione per la scrittura, possiamo creare insieme contenuti che ispirino, informino e intrattengano i nostri utenti.
-                        </p>
                     </div>
                 </div>
             </div>
-            <div class="bg-warning text-center py-3">
-                <i class="fas fa-phone-alt"></i>
-                <span>Contattaci al numero verde 800-000-000</span>
+            <div class="d-flex justify-content-center bg-white h50">
+                <div class="col-lg-7 col-md-12 mb-5 d-flex justify-content-start mt-5  duration-200 bg-white">
+                    <div class="col-lg-5 col-md-12 d-flex justify-content-start mr-10 bg-white ">
+                        <img src="images/Group.png" alt="Descrizione dell'immagine" class="img-fluid"
+                            style="min-width: 100%;"> <!-- Added inline style to reduce image size -->
+                    </div>
+                    <div class="justify-content-center" style="max-width: 600px; margin-top: 90px;"> <!-- Increased margin-top -->
+                        {{-- <h2 class="font-rounded mb-3 text-center">Benvenuto!</h2> --}}
+                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Entra
+                            nella nostra
+                            <strong>comunità giornalistica</strong>, dove ogni parola ha significato e ogni storia trova
+                            spazio.
+                        </p>
+                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">La tua
+                            voce qui è
+                            preziosa. Scrivi articoli che incantano, stimolano e aprono orizzonti nuovi.</p>
+                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Siediti
+                            e lasciati trasportare dal potere delle parole mentre esplori, crei e
+                            condividi il tuo mondo con il nostro.</p>
+                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Cosa
+                            aspetti? Crea un articolo ora!</p>
+                    </div>
+                </div>
             </div>
+            
+            </div>
+       
         @endif
-    </div>
-
+        
+            <x-faq/>
     <script>
         /*-------CORIANDOLI BENVENUTO---------*/
         var confettiInterval = setInterval(function() {
