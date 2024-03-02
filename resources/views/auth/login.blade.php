@@ -1,8 +1,8 @@
 <x-layout>
     <div class="container-fluid p-5 bg-transparent text-center text-white">
         <div class="row justify-content-center">
-            <h1 class="display-1 text-5xl font-bold leading-tight sm:text-5xl lg:text-5xl"style="font-size:30px;">
-                Accedi
+            <h1 class="mt-4 category-button button-glitch align-items-center justify-content-center p-1"style="font-size:100px;">
+               LOGIN
             </h1>
         </div>
     </div>
@@ -25,17 +25,17 @@
                     @csrf
 
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email:</label>
-                        <input name="email" type="email" class="form-control" id="email" value="{{old('email')}}">
+                        <label for="email" class="form-label glitch-font" style="font-size:25px;">Email:</label>
+                        <input name="email" type="email" class="form-control " id="email" value="{{old('email')}}">
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password:</label>
+                        <label for="password" class="form-label glitch-font" style="font-size:25px;">Password:</label>
                         <input name="password" type="password" class="form-control" id="password">
                     </div>
                     <div class="mt-2">
                         <button class="btn btn-read text-white ">Accedi</button>
                         <div class="align-items">
-                            <p class="small flex-align">Non sei registrato?<a href="{{route('register')}}" class="btn btn-read text-white ml2">Clicca qui</a></p>
+                            <p class="small flex-align" style="font-size:15px;">Non sei registrato?<a href="{{route('register')}}" class="btn btn-read text-white ml2">Clicca qui</a></p>
                         </div>
                     </div>
                 </form>

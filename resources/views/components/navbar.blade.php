@@ -65,10 +65,10 @@
         @guest
             <div class="d-inline-flex mx-0 align-items-center">
                 <li class="d-flex nav-item align-items-center justify-content-center">
-                    <a class="d-flex nav-link  align-items-center" href="{{ route('login') }}">Accedi</a>
+                    <a class="d-flex nav-link  align-items-center glitch-font2" href="{{ route('login') }}">Accedi</a>
                 </li>
                 <li class="d-flex nav-item d-flex align-items-center justify-content-center">
-                    <a class="d-flex nav-link  align-items-center" href="{{ route('register') }}">Registrati</a>
+                    <a class="d-flex nav-link  align-items-center glitch-font2" href="{{ route('register') }}">Registrati</a>
                 </li>
             </div>
         @endguest

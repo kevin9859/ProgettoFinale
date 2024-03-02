@@ -16,10 +16,10 @@
     <ul class="menu">
         <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
         <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Servizi</a></li>
         <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Contatti</a></li>
 
     </ul>
-    <p>&copy;2024 Kevin Lapi | All Rights Reserved</p>
+    <p style="color:black;">2024 Kevin Lapi | All Rights Reserved</p>
 </footer>

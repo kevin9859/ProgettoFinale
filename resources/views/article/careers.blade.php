@@ -12,7 +12,7 @@
                         enctype="multipart/form-data">
                         @csrf
                     <div class="mb-3">
-                        <label for="role" class="form-label text-start">Per quale ruolo ti stai candidando?</label>
+                        <label for="role" class="form-label text-start glitch-font">Per quale ruolo ti stai candidando?</label>
                         <select name="role" id="role" class="form-control">
                             <option value="">Scegli qui</option>
                             <option value="admin">Amministratore</option>
@@ -21,11 +21,11 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label text-start">Email</label>
+                        <label for="email" class="form-label text-start glitch-font">Email</label>
                         <input  name="email"type="email" class="form-control"id="email" value="{{old('email') ?? Auth::user()->email}}">
                     </div>
                     <div class="mb-3">
-                        <label for="message" class="form-label text-start">Parlaci di te</label>
+                        <label for="message" class="form-label text-start glitch-font">Parlaci di te</label>
                         <textarea name="message" id="message" cols="30" rows="7"class="form-control">{{old('message')}}</textarea>
                     </div>
                     <div class="mt-2">

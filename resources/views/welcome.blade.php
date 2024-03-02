@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();
@@ -45,19 +47,20 @@
     <div>
 
         @guest
-        <div class="container-fluid vh-100 p-5 bg-transparent text-center text-white">
-            <div class="row h-100 justify-content-center align-items-center">
-                <div class="col-lg-5 col-md-8 col-sm-10 m-3">
-                    <img src="/images/welcome-image3.png" alt="Descrizione dell'immagine"
-                        class="img-fluid card-3 mb-4" style="max-width: 100%;">
-                </div>
-                <div class="max-w-2xl mx-auto text-center">
-                    <h2 class="font-bold  " style="font-size:100px;">
-                        Benvenuto! 
-                    </h2>
+            <div class="container-fluid vh-100 p-5 bg-transparent text-center text-white">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-lg-5 col-md-8 col-sm-10 m-3">
+                        <img src="/images/welcome-image3.png" alt="Descrizione dell'immagine" class="img-fluid card-3 mb-4"
+                            style="max-width: 100%;">
+                    </div>
+                    <div class="max-w-2xl mx-auto text-center">
+                        <h1 class="mt-4 titolo-glitch align-items-center justify-content-end p-1"style="font-size:100px;min-width:1000px;margin-right:50px;">
+                        
+                           Benvenuto!
+                        </h1>
+                    </div>
                 </div>
             </div>
-        </div>
 
         @endguest
         @if (Auth::user())
@@ -76,6 +79,9 @@
                 </div>
             </a> --}}
             <!-- Aggiungi il tuo div qui -->
+            <div class="text-center bg-white py-5 p-5">
+
+            </div>
 
             <div class="d-flex  p-3 h50 main-div">
                 <div class="col-lg-5 col-md-12 d-flex justify-content-start px-5">
@@ -90,65 +96,10 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-between bg-white p-5 h50">
+            <div class="d-flex justify-content-between bg-white p-5 ">
                 <div class="col-lg-7 col-md-12 mb-5 d-flex justify-content-end mt-5">
 
                     <div style="max-width: 600px;">
-                        {{-- <h2 class="font-rounded mb-3 text-center">Benvenuto!</h2> --}}
-                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Entra
-                            nella nostra
-                            <strong>comunità giornalistica</strong>, dove ogni parola ha significato e ogni storia trova
-                            spazio.
-                        </p>
-                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">La tua
-                            voce qui è
-                            preziosa. Scrivi articoli che incantano, stimolano e aprono orizzonti nuovi.</p>
-                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Siediti
-                             e lasciati trasportare dal potere delle parole mentre esplori, crei e
-                            condividi il tuo mondo con il nostro.</p>
-                        <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Cosa
-                            aspetti? Crea un articolo ora!</p>
-                    </div>
-
-
-                </div>
-
-                <div class="col-lg-5 col-md-12 d-flex justify-content-center">
-                    <img src="images/welcome-desk.gif" alt="Descrizione dell'immagine" class="img-fluid"
-                        style="max-width: 70%;"> <!-- Added inline style to reduce image size -->
-                </div>
-            </div>
-
-
-            <!-- Colonna di sinistra per il testo e il form -->
-
-
-            <!-- Colonna di destra per gli articoli -->
-            <div class="container my-5">
-                <div class=" d-flex justify-content-around flex-wrap">
-                    @foreach ($articles as $article)
-                        <x-card :article="$article" />
-                    @endforeach
-                </div>
-            </div>
-            <div class="d-flex p-3 h50 main-div justify-content-end">
-                <div class="col-lg-5 col-md-12 d-flex px-5">
-                    <div class="welcome-text justify-content-start" style="padding-left: 20px;">
-                        <span class="small-text"
-                            style="font-family:'Roboto', sans-serif; font-size: 15px; letter-spacing: 1px;">perchè abbiamo</span>
-                        <span class="large-text mx-3"
-                            style="font-family: 'Roboto', sans-serif; font-size: 24px; letter-spacing: 1px;">bisogno di te</span>
-
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center bg-white h50">
-                <div class="col-lg-7 col-md-12 mb-5 d-flex justify-content-start mt-5  duration-200 bg-white">
-                    <div class="col-lg-5 col-md-12 d-flex justify-content-start mr-10 bg-white ">
-                        <img src="images/Group.png" alt="Descrizione dell'immagine" class="img-fluid"
-                            style="min-width: 100%;"> <!-- Added inline style to reduce image size -->
-                    </div>
-                    <div class="justify-content-center" style="max-width: 600px; margin-top: 90px;"> <!-- Increased margin-top -->
                         {{-- <h2 class="font-rounded mb-3 text-center">Benvenuto!</h2> --}}
                         <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Entra
                             nella nostra
@@ -164,14 +115,82 @@
                         <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Cosa
                             aspetti? Crea un articolo ora!</p>
                     </div>
+
+
+                </div>
+
+                <div class="col-lg-5 col-md-12 d-flex justify-content-center">
+                    <img src="images/welcome-desk.gif" alt="Descrizione dell'immagine" class="img-fluid"
+                        style="max-width: 70%; max-heigt:480px;"> <!-- Added inline style to reduce image size -->
                 </div>
             </div>
-            
+            {{-- <div class="text-center bg-dark py-5 p-5">
+              
+            </div> --}}
+            <div class="d-flex justify-content-center bg-yellow2 ">
+
+                <a  href="{{ route('article.create') }}"><button class="button-glitch align-items-center justify-content-center m-5">CREA UN ARTICOLO</button> </a>
+               
+                
+                {{-- <div class="max-w-2xl mx-auto d-flex justify-content-center align-items-center text-center">
+                    <h2 class="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+                        Domande più frequenti
+                    </h2>
+                </div> --}}
             </div>
-       
-        @endif
-        
-            <x-faq/>
+            <div class=" m-0">
+                <div class="container ">
+                    <div class=" d-flex justify-content-around flex-wrap">
+                        @foreach ($articles as $article)
+                            <x-card :article="$article" />
+                        @endforeach
+                    </div>
+                </div>
+
+            </div>
+            <div class="d-flex p-3 h50 main-div justify-content-end">
+                <div class="col-lg-5 col-md-12 d-flex px-5">
+                    <div class="welcome-text justify-content-start" style="padding-left: 20px;">
+                        <span class="small-text"
+                            style="font-family:'Roboto', sans-serif; font-size: 15px; letter-spacing: 1px;">perchè
+                            abbiamo</span>
+                        <span class="large-text mx-3"
+                            style="font-family: 'Roboto', sans-serif; font-size: 24px; letter-spacing: 1px;">bisogno di
+                            te</span>
+
+                    </div>
+                </div>
+            </div>
+<div class="d-flex justify-content-center bg-white h50">
+    <div class="col-lg-7 col-md-12 mb-5 d-flex justify-content-start mt-5  duration-200 bg-white">
+        <div class="col-lg-5 col-md-12 d-flex justify-content-start mr-10 bg-white ">
+            <img src="images/Group.png" alt="Descrizione dell'immagine" class="img-fluid"
+                style="min-width: 80%;"> <!-- Added inline style to reduce image size -->
+        </div>
+        <div class="d-flex flex-column justify-content-center" style="max-width: 600px; "> <!-- Increased margin-top -->
+            {{-- <h2 class="font-rounded mb-3 text-center">Benvenuto!</h2> --}}
+            <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Entra
+                nella nostra
+                <strong>comunità giornalistica</strong>, dove ogni parola ha significato e ogni storia trova
+                spazio.
+            </p>
+            <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">La tua
+                voce qui è
+                preziosa. Scrivi articoli che incantano, stimolano e aprono orizzonti nuovi.</p>
+            <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Siediti
+                e lasciati trasportare dal potere delle parole mentre esplori, crei e
+                condividi il tuo mondo con il nostro.</p>
+            <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size: 20px;">Cosa
+                aspetti? Crea un articolo ora!</p>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    @endif
+
+    <x-faq />
     <script>
         /*-------CORIANDOLI BENVENUTO---------*/
         var confettiInterval = setInterval(function() {

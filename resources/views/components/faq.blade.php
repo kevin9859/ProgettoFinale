@@ -60,9 +60,8 @@
             </div>
         </div>
         <p class="text-center text-gray-600 textbase mt-9">
-            Still have questions?
-            <span class="cursor-pointer font-medium text-tertiary transition-all duration-200 hover:text-tertiary focus:text-tertiary hover-underline">Contact
-                our support
+           Hai ancora domande?
+            <span class="cursor-pointer font-medium text-tertiary transition-all duration-200 hover:text-tertiary focus:text-tertiary hover-underline ml-2"style="font-size:22px;">Contattaci
             </span>
         </p>
     </div>
