@@ -7,20 +7,20 @@
             </a>
         </div>
         <!-- Search bar -->
-        <div class="d-flex justify-content-center custom-nav-link flex-grow-1">
+        <div class="d-flex justify-content-center custom-nav-link flex-grow-1 mx-auto">
             <form class="d-flex search-form custom-nav-link" method="GET"
                 style="min-width: 300px; border: 1px solid #ccc; border-radius: 24px; overflow: hidden;"
                 action="{{ route('article.search') }}">
                 <input class="form-control search-input" type="search" name="query" placeholder="Cosa stai cercando?"
                     aria-label="Search" style="flex-grow: 1; border: none; padding: 10px 20px;">
-                <button class="btn btn-primary d-flex align-items-center justify-content-center search-button" type="submit"
+                <button class="btn  d-flex align-items-center justify-content-center search-button" type="submit"
                     style="border: none; padding: 10px 20px; cursor: pointer; width: 50px; height: 50px;">
                     <i class="fa fa-search" style="font-size: 24px;"></i>
                 </button>
             </form>
         </div>
 
-        {{--CAMBIO LINGUA  <form method="GET" style="display: inline;">
+        {{-- CAMBIO LINGUA  <form method="GET" style="display: inline;">
             <select name="lang" onchange="this.form.submit()">
                 <option value="en" {{ App::getLocale() == 'en' ? 'selected' : '' }}>English</option>
                 <option value="it" {{ App::getLocale() == 'it' ? 'selected' : '' }}>Italiano</option>
@@ -62,21 +62,21 @@
                 </button>
             </div>
         @endauth
-        @guest
+        {{-- @guest
             <div class="d-inline-flex mx-0 align-items-center">
                 <li class="d-flex nav-item align-items-center justify-content-center">
-                    <a class="d-flex nav-link  align-items-center glitch-font2" href="{{ route('login') }}">Accedi</a>
+                    <a class="d-flex nav-link  align-items-center glitch-font2" style="font-size:30px;" href="{{ route('login') }}">Accedi</a>
                 </li>
                 <li class="d-flex nav-item d-flex align-items-center justify-content-center">
-                    <a class="d-flex nav-link  align-items-center glitch-font2" href="{{ route('register') }}">Registrati</a>
+                    <a class="d-flex nav-link  align-items-center glitch-font2" style="font-size:30px;" href="{{ route('register') }}">Registrati</a>
                 </li>
             </div>
-        @endguest
+        @endguest --}}
     </div>
 </nav>
 <div class="custom-div rounded bg-dark-as-box text-center">
     <a href="">
-        <div class=" text-center alert alert-saturn custom-alert custom-div">
+        <div class=" text-center text-white alert alert-saturn custom-alert custom-div">
             "ISCRIVITI ALLA NOSTRA
             <b>NEWSLETTER</b>
             PER RESTARE SEMPRE AGGIORNATO SULLE ULTIME NOTIZIE!"
@@ -84,26 +84,67 @@
     </a>
 </div>
 <script>
-    function openNav() {
-        document.getElementById("mySidebar").style.width = "350px";
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "300px";
+    if (sidebar.style.width === "0px" || sidebar.style.width === "") {
+        sidebar.style.width = "350px";
         document.getElementById("navbarMenuButton").style.marginRight = "250px";
         document.querySelector(".openbtn").style.display = "none"; /* Hide the button */
     }
+}
 
-    function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("navbarMenuButton").style.marginRight = "0";
-        document.querySelector(".openbtn").style.display = "block"; /* Show the button */
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("navbarMenuButton").style.marginRight = "0";
+    document.querySelector(".openbtn").style.display = "block"; /* Show the button */
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    closeNav();
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+    const dropdownMenu = document.getElementById('navbarNavDropdown');
+
+    if (navbarToggler) {
+        navbarToggler.addEventListener("click", function() {
+            document.body.classList.toggle("menu-open");
+        });
+    } else {
+        console.log('Element with class .navbar-toggler not found');
     }
 
-    // Add an event listener for click on the document
-    document.addEventListener('click', function(event) {
-        var sidebar = document.getElementById("mySidebar");
-        var openButton = document.querySelector(".openbtn");
-        // If the click event was not triggered by the sidebar or a child of it, and not by the open button, hide the sidebar
-        if (!sidebar.contains(event.target) && !openButton.contains(event.target) && sidebar.style.width !==
-            '0px') {
+    if (dropdownMenu) {
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('.navbar-toggler') && dropdownMenu && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    } else {
+        console.log('Element with id navbarNavDropdown not found');
+    }
+
+    var links = document.querySelectorAll('#mySidebar a');
+    links.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Previene l'azione predefinita del click sul link
             closeNav();
-        }
+            setTimeout(function() {
+                window.location.href = link.href; // Reindirizza alla URL del link
+            }, 200); // Ritardo di 200 millisecondi
+        });
     });
+});
+
+document.addEventListener('click', function(event) {
+    var sidebar = document.getElementById("mySidebar");
+    var openButton = document.querySelector(".openbtn");
+    // If the sidebar or openButton doesn't exist, just return
+    if (!sidebar || !openButton) {
+        return;
+    }
+    // If the click event was not triggered by the sidebar or a child of it, and not by the open button, hide the sidebar
+    if (!sidebar.contains(event.target) && !openButton.contains(event.target) && sidebar.style.width !== '0px') {
+        closeNav();
+    }
+});
 </script>

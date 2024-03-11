@@ -5,7 +5,7 @@
             <div class="col-md-4 bg-transparent">
                 <div class="p-3 text-center text-white">
                     <h1 class="button-glitch p-1" style="font-size:100px;">
-                        REGISTER
+                        registrati
                     </h1>
                 </div>
             </div>

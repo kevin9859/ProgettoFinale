@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RevisorController;
 use Illuminate\Support\Facades\Session;
-
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,9 +53,10 @@ Route::middleware('writer')->group(function () {
     Route::put('/article/{article}/update', [ArticleController::class, 'update'])->name('article.update');
     Route::delete('/article/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
     
+    
 });
 Route::get('/article.index', [ArticleController::class, 'index'])->name('article.index');
-Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show'); 
+Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/category/{category}', [ArticleController::class, 'byCategory'])->name('article.byCategory');
 Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name('article.search');
 Route::get('/article/careers', [ArticleController::class, 'articleCareers'])->name('article.careers');
@@ -65,3 +66,10 @@ Route::get('language/{lang}', function ($lang) {
     Session::put('applocale', $lang);
     return redirect()->back();
 })->name('language');
+
+
+Route::post('/articles/{article}/like', [ArticleController::class , 'like'])->name('articles.like');
+Route::get('/articles/{article}/comments', [CommentController::class ,'index'])->name('comments.index');
+Route::post('/articles/{article}/comments', [CommentController::class ,'store'])->name('comments.store');
+Route::delete('/comment/{comment}', [CommentController::class, 'destroy'])->name('comment.destroy');
+Route::post('/comments/{comment}/like', [CommentController::class, 'like'])->name('comment.like');

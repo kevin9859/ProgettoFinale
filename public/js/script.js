@@ -1,60 +1,165 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var btns = document.querySelectorAll('.btn-card');
+    var commentButtons = document.querySelectorAll('.comment-button');
+    var commentForms = document.querySelectorAll('.comment-form');
 
-
-
-// Chiudi il dropdown menu quando si fa clic fuori
-window.addEventListener('click', function(event) {
-    var dropdownMenu = document.getElementById('navbarNavDropdown');
-    if (!event.target.matches('.navbar-toggler') && !dropdownMenu.contains(event.target)) {
-        dropdownMenu.classList.remove('show');
-    }
-});
-
-// Aggiungi una classe al body quando il menu viene aperto
-document.addEventListener("DOMContentLoaded", function() {
-    const navbarToggler = document.querySelector(".navbar-toggler");
-    const navbarCollapse = document.querySelector(".navbar-collapse");
-    navbarToggler.addEventListener("click", function() {
-        document.body.classList.toggle("menu-open");
+    btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var heartIcon = btn.querySelector('.fa-heart');
+            var articleId = this.dataset.articleId;
+            var likesCountElement = document.querySelector('#likes-count-' + articleId);
+    
+            if (!likesCountElement) {
+                return;
+            }
+    
+            if (heartIcon) {
+                if (btn.classList.contains('liked')) {
+                    heartIcon.classList.add('heart-red');
+                } else {
+                    heartIcon.classList.remove('heart-red');
+                }
+            }
+    
+            fetch('/articles/' + articleId + '/like', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                likesCountElement.textContent = data.likes;
+            
+                if (heartIcon) {
+                    if (data.liked) {
+                        btn.classList.add('liked');
+                        heartIcon.classList.add('heart-red', 'heart-beat');
+                        setTimeout(function() {
+                            heartIcon.classList.remove('heart-beat');
+                        }, 500);
+                    } else {
+                        btn.classList.remove('liked');
+                        heartIcon.classList.remove('heart-red');
+                    }
+                }
+            })
+            .catch(error => {});
+        });
     });
+  
 
-    // Chiudi il menu quando si fa clic su un link
-    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-    navLinks.forEach(function(navLink) {
-        navLink.addEventListener("click", function() {
-            if (navbarCollapse.classList.contains("show")) {
-                navbarToggler.click();
+    commentButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.stopPropagation();
+    
+            var articleId = this.dataset.articleId;
+    
+            var commentForm = document.querySelector('#comment-form-' + articleId);
+            if (commentForm) {
+                commentForm.style.display = 'block';
             }
         });
     });
-});
 
-//CARD MOUSE
-document.addEventListener("DOMContentLoaded", function() {
-    const cards = document.querySelectorAll(".my-card");
-
-    cards.forEach(function(card) {
-        card.addEventListener("mouseenter", function() {
-            card.style.transform = "translateY(-5px)"; // Sposta la card leggermente verso l'alto al passaggio del mouse
-        });
-
-        card.addEventListener("mouseleave", function() {
-            card.style.transform = "translateY(0)"; // Ripristina la posizione originale al mouseleave
-        });
-
-        card.addEventListener("click", function() {
-            card.style.transform = "translateY(2px)"; // Sposta la card leggermente verso il basso al click
-            setTimeout(function() {
-                card.style.transform = "translateY(0)"; // Ripristina la posizione originale dopo un breve ritardo
-            }, 300);
+    commentForms.forEach(function(form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var articleId = this.dataset.articleId;
+            var commentText = this.querySelector('[name="comment"]').value;
+    
+            var formData = new URLSearchParams();
+            formData.append('body', commentText);
+            formData.append('article_id', articleId);
+    
+            fetch('/articles/' + articleId + '/comments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                var commentsSection = document.querySelector('#comments-section-' + articleId);
+                var commentElement = document.createElement('div');
+                var userProfileImageElement = document.createElement('img');
+                var userNameElement = document.createElement('p');
+                var commentTextElement = document.createElement('p');
+    
+                userNameElement.textContent = data.comment.user.name;
+                commentTextElement.textContent = data.comment.body;
+    
+                commentElement.appendChild(userProfileImageElement);
+                commentElement.appendChild(userNameElement);
+                commentElement.appendChild(commentTextElement);
+                commentsSection.appendChild(commentElement);
+    
+                this.style.display = 'none';
+                this.querySelector('[name="comment"]').value = '';
+            })
+            .catch(error => {});
         });
     });
 });
 
-$(document).ready(function(){
-    $('.carousel').slick({
-        slidesToShow: 6,
-        slidesToScroll: 6,
-        dots: true,
-        infinite: false,
+document.querySelectorAll('.comment-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        var articleId = this.dataset.articleId;
+        var form = document.querySelector('#comment-form-' + articleId);
+        form.style.display = form.style.display === 'none' ? 'flex' : 'none';
+    });
+});
+
+document.querySelectorAll('.like-comment-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        var commentId = this.dataset.commentId;
+        var likeIcon = this.querySelector('.fa-heart');
+        var likesCountElement = document.querySelector('#likes-count-' + commentId);
+
+        if (!likesCountElement) {
+            return;
+        }
+
+        if (likeIcon) {
+            if (button.classList.contains('liked')) {
+                likeIcon.classList.add('heart-red');
+            } else {
+                likeIcon.classList.remove('heart-red');
+            }
+        }
+
+        fetch('/comments/' + commentId + '/like', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            likesCountElement.textContent = data.likes;
+        
+            if (likeIcon) {
+                if (data.liked) {
+                    button.classList.add('liked');
+                    likeIcon.classList.add('heart-red', 'heart-beat');
+                    setTimeout(function() {
+                        likeIcon.classList.remove('heart-beat');
+                    }, 500);
+                } else {
+                    button.classList.remove('liked');
+                    likeIcon.classList.remove('heart-red');
+                }
+            }
+        })
+        .catch(error => console.error('Error:', error));;
     });
 });

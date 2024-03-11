@@ -27,7 +27,7 @@
                 <form action="{{ route('admin.deleteTag', ['tag' => $metaInfo]) }}" method="post">
                     @csrf
                     @method('delete')
-                    <button type="submit" class="btn btn-delete text-white">Elimina</button>
+                    <button type="submit" class="btn-delete text-white">Elimina</button>
                 </form>
             </td>
             @else
@@ -36,14 +36,14 @@
                     @csrf
                     @method('put')
                     <input type="text" name="name" placeholder="Nuovo nome categoria" class="form-control w-50 d-inline">
-                    <button type="submit" class="btn text-white">Aggiorna</button>
+                    <button type="submit" class="btn btn-read text-white">Aggiorna</button>
                 </form>
             </td>
             <td>
                 <form action="{{route('admin.deleteCategory', ['category' => $metaInfo])}}" method="POST">
                     @csrf
                     @method('delete')
-                    <button type="submit" class=" btn-delete text-white">Elimina</button>
+                    <button type="submit" class="btn-delete text-white">Elimina</button>
                 </form>
             </td>
             @endif

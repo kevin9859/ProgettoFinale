@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
+use App\Models\Like;
 
 class Article extends Model
 {
@@ -19,7 +20,13 @@ class Article extends Model
         'category_id',
         'is_accepted',
         'slug',
-    ];
+    ];  
+    protected $withCount = ['likes'];
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 
     public function user(){
         return $this->belongsTo(User::class);
@@ -43,6 +50,7 @@ class Article extends Model
     }
 
     public function tags(){
+        
         return $this->belongsToMany(Tag::class);
     }
 
@@ -59,4 +67,14 @@ class Article extends Model
         $minuteToRead = round($totalWords / 200); // Assume 200 parole al minuto come velocità di lettura media
         return intval($minuteToRead);
     }
+
+
+    public function isLikedByUser()
+{
+    return $this->likes->where('user_id', auth()->id())->isNotEmpty();
+}
+
+
+
+
 }

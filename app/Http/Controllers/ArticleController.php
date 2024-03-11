@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Models\User;
 use Illuminate\Support\Facades\Log;
+use App\Models\Like;
 
 class ArticleController extends Controller
 {
@@ -23,7 +24,12 @@ class ArticleController extends Controller
 
         return view('writer.dashboard', compact('unrevisionedArticles', 'acceptedArticles', 'rejectedArticles'));
     }
-    
+    public function create()
+{
+    $categories = Category::all();
+    return view('article.create', ['categories' => $categories]);
+}
+
     public function __construct()
     {
         $this->middleware('auth')->except('index', 'show');
@@ -44,20 +50,16 @@ class ArticleController extends Controller
         return view('article.index', compact('articles'));
     }
     public function latest()
-{
-    $articles = Article::where('is_accepted', true)
-        ->orderBy('created_at', 'desc')
-        ->take(4)
-        ->get();
-
-    return view('article.latest', compact('articles'));
-}
-    
-    public function create()
     {
-        return view('article.create');
+        $articles = Article::where('is_accepted', true)
+            ->orderBy('created_at', 'desc')
+            ->take(4)
+            ->get();
+
+        return view('article.latest', compact('articles'));
     }
 
+   
     public function store(Request $request)
     {
         $request->validate([
@@ -65,33 +67,33 @@ class ArticleController extends Controller
             'subtitle' => 'required|unique:articles|min:5',
             'body' => 'required|min:10',
             'image' => 'image|required',
-            'category' => 'required',
+            'category' => 'required|array',
             'tags' => 'required',
         ]);
-
+    
         $imagePath = $request->file('image')->store('', 'public');
-
+    
         $article = Article::create([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
             'body' => $request->body,
             'image' => $imagePath,
-            'category_id' => $request->category,
+            'category_id' => $request->category[0], // Get the first element of the array
             'user_id' => Auth::user()->id,
             'slug' => Str::slug($request->title),
         ]);
-
+    
         $tags = explode(', ', $request->tags);
+    
         foreach ($tags as $tag) {
-            $newTag = Tag::updateOrCreate([
-                'name' => $tag,
-            ]);
-            $article->tags()->attach($newTag);
+            if (!empty($tag)) {
+                $newTag = Tag::updateOrCreate(['name' => $tag]);
+                $article->tags()->attach($newTag->id); // Pass the ID of the tag
+            }
         }
-
+    
         return redirect(route('homepage'))->with('message', 'Articolo creato con successo');
     }
-
 
     public function show($articleId)
     {
@@ -188,6 +190,40 @@ class ArticleController extends Controller
 
         return view('article.careers');
     }
+
+    public function like($articleId)
+    {
+        $article = Article::findOrFail($articleId);
+        $userId = Auth::id(); // Assumendo che l'utente sia autenticato
+
+        $like = Like::where('article_id', $article->id)->where('user_id', $userId)->first();
+
+        if ($like) {
+            // Se l'utente ha già messo "mi piace" all'articolo, rimuovi il "mi piace"
+            $like->delete();
+            $liked = false;
+        } else {
+            // Altrimenti, aggiungi un "mi piace"
+            $like = new Like();
+            $like->article_id = $article->id;
+            $like->user_id = $userId;
+            $like->save();
+            $liked = true;
+        }
+
+        // Ricarica l'articolo dal database per ottenere il conteggio dei "mi piace" aggiornato
+        $article = Article::findOrFail($articleId);
+
+        return response()->json(['likes' => $article->likes->count(), 'liked' => $liked]);
+    }
+
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+
 }
 
 

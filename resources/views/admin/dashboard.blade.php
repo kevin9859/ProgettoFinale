@@ -2,7 +2,7 @@
 
     <div class="container-fluid p-5 bg-transparent text-center text-white">
         <div class="row justify-content-center">
-            <h1 class="display-1">
+            <h1 class="font-bold display-1">
                 Bentornato, Amministratore
             </h1>
         </div>
@@ -55,7 +55,7 @@
                 <form class="d-flex ml-auto" style="max-width: 500px;" action="{{route('admin.storeCategory')}}" method="POST">
                     @csrf
                     <input type="text" name="name" class="form-control me-2" placeholder="Crea una categoria">
-                    <button type="submit" class="btn-modify text-white">Aggiungi</button>
+                    <button type="submit" class="btn-modify text-white" style="background-color: forestgreen">Aggiungi</button>
                 </form>
             </div>
         </div>

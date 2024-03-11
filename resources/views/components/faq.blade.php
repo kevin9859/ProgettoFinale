@@ -47,7 +47,7 @@
             </div>
             <div
                 class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
-                <button type="button" id="question4" data-state="closed" class="flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                <button type="button" id="question4" data-state="closed" class="flex items-center justify-content-center w-full px-4 py-5 sm:p-6">
                     <span class="flex text-lg font-semibold text-black">Come ricevo le ultime notizie?</span>
                     <svg id="arrow4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         class="w-6 h-6 text-gray-400">
@@ -82,5 +82,6 @@
             });
         });
     </script>
-</section>
+
 </div>
+</section>

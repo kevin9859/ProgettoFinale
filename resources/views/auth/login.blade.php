@@ -1,8 +1,8 @@
 <x-layout>
     <div class="container-fluid p-5 bg-transparent text-center text-white">
         <div class="row justify-content-center">
-            <h1 class="mt-4 category-button button-glitch align-items-center justify-content-center p-1"style="font-size:100px;">
-               LOGIN
+            <h1 class="button-glitch p-1"style="font-size:100px;max-width:400px;">
+               accedi
             </h1>
         </div>
     </div>
