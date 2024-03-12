@@ -1,30 +1,52 @@
-# Laravel specific
-/.env
-/public/hot
-/public/storage
-/storage/*.key
 /vendor
 /node_modules
-npm-debug.log
-/storage/*.index
 
-# Homestead/Vagrant
-Homestead.yaml
-Homestead.json
-Homestead.yaml.example
-Vagrantfile
+# Laravel 4 specific
+/bootstrap/compiled.php
+/app/storage/meta/*
+/app/storage/sessions/*
+/app/storage/views/*
 
-# PhpStorm
-.idea
+# Laravel 5 & 6 specific
+/bootstrap/cache/
+/storage/*.key
+/.env.*.php
+/.env
 
-# Sublime Text
-*.sublime-project
-*.sublime-workspace
+# Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
+/.rocketeer/
 
-# VS Code
-.vscode
-.env.local
-.env.*.local
+# PHPStorm IDE
+/.idea/
 
-# Database
+# Phpunit
+/phpunit.xml
 
+# SublimeText
+/*.sublime-workspace
+
+# sftp configuration file
+/sftp-config.json
+
+# Mac DS_Store Files
+.DS_Store
+
+# Windows Thumbnail cache
+Thumbs.db
+
+# Windows Files
+Desktop.ini
+
+# PHPUnit
+/app/tests/_log/
+.phpunit.result.cache
+
+# dotenv
+.env.backup
+.env.testing
+
+# Backup dump file for migrating database from env
+/database/database.sql
+
+# Node local development
+.npm
