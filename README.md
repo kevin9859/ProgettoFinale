@@ -2,7 +2,7 @@
 <p>1.Clona il repository</p>
 <p>2.Crea la cartella cache in TheAulabPost/bootstrap/</p>
 <p>3.Installa dipendenze: abilita estenzione sqlite3 nel .ini oppure composer i --ignore-platform-req=ext-sqlite3</p>
-<p>4.Copia il file .env.example e rinominalo in env o esegui cp .env.example .env nel terminale e modifica le variabili di ambiente in base alla tua configurazione </p>
+<p>4.Copia il file .env.example e rinominalo in .env o esegui cp .env.example .env nel terminale e modifica le variabili di ambiente in base alla tua configurazione </p>
 <p>5.Genera la chiave dell'applicazione: php artisan key:generate</p>
 <p>6.Esegui le migrazioni del database per creare le tabelle necessarie</p>
 <p>7.Avvia il server di sviluppo</p></p>
