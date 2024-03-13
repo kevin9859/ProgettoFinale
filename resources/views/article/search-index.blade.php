@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid p-5 bg-transparent text-center text-white">
         <div class="row justify-content-center">
-            <h1 class="display-1">
+            <h1 class="glitch-font display-1">
                 Tutti gli articoli per: {{ $query }}
 
                 <h1>

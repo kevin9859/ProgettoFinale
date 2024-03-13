@@ -87,16 +87,14 @@
                         class="button-glitch align-items-center justify-content-center m-4">CREA UN ARTICOLO</button>
                 </a>
             </div>
-           
-            <div class="bg-dark m-0 pt-5">
-                <div class="container ">
-                    <div class=" d-flex justify-content-around flex-wrap">
-                        @foreach ($articles as $article)
+            <div class="row" style="flex-direction: column; align-items: start; justify-content: start;">
+                <div class="" style="flex-direction: column; align-items: start; justify-content: start;">
+                    @foreach ($articles as $article)
+                        <div class="col" style="flex-direction: column; align-items: start; justify-content: start;">
                             <x-card :article="$article" />
-                        @endforeach
-                    </div>
+                        </div>
+                    @endforeach
                 </div>
-
             </div>
             <div class="d-flex p-3 h50 main-div justify-content-end">
                 <div class="col-lg-5 col-md-12 d-flex px-5">

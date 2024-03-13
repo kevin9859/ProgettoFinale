@@ -208,6 +208,10 @@ html {
 p.small.flex-align {
     align-items: center; /* Allinea verticalmente il testo e il link */
 }
+.bg-gradiente{
+    background: linear-gradient(135deg, #fd8f20 0%, #d83a28 100%)!important;
+
+}
 .bg-white {
     background-color: #fff; /* Imposta il colore di sfondo a bianco */
 }
@@ -216,7 +220,7 @@ p.small.flex-align {
     background: linear-gradient(to right, #ac41f3 , #4738e8);
 }
 .bg-create{
-    background-image: url('/images/sfondo-create.jpg');
+    background: linear-gradient(to right, #41f39a , #4738e8);
 }
 .bg-welcome{
     background-color:gray;
@@ -897,10 +901,6 @@ form {
     
 }
 
- .container {
-   justify-content: flex-start;
-    
-} 
 .container-2 {
     min-height: 10vh; /* Imposta l'altezza minima al 100% dell'altezza della finestra visibile */
     margin-left: auto;

@@ -21,7 +21,7 @@
 <body class="bg-careers">
     <x-navbar />
 
-    <div class="min-vh-100">
+    <div class="">
         {{ $slot }}
     </div>
     <x-faq />

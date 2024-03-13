@@ -2,6 +2,11 @@
   
     <div class="container-fluid">
         <div class="row h-100 justify-content-center align-items-center">
+            <div class="container-fluid p-5 bg-transparent text-center text-white d-flex justify-content-center align-items-center">
+                <h1 class="glitch-font p-1" style="width:1000px; font-size:100px;">
+                    Lavora con noi
+                </h1>
+            </div>
             <div class="col-lg-5 col-md-8 col-sm-10 m-3">
                 <img src="/images/article-careers-image2.png" alt="Descrizione dell'immagine"
                     class="img-fluid card-3">

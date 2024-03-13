@@ -121,12 +121,12 @@ buttons.forEach(button => {
             if (btn !== button) {
                 btn.parentElement.classList.remove('highlight');
                 btn.parentElement.classList.remove('selected');
-                btn.parentElement.querySelector('.category-checkbox').checked = false; // Uncheck the checkbox
+                btn.parentElement.querySelector('.category-checkbox').checked = false; 
             }
         });
         button.parentElement.classList.toggle('highlight');
         button.parentElement.classList.toggle('selected');
-        button.parentElement.querySelector('.category-checkbox').checked = !button.parentElement.querySelector('.category-checkbox').checked; // Toggle the checkbox
+        button.parentElement.querySelector('.category-checkbox').checked = !button.parentElement.querySelector('.category-checkbox').checked;
     });
 });
     </script>

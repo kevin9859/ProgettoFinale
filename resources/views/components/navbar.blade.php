@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg  bg-transparent">
+<nav class="navbar navbar-expand-lg bg-gradiente">
     <div class="container-fluid d-flex ">
         <!-- Logo -->
         <div class="d-flex justify-content-start">
