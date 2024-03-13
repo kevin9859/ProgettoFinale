@@ -1,4 +1,10 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a>##Installazione/
+<p>1.Clona il repository</p>
+<p>2.Installa dipendenze: abilita estenzione sqlite3 nel .ini oppure composer i --ignore-platform-req=ext-sqlite3</p>
+<p>3.Copia il file .env.example e rinominalo in env o esegui cp .env.example .env nel terminale e modifica le variabili di ambiente in base alla tua configurazione </p>
+<p>4.Genera la chiave dell'applicazione: php artisan key:generate</p>
+<p>5.Esegui le migrazioni del database per creare le tabelle necessarie</p>
+<p>6.Avvia il server di sviluppo</p></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
