@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Schema;
 use App\Models\Category; 
 use Illuminate\Support\Facades\View;
 use App\Models\Tag;
+use Laravel\Fortify\Contracts\VerifyEmailViewResponse;
+use Illuminate\Contracts\Support\Responsable;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,5 +34,14 @@ class AppServiceProvider extends ServiceProvider
             $tags = Tag::all();
             View::share(['tags' => $tags]);
         }
+
+        $this->app->singleton(VerifyEmailViewResponse::class, function ($app) {
+            return new class implements Responsable {
+                public function toResponse($request)
+                {
+                    return view('auth.verify-email');
+                }
+            };
+        });
     }
 }

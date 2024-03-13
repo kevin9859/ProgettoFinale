@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\RoleRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -16,7 +17,7 @@ class PublicController extends Controller
 {
     $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(6)->get();
 
-   /* */ // Set the confetti session here
+   
     if (Auth::check() && !session('confetti')) {
         session(['confetti' => true]);
     }
@@ -35,46 +36,52 @@ class PublicController extends Controller
     }
 
     public function careersSubmit(Request $request)
-{
-    $request->validate([
-        'role' => 'required',
-        'email' => 'required|email',
-        'message' => 'required',
-    ]);
-
-    $role = $request->role;
-    $email = $request->email;
-    $message = $request->message;
-
+    {
+        $request->validate([
+            'role' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
     
-    Mail::to('admin@theaulabpost.it')->send(new CareerRequestMail(compact('role', 'email', 'message')));
-
+        $role = $request->role;
+        $email = $request->email;
+        $message = $request->message;
     
-    if (Auth::check()) {
-        $user = Auth::user();
-
-        // Aggiorna il ruolo dell'utente solo dopo l'invio dell'email
-        switch ($role) {
-            case 'admin':
-                $user->is_admin = NULL;
-                break;
-
-            case 'revisor':
-                $user->is_revisor = NULL;
-                break;
-
-            case 'writer':
-                $user->is_writer = NULL;
-                break;
+        if (Auth::check()) {
+            $user = Auth::user();
+    
+            // Crea una nuova richiesta di ruolo e la salva nel database
+            $roleRequest = new RoleRequest;
+            $roleRequest->user_id = $user->id;
+            $roleRequest->role = $role;
+            $roleRequest->status = 'pending';
+            $roleRequest->save();
+    
+            // Aggiorna il ruolo dell'utente prima dell'invio dell'email
+            switch ($role) {
+                case 'admin':
+                    $user->is_admin = NULL;
+                    break;
+    
+                case 'revisor':
+                    $user->is_revisor = NULL;
+                    break;
+    
+                case 'writer':
+                    $user->is_writer = NULL;
+                    break;
+            }
+    
+            $user->save();
         }
-
-        // Aggiorna il modello dell'utente solo se l'email è stata inviata con successo
-        if (count(Mail::failures()) === 0) {
-            //$user->save();
+    
+        try {
+            Mail::to('admin@theaulabpost.it')->send(new CareerRequestMail(compact('role', 'email', 'message')));
+            $mailSent = true;
+        } catch (\Exception $e) {
+            $mailSent = false;
         }
+    
+        return redirect(route('homepage'))->with('message', 'Grazie per averci contattato');
     }
-
-    return redirect(route('homepage'))->with('message', 'Grazie per averci contattato');
-}
-
 }

@@ -18,36 +18,49 @@
                         <a href="{{ route('article.index') }}" class="btn-read text-white my-2">Torna indietro</a>
                     </div>
                     @endif
-                    <div class="comments-section" id="comments-section-{{ $article->id }}">
+                    <div class="comments-section mt-5" id="comments-section-{{ $article->id }}">
+                        <h3 class="mb-4">Commenti</h3>
                         @foreach ($article->comments as $comment)
-                        <div class="comment">
-                            <div class="comment-user-name">{{ $comment->user->name }}</div>
-                            <div class="comment-text">{{ $comment->body }}</div>
-                            <div class="comment-actions">
-                                <span id="likes-count-{{ $comment->id }}">{{ $comment->likes->count() }}</span>
-                                <div class="like-comment-button" data-comment-id="{{ $comment->id }}" style="cursor: pointer;">
-                                    <i class="fa fa-heart"></i>
+                            <div class="card mb-3 border-light shadow-sm">
+                                <div class="card-header bg-transparent border-bottom-0">
+                                    <h5 class="card-title mb-0">{{ $comment->user->name }}</h5>
                                 </div>
-                                @if(Auth::user() && Auth::user()->id == $comment->user_id)
-                                    <form method="POST" action="{{ route('comment.destroy', $comment) }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" style="background: none; border: none;margin-bottom:5px;">
-                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                        </button>
-                                    </form>
-                                @endif
+                                <div class="card-body">
+                                    <p class="card-text">{{ $comment->body }}</p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0 text-muted">
+                                    <div class="comment-actions d-flex justify-content-between align-items-center">
+                                        <div class="mr-2">
+                                            <span id="likes-count-{{ $comment->id }}">{{ $comment->likes->count() }}</span>
+                                            <button class="like-comment-button btn btn-outline-primary btn-sm" data-comment-id="{{ $comment->id }}">
+                                                <i class="fa fa-heart"></i> Mi piace
+                                            </button>
+                                        </div>
+                                        @if(Auth::user() && Auth::user()->id == $comment->user_id)
+                                            <form method="POST" action="{{ route('comment.destroy', $comment) }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-outline-danger btn-sm">
+                                                    <i class="fa fa-trash"></i> Elimina
+                                                </button>
+                                            </form>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
-                    @endforeach
+                        @endforeach
                     </div>
-                    <div id="comment-form-{{ $article->id }}" class="comment-form-container">
+                    <div id="comment-form-{{ $article->id }}" class="comment-form-container mt-4">
                         <form class="comment-form" data-article-id="{{ $article->id }}">
                             @csrf
-                            <input type="text" name="comment" class="comment-text" placeholder="Scrivi un commento...">
-                            <button type="submit" class="submit-comment">Invia</button>
+                            <div class="input-group">
+                                <input type="text" name="comment" class="form-control col-8" placeholder="Scrivi un commento...">
+                                <div class="input-group-append col-4 p-0">
+                                    <button type="submit" class="btn btn-primary rounded-left-0 w-100" style="background-color: #007bff; border-color: #007bff;">Invia</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
-                </div>
             </div>
         </div>
     </div>

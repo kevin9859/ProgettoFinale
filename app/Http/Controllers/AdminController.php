@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\RoleRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Tag;
@@ -9,41 +9,55 @@ use App\Models\Category;
 
 class AdminController extends Controller
 {
-   public function dashboard()
-   {
-    $adminRequests = User::where('is_admin', NULL)->get();
-    $revisorRequests = User::where('is_revisor', NULL)->get();
-    $writerRequests = User::where('is_writer', NULL)->get();
+    public function dashboard()
+    {
+        $adminRequests = RoleRequest::where('role', 'admin')->get();
+        $revisorRequests = RoleRequest::where('role', 'revisor')->get();
+        $writerRequests = RoleRequest::where('role', 'writer')->get();
 
-    return view('admin.dashboard', compact('adminRequests', 'revisorRequests', 'writerRequests'));
-   }
+        
+    
+        return view('admin.dashboard', compact('adminRequests', 'revisorRequests', 'writerRequests'));
+    }
 
-   public function setAdmin(User $user)
-   {
+    public function setAdmin(User $user, RoleRequest $request)
+{
     $user->update([
-        'is_admin' => true,
+        'is_admin' => true
     ]);
 
-    return redirect(route('admin.dashboard'))->with('message', 'Hai correttamente reso amministratore l\'utente scelto');
-   }
+    RoleRequest::where('user_id', $user->id)->where('role', 'admin')->delete();
 
-   public function setRevisor(User $user)
-   {
+    session()->flash('success', 'Ruolo impostato con successo come amministratore.');
+
+    return redirect()->route('admin.dashboard');
+}
+
+public function setRevisor(User $user, RoleRequest $request)
+{
     $user->update([
-        'is_revisor' => true,
+        'is_revisor' => true
     ]);
 
-    return redirect(route('admin.dashboard'))->with('message', 'Hai correttamente reso revisore l\'utente scelto');
-   }
+    RoleRequest::where('user_id', $user->id)->where('role', 'revisor')->delete();
 
-   public function setWriter(User $user)
-   {
+    session()->flash('success', 'Ruolo impostato con successo come revisore.');
+
+    return redirect()->route('admin.dashboard');
+}
+
+public function setWriter(User $user, RoleRequest $request)
+{
     $user->update([
-        'is_writer' => true,
+        'is_writer' => true
     ]);
 
-    return redirect(route('admin.dashboard'))->with('message', 'Hai correttamente reso redattore l\'utente scelto');
-   }
+    RoleRequest::where('user_id', $user->id)->where('role', 'writer')->delete();
+
+    session()->flash('success', 'Ruolo impostato con successo come scrittore.');
+
+    return redirect()->route('admin.dashboard');
+}
    
    public function editTag(Request $request, Tag $tag)
    {

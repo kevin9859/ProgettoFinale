@@ -4,33 +4,36 @@
             <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Email</th>
+            <th scope="col">Ruolo richiesto</th>
+            <th scope="col">Stato</th>
             <th scope="col">Azioni</th>
         </tr>
     </thead>
     <tbody>
         @if(is_iterable($roleRequests))
-    @foreach($roleRequests as $user)
-    <tr>
-        <th scope="row">{{$user->id}}</th>
-        <td>{{$user->name}}</td>
-        <td>{{$user->email}}</td>
-        <td>
-            <button class="btn btn-info text-white">Attiva {{$role}}</button>
-            @switch($role)
-            @case('amministratore')
-            <a href="{{route('admin.setAdmin', compact('user'))}}"class="btn btn-info text-white">Attiva {{$role}}</a>
-            @break
-            @case('revisore')
-            <a href="{{route('admin.setRevisor', compact('user'))}}"class="btn btn-info text-white">Attiva {{$role}}</a>
-            @break
-            @case('redattore')
-            <a href="{{route('admin.setWriter', compact('user'))}}"class="btn btn-info text-white">Attiva {{$role}}</a>
-            @break
-            @endswitch
-        </td>
-    </tr>
-    @endforeach
-@else
+            @foreach($roleRequests as $request)
+                <tr>
+                    <th scope="row">{{$request->id}}</th>
+                    <td>{{$request->user->name}}</td>
+                    <td>{{$request->user->email}}</td>
+                    <td>{{$request->role}}</td>
+                    <td>{{$request->status}}</td>
+                    <td>
+                        @switch($request->role)
+                            @case('admin')
+                            <a href="{{route('admin.setAdmin', ['user' => $request->user->id, 'roleRequest' => $request->id])}}"class="btn btn-info text-white">Attiva {{$request->role}}</a>
+                                @break
+                            @case('revisor')
+                            <a href="{{route('admin.setRevisor', ['user' => $request->user->id, 'roleRequest' => $request->id])}}"class="btn btn-info text-white">Attiva {{$request->role}}</a>
+                                @break
+                            @case('writer')
+                            <a href="{{route('admin.setWriter', ['user' => $request->user->id, 'roleRequest' => $request->id])}}"class="btn btn-info text-white">Attiva {{$request->role}}</a>
+                                @break
+                        @endswitch
+                    </td>
+                </tr>
+            @endforeach
+        @else
     <!-- Gestione dell'errore o messaggio di avviso -->
 @endif
     </tbody>

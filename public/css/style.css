@@ -35,9 +35,19 @@ html {
 .large-text {
     font-size: 2em; /* Adjust this value to make the text smaller or larger */
 }
+.btn-primary {
+    background-color: #007bff; 
+    height:auto;
+    margin-left: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9; /* Set the background color to a darker shade of blue when the mouse hovers over the button */
+}
+
 .btn{
     
-    color: #fff;
+    
     padding: 0.5em 1em;
     border: none;
     border-radius: 5px;
@@ -197,6 +207,9 @@ html {
 }
 p.small.flex-align {
     align-items: center; /* Allinea verticalmente il testo e il link */
+}
+.bg-white {
+    background-color: #fff; /* Imposta il colore di sfondo a bianco */
 }
 .bg-base{
     /* background-image: url('/images/orange.jpg'); */

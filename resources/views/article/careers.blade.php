@@ -8,8 +8,8 @@
             </div>
             <div class="col-lg-5 col-md-8 col-sm-10 m-3">
                 <div class="form-container">
-                    <form class="card-careers text-black bg-white p-5 " action="{{ route('article.store') }}" method="post"
-                        enctype="multipart/form-data">
+                    <form class="card-careers text-black bg-white p-5 " action="{{ route('careers.submit') }}" method="post" enctype="multipart/form-data">
+          
                         @csrf
                     <div class="mb-3">
                         <label for="role" class="form-label text-start glitch-font">Per quale ruolo ti stai candidando?</label>
