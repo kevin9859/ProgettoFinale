@@ -72,7 +72,7 @@
     if (sidebar.style.width === "0px" || sidebar.style.width === "") {
         sidebar.style.width = "350px";
         document.getElementById("navbarMenuButton").style.marginRight = "250px";
-        document.querySelector(".openbtn").style.display = "none"; /
+        document.querySelector(".openbtn").style.display = "none";
     }
 }
 
@@ -81,6 +81,7 @@ function closeNav() {
     document.getElementById("navbarMenuButton").style.marginRight = "0";
     document.querySelector(".openbtn").style.display = "block"; 
 
+}
 document.addEventListener('DOMContentLoaded', function() {
     closeNav();
     const navbarToggler = document.querySelector(".navbar-toggler");

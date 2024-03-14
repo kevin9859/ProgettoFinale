@@ -104,13 +104,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center bg-white h50">
-                <div class="col-xl-7 col-lg-12 mb-5 justify-content-start mt-5 duration-200 bg-white">
+            <div class="d-flex justify-content-between bg-white flex-lg-row flex-column-reverse" style="padding: 8vh;">
+                <div class="col-lg-7 col-md-12 mb-5 mx-auto order-2 order-lg-1">
                     <div class="row">
-                        <div class="col-xl-5 col-lg-12 justify-content-start mr-10 bg-white">
-                            <img src="images/Group.png" alt="Descrizione dell'immagine" class="img-responsive">
+                        <div class="col-lg-5 col-md-12">
+                            <img src="images/Group.png" class="img-fluid" alt="Responsive image"style="min-width:30vh;">
                         </div>
-                        <div class="col-xl-7 col-lg-12 d-flex flex-column justify-content-center mx-3" style="max-width: 600px;">
+                        <div class="col-xl-7 col-lg-12 d-flex flex-column justify-content-center mx-md-3" style="max-width: 600px;">
                             <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size:1.2em;margin-bottom:2vh;">Siamo sempre alla ricerca di menti curiose e appassionate come la tua per arricchire il nostro sito con punti di vista unici e freschi.</p>
                             <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size:1.2em;margin-bottom:2vh;">Se hai un'opinione da condividere, una passione da esprimere o semplicemente un interesse per la scrittura giornalistica, il nostro sito è il posto perfetto per te!</p>
                             <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size:1.2em;margin-bottom:2vh;">Unisciti a noi e lascia il tuo segno nel mondo delle notizie online. Siamo sicuri che il tuo contributo porterà nuova vita e vivacità al nostro sito!</p>
