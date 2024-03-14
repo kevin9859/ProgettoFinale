@@ -54,6 +54,7 @@
 
 
                     <div  class="min-vh100"style="max-width: 600px;">
+                        {{-- <h2 class="font-rounded mb-3 text-center">Benvenuto!</h2> --}}
                         <p class="lead text-justify font-rounded " style="font-size:1.2em;margin-bottom:2vh;">
                             Benvenuto nella nostra <strong>comunità giornalistica</strong>, dove ogni parola ha valore e
                             ogni storia trova spazio.</p>
@@ -143,6 +144,7 @@
                 }, 
                 colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'],
                 zIndex: 1000 
+            });
         }, 100);
 
         setTimeout(function() {
