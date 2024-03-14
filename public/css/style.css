@@ -844,7 +844,11 @@ span{
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Aumenta il raggio dell'ombra e l'opacità del colore */
+<<<<<<< HEAD
     max-height: 700px;
+=======
+    max-height: 500px;
+>>>>>>> 908cae85dbfe4b9fdabd735fc95a4d4272bc770a
     width: 650px; /* Imposta una larghezza fissa */
 }
 .card {
