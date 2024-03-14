@@ -4,10 +4,10 @@
             lista articoli
         </h1>
     </div>
-    <div class="container">
-        <div class="row justify-content-center">
+    <div class="row" style="flex-direction: column; align-items: start; justify-content: start;">
+        <div class="" style="flex-direction: column; align-items: start; justify-content: start;">
             @foreach ($articles as $article)
-                <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex justify-content-center">
+                <div class="col" style="flex-direction: column; align-items: start; justify-content: center;">
                     <x-card :article="$article" />
                 </div>
             @endforeach

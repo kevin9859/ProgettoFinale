@@ -2,8 +2,8 @@
 
     <div class="container-fluid p-5 bg-green text-center text-white">
         <div class="row justify-content-center">
-            <h1 class=" font-bold display-1">
-                Bentornato, Revisore
+            <h1 class=" glitch-font display-1">
+                Bentornato  Revisore
             </h1>
         </div>
     </div>
