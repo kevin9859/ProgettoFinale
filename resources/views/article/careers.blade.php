@@ -7,25 +7,19 @@
                     Lavora con noi
                 </h1>
             </div>
-      
+            <div class="col-lg-4 col-md-6 col-sm-8 m-3">
+                <img src="/images/image-careers.png" alt="Descrizione dell'immagine" class="img-fluid" </div>
+            </div>
 
-
-                    <div class="col-lg-4 col-md-6 col-sm-8 m-3">
-                        <img src="/images/image-careers.png" alt="Descrizione dell'immagine" class="img-fluid"
-
-                    </div>
-                </div>
-         
             <div class="d-flex p-3 h50 main-div justify-content-end">
                 <div class="col-lg-5 col-md-12 d-flex px-5">
                     <div class="welcome-text justify-content-start" style="padding-left: 20px;">
                         <span class="small-text"
-
                             style="font-family:'Roboto', sans-serif; font-size: 1vw; letter-spacing: 1px;">cosa
-                            </span>
+                        </span>
                         <span class="large-text mx-3"
                             style="font-family: 'Roboto', sans-serif; font-size: 1.2vw; letter-spacing: 1px;">farai?
-                            </span>
+                        </span>
                     </div>
                 </div>
             </div>

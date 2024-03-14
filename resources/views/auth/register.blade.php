@@ -1,16 +1,13 @@
 <x-layout>
     
-    <div class="container-fluid p-3">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-4 bg-transparent">
-                <div class="p-3 text-center text-white">
-                    <h1 class="button-glitch p-1" style="font-size:100px;">
-                        registrati
-                    </h1>
-                </div>
-            </div>
+    <div class="container-fluid p-5 bg-transparent text-center text-white">
+        <div class="row justify-content-center">
+            <h1 class="button-glitch p-1"style="font-size:100px;max-width:400px;">
+              registrati
+            </h1>
         </div>
     </div>
+
     
     <div class="container ">
         <div class="row justify-content-center">
@@ -25,7 +22,7 @@
             </ul>
             </div>
              @endif
-            <form class="card2 p-5 shadow" action="{{route('register')}}" method="post">
+            <form class="card  shadow" action="{{route('register')}}" method="post">
             @csrf
             
             <div class="mb-3">

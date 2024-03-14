@@ -21,7 +21,7 @@
                     </div>
                 @endif
 
-                <form class="card2 justify-content-center shadow " action="{{route('login')}}" method="post">
+                <form class="card justify-content-center shadow " action="{{route('login')}}" method="post">
                     @csrf
 
                     <div class="mb-3">

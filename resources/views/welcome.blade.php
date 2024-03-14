@@ -14,7 +14,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite(['public/css/app.css', 'public/js/app.js'])
     <title>The Aulab Post</title>
-    @stack('styles')
+    
 </head>
 
 <body class="@auth bg-base @endauth @guest background-div @endguest">
@@ -23,22 +23,18 @@
     <div>
         <div>
             @guest
-            <div class="container-fluid vh-100 p-5 bg-transparent text-center text-white">
+            <div class="container-fluid vh-100 p-5 bg-transparent text-center text-white d-flex justify-content-center align-items-center">
                 <div class="row h-100 justify-content-center align-items-center">
-                    <div class="max-w-2xl mx-auto text-center" style="margin-bottom: 12.5em;">
-                        <h1 class="mt-4 font-bold align-items-center justify-content-end p-1" style="font-size:6.25em;min-width:31.25em;max-width:62.5em;">
+                    <div class="" style="margin-bottom: 12.5em;">
+                        <h1 class="mt-4 font-bold align-items-center justify-content-center p-1 d-flex" style="font-size:6.25em;min-width:;">
                             Benvenuto!
-                            <a href="{{ route('login') }}" class="font-bold btn btn-primary" style="font-size: 1.875em;">Inizia ora</a>
+                            <button href="{{ route('login') }}" class="font-bold btn btn-primary" style="font-size: 1.4vw;">Inizia ora</button>
                         </h1>
                     </div>
                 </div>
             </div>
         @endguest
             
-            {{-- <div class="col-lg-5 col-md-8 col-sm-10 m-5">
-                            <img src="/images/welcome-image.png" alt="Descrizione dell'immagine" class="img-fluid card-3 mb-4 "
-                                style="max-width: 100%;">
-                        </div> --}}
        @if (Auth::user())
             <div class="d-flex  p-5 h100 main-div">
                 <div class="col-lg-5 col-md-12 d-flex justify-content-start px-5">
