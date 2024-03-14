@@ -1,8 +1,8 @@
 <x-layout>
     <div class="container-fluid p-5 text-center text-white">
         <div class="d-flex flex-column align-items-center">
-            <h2 class="font-bold mb-3" style="font-size:70px;">
-                Benvenuto Redattore
+            <h2 class="glitch-font mb-3" style="font-size:70px;">
+                Bentornato  Redattore
             </h2>
         </div>
     </div>
