@@ -28,7 +28,7 @@
                     <div class="" style="margin-bottom: 12.5em;">
                         <h1 class="mt-4 font-bold align-items-center justify-content-center p-1 d-flex" style="font-size:6.25em;min-width:;">
                             Benvenuto!
-                            <button href="{{ route('login') }}" class="font-bold btn btn-primary" style="font-size: 1.4vw;">Inizia ora</button>
+                            <a href="{{ route('login') }}" class="font-bold btn btn-primary" style="font-size: 1.4vw;">Inizia ora</a>
                         </h1>
                     </div>
                 </div>
