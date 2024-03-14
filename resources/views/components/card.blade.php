@@ -22,7 +22,7 @@
                 <div>
                     <span class="mr-1 likes-count" id="likes-count-{{ $article->id }}">{{ $article->likes_count }}</span>
                     <button type="button" class="btn-card {{ $article->isLikedByUser() ? 'liked' : '' }}"
-                        data-article-id="{{ $article->id }}" {{--onclick="likeArticle({{ $article->id }})"--}}>
+                        data-article-id="{{ $article->id }}">
                         <i class="fa fa-heart"></i> 
                     </button>
                     <span class="comment-icon" data-article-id="{{ $article->id }}">

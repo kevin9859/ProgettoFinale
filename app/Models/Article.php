@@ -54,17 +54,11 @@ class Article extends Model
         return $this->belongsToMany(Tag::class);
     }
 
-    //public function getRouteKeyName() {
-      //  return 'slug';    }
-
-   
-
-    
     public function readDuration()
     {
-        // Calcolo della durata di lettura in base al numero di parole
+
         $totalWords = str_word_count($this->body);
-        $minuteToRead = round($totalWords / 200); // Assume 200 parole al minuto come velocità di lettura media
+        $minuteToRead = round($totalWords / 200);
         return intval($minuteToRead);
     }
 

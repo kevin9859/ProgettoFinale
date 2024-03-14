@@ -50,14 +50,14 @@ class PublicController extends Controller
         if (Auth::check()) {
             $user = Auth::user();
     
-            // Crea una nuova richiesta di ruolo e la salva nel database
+          
             $roleRequest = new RoleRequest;
             $roleRequest->user_id = $user->id;
             $roleRequest->role = $role;
             $roleRequest->status = 'pending';
             $roleRequest->save();
     
-            // Aggiorna il ruolo dell'utente prima dell'invio dell'email
+        
             switch ($role) {
                 case 'admin':
                     $user->is_admin = NULL;

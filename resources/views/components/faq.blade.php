@@ -66,7 +66,7 @@
         </p>
     </div>
     <script>
-        // JavaScript to toggle the answers and rotate the arrows
+
         document.querySelectorAll('[id^="question"]').forEach(function(button, index) {
             button.addEventListener('click', function() {
                 var answer = document.getElementById('answer' + (index + 1));

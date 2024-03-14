@@ -34,7 +34,6 @@
                 </tr>
             @endforeach
         @else
-    <!-- Gestione dell'errore o messaggio di avviso -->
 @endif
     </tbody>
 </table>

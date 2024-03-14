@@ -78,7 +78,7 @@ class ArticleController extends Controller
             'subtitle' => $request->subtitle,
             'body' => $request->body,
             'image' => $imagePath,
-            'category_id' => $request->category[0], // Get the first element of the array
+            'category_id' => $request->category[0],
             'user_id' => Auth::user()->id,
             'slug' => Str::slug($request->title),
         ]);
@@ -88,7 +88,7 @@ class ArticleController extends Controller
         foreach ($tags as $tag) {
             if (!empty($tag)) {
                 $newTag = Tag::updateOrCreate(['name' => $tag]);
-                $article->tags()->attach($newTag->id); // Pass the ID of the tag
+                $article->tags()->attach($newTag->id);
             }
         }
     
@@ -100,12 +100,6 @@ class ArticleController extends Controller
         $article = Article::findOrFail($articleId);
         return view('article.show', compact('article'));
     }
-
-    // public function show($articleId)
-    // {
-    //     $article = Article::findOrFail($articleId);
-    //     return response()->json(['article' => $article]);
-    // }
 
     public function edit(Article $article)
     {
@@ -194,16 +188,16 @@ class ArticleController extends Controller
     public function like($articleId)
     {
         $article = Article::findOrFail($articleId);
-        $userId = Auth::id(); // Assumendo che l'utente sia autenticato
+        $userId = Auth::id(); 
 
         $like = Like::where('article_id', $article->id)->where('user_id', $userId)->first();
 
         if ($like) {
-            // Se l'utente ha già messo "mi piace" all'articolo, rimuovi il "mi piace"
+          
             $like->delete();
             $liked = false;
         } else {
-            // Altrimenti, aggiungi un "mi piace"
+           
             $like = new Like();
             $like->article_id = $article->id;
             $like->user_id = $userId;
@@ -211,7 +205,7 @@ class ArticleController extends Controller
             $liked = true;
         }
 
-        // Ricarica l'articolo dal database per ottenere il conteggio dei "mi piace" aggiornato
+    
         $article = Article::findOrFail($articleId);
 
         return response()->json(['likes' => $article->likes->count(), 'liked' => $liked]);

@@ -54,7 +54,6 @@
 
 
                     <div  class="min-vh100"style="max-width: 600px;">
-                        {{-- <h2 class="font-rounded mb-3 text-center">Benvenuto!</h2> --}}
                         <p class="lead text-justify font-rounded " style="font-size:1.2em;margin-bottom:2vh;">
                             Benvenuto nella nostra <strong>comunità giornalistica</strong>, dove ogni parola ha valore e
                             ogni storia trova spazio.</p>
@@ -108,7 +107,7 @@
                 <div class="col-xl-7 col-lg-12 mb-5 justify-content-start mt-5 duration-200 bg-white">
                     <div class="row">
                         <div class="col-xl-5 col-lg-12 justify-content-start mr-10 bg-white">
-                            <img src="images/Group.png" alt="Descrizione dell'immagine" class="img-fluid" style="max-width: 50vh;max-height:50vh;">
+                            <img src="images/Group.png" alt="Descrizione dell'immagine" class="img-responsive">
                         </div>
                         <div class="col-xl-7 col-lg-12 d-flex flex-column justify-content-center mx-3" style="max-width: 600px;">
                             <p class="lead text-justify font-rounded mb-4 responsive-font" style="font-size:1.2em;margin-bottom:2vh;">Siamo sempre alla ricerca di menti curiose e appassionate come la tua per arricchire il nostro sito con punti di vista unici e freschi.</p>
@@ -141,15 +140,14 @@
                 origin: {
                     x: Math.random(),
                     y: 0
-                }, // Randomize x origin for a more natural effect
+                }, 
                 colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'],
-                zIndex: 1000 // Increase zIndex to have confetti fall over other page elements
-            });
+                zIndex: 1000 
         }, 100);
 
         setTimeout(function() {
             clearInterval(confettiInterval);
-        }, 5000); // Stop after 5 seconds
+        }, 5000); 
 
         var Tawk_API = Tawk_API || {},
             Tawk_LoadStart = new Date();

@@ -26,10 +26,10 @@ class CommentController extends Controller
         $comment = new Comment;
         $comment->body = $request->body;
         $comment->article_id = $article->id;
-        $comment->user_id = auth()->id(); // Assumendo che l'utente sia autenticato
+        $comment->user_id = auth()->id();
         $comment->save();
     
-        // Carica le informazioni dell'utente
+     
         $comment->load('user');
     
         return response()->json(['comment' => $comment], 201);

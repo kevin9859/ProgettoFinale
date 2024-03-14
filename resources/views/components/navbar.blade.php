@@ -19,13 +19,6 @@
                 </button>
             </form>
         </div>
-
-        {{-- CAMBIO LINGUA  <form method="GET" style="display: inline;">
-            <select name="lang" onchange="this.form.submit()">
-                <option value="en" {{ App::getLocale() == 'en' ? 'selected' : '' }}>English</option>
-                <option value="it" {{ App::getLocale() == 'it' ? 'selected' : '' }}>Italiano</option>
-            </select>
-        </form> --}}
         @auth
             <div id="mySidebar" class="sidebar">
                 <span href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</span>
@@ -62,16 +55,6 @@
                 </button>
             </div>
         @endauth
-        {{-- @guest
-            <div class="d-inline-flex mx-0 align-items-center">
-                <li class="d-flex nav-item align-items-center justify-content-center">
-                    <a class="d-flex nav-link  align-items-center glitch-font2" style="font-size:30px;" href="{{ route('login') }}">Accedi</a>
-                </li>
-                <li class="d-flex nav-item d-flex align-items-center justify-content-center">
-                    <a class="d-flex nav-link  align-items-center glitch-font2" style="font-size:30px;" href="{{ route('register') }}">Registrati</a>
-                </li>
-            </div>
-        @endguest --}}
     </div>
 </nav>
 <div class="custom-div rounded bg-dark-as-box text-center">
@@ -89,15 +72,14 @@
     if (sidebar.style.width === "0px" || sidebar.style.width === "") {
         sidebar.style.width = "350px";
         document.getElementById("navbarMenuButton").style.marginRight = "250px";
-        document.querySelector(".openbtn").style.display = "none"; /* Hide the button */
+        document.querySelector(".openbtn").style.display = "none"; /
     }
 }
 
 function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("navbarMenuButton").style.marginRight = "0";
-    document.querySelector(".openbtn").style.display = "block"; /* Show the button */
-}
+    document.querySelector(".openbtn").style.display = "block"; 
 
 document.addEventListener('DOMContentLoaded', function() {
     closeNav();
@@ -126,11 +108,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var links = document.querySelectorAll('#mySidebar a');
     links.forEach(function(link) {
         link.addEventListener('click', function(event) {
-            event.preventDefault(); // Previene l'azione predefinita del click sul link
+            event.preventDefault(); 
             closeNav();
             setTimeout(function() {
-                window.location.href = link.href; // Reindirizza alla URL del link
-            }, 200); // Ritardo di 200 millisecondi
+                window.location.href = link.href; 
+            }, 200); 
         });
     });
 });
@@ -138,11 +120,11 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('click', function(event) {
     var sidebar = document.getElementById("mySidebar");
     var openButton = document.querySelector(".openbtn");
-    // If the sidebar or openButton doesn't exist, just return
+   
     if (!sidebar || !openButton) {
         return;
     }
-    // If the click event was not triggered by the sidebar or a child of it, and not by the open button, hide the sidebar
+   
     if (!sidebar.contains(event.target) && !openButton.contains(event.target) && sidebar.style.width !== '0px') {
         closeNav();
     }
