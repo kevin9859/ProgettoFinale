@@ -5,7 +5,7 @@
                 <div class="bg-white p-5 rounded shadow article-container">
                     <h1 class="display-4 article-title text-center">{{ $article->title }}</h1>
                     <img src="{{ asset(Storage::url($article->image)) }}" class="article-image img-fluid rounded mb-4" alt="...">
-                    <h2 class="h4 mb-3 text-muted article-subtitle">{{ $article->subtitle }}</h2>
+                    <h2 class="h4 mb-3 text-muted article-subtitle"style="font-size:1.8vh;">{{ $article->subtitle }}</h2>
                     <p class="text-muted fst-italic mb-4">
                         Redatto da {{ $article->user->name }} il {{ $article->created_at->format('d/m/Y') }}
                     </p>

@@ -8,7 +8,7 @@
                 </h1>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-8 m-3">
-                <img src="/images/image-careers.png" alt="Descrizione dell'immagine" class="img-fluid" </div>
+                <img src="/images/image-careers.png" alt="Descrizione dell'immagine" class="img-fluid">
             </div>
 
             <div class="d-flex p-3 h50 main-div justify-content-end">
@@ -24,20 +24,20 @@
                 </div>
             </div>
             <div class="d-flex p-5 h50 main-div justify-content-center">
-                <div class="col-lg-5 col-md-12 px-3">
+                <div class="col-lg-5 col-md-12 px-3 ">
                     <h2 class="font-rounded mb-3 text-center mt-2">Ruoli nel nostro blog:</h2>
                     <div class="role-description font-rounded mb-4" style="font-size: 18px;">
-                        <h4>Amministratore:</h4>
+                        <h4 class="text-center">Amministratore:</h4>
                         <p>Sei il "direttore d'orchestra" del blog, plasmi l'esperienza degli utenti e guidi il destino
                             del blog.</p>
                     </div>
                     <div class="role-description font-rounded mb-4" style="font-size: 18px;">
-                        <h4>Revisore:</h4>
+                        <h4 class="text-center">Revisore:</h4>
                         <p>Sei il custode della qualità e dell'eccellenza, perfezioni ogni articolo e ne assicuri la
                             professionalità.</p>
                     </div>
                     <div class="role-description font-rounded mb-4" style="font-size: 18px;">
-                        <h4>Scrittore:</h4>
+                        <h4 class="text-center">Scrittore:</h4>
                         <p>Sei il narratore di storie, l'artista della parola, condividi idee e ispiri emozioni
                             attraverso ogni articolo.</p>
                     </div>
@@ -48,7 +48,7 @@
             <div class="col-lg-5 col-md-8 col-sm-10 m-3">
                 <img src="/images/article-careers-image2.png" alt="Descrizione dell'immagine" class="img-fluid card-3">
             </div>
-            <div class="col-lg-5 col-md-8 col-sm-10 m-3 mt-n5"> <!-- Aggiunto mt-n5 qui -->
+            <div class="col-lg-5 col-md-8 col-sm-10 m-3 mt-n5">
                 <div class="form-container">
                     <form class="card-careers text-black bg-white p-5 mb-5" action="{{ route('careers.submit') }}"
                         method="post" enctype="multipart/form-data">

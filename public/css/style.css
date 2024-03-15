@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 
 .font-rounded {
     font-family: 'Quicksand', sans-serif;
@@ -113,7 +114,7 @@ html {
     transition: transform 0.5s ease;
     margin-top: auto;
     font-size: 0.8em;
-    margin-left: 35vh;
+    align-self: flex-end;
 }
 .btn-modify{
     background: linear-gradient(135deg, green 50%,  darkgreen 100%);
@@ -196,6 +197,18 @@ html {
     max-width: 100%;
     height: auto;
 }
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.icon-fluid{
+    max-width: 100%;
+    max-height: 100%;
+    width: 10vh;
+    height: 10vh;
+
+}
 .img-center {
     display: block;
     margin-left: auto;
@@ -224,6 +237,17 @@ p.small.flex-align {
 }
 .bg-create{
     background: linear-gradient(to right, #41f39a , #4738e8);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    position: relative;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-width: 500px;
 }
 .bg-welcome{
     background-color:gray;
@@ -268,37 +292,42 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+}
+
+.container {
     min-width: 500px;
-} 
+    width: 100%;
+}
 
 .article-body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
-    font-size: 1.2em; 
-    margin: 2em 0; 
+    font-size: 1.1em; 
+    margin: 1em 0; 
     text-align: justify; 
-    text-indent: 2em; 
+    text-indent: 1em; 
     text-justify: inter-word;
-    margin: 1em auto;
-    max-width: 800px;
-    min-width: 300px;
-    padding: 1em;
+    margin: 0.5em auto;
+    max-width: 1000px;
+    
+   
 }
 .article-title {
     color: #000;
-    font-family: 'Times New Roman', serif;
+    font-family: 'Playfair Display', serif;
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 3.5em;
     margin-bottom: 5vh;
 }
 
 .article-subtitle {
-    font-family: 'Arial', sans-serif;
-    font-style: italic;
-    font-size: 0.9em;
-    margin-bottom: 10px;
-    margin-left: 15vh;
-    margin-right: 15vh;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6;
+    margin: 1em 0; 
+    text-align: center; /* Allinea il testo al centro */
+    text-indent: 1em; 
+    text-justify: inter-word;
+    margin: 0.5em auto;
 }
 
 .article-details {
@@ -315,9 +344,8 @@ body {
 }
 
 .article-image{
-    min-width: 40vh;
-    width: 50vw; 
-    height: 30vw; 
+    max-width: 20vw;
+    height: 20vw; 
     margin: 2vh auto; 
     display: block;
     margin-bottom: 10vh;
@@ -734,49 +762,10 @@ span{
     transform: scale(1.1); 
 }
 
-.form-container, .image-container {
-    transform: scale(1); 
-    transform-origin: top left; 
-    padding: 20px; 
-}
 
- @media (max-width: 1600px) {
-    .form-container, .image-container {
-        transform: scale(0.9);
-    }
+.card2-footer.ml-auto.d-flex {
+    justify-content: flex-end;
 }
-
-@media (max-width: 1400px) {
-    .form-container, .image-container {
-        transform: scale(0.8); 
-    }
-}
-
-@media (max-width: 800px) {
-    .form-container, .image-container {
-        transform: scale(0.6); 
-    }
-}
-
-@media (max-width: 600px) {
-    .form-container, .image-container {
-        transform: scale(0.4); 
-    }
-}
-.card3-image{
-    min-width: 800px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-@media screen and (max-width: 500px) {
-    .card {
-        min-width: none;
-        width: 80%;
-        height: 80%;
-    }
-    
-} 
-
 .card2 {
     display: flex;
     justify-content: center;
@@ -791,9 +780,18 @@ span{
     max-height: auto;
     padding: 8vh; 
     margin-left: 10vw;
-    margin-right: 10vw
+    margin-right: 10vw;
+    padding: 8vh 2vw;
+     position: relative;
 }
-
+.card2 .read-article-button {
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    margin: auto; 
+    width: fit-content; 
+}
 .card2-img-top {
     height: 30vh;
     object-fit: cover;
@@ -1076,72 +1074,6 @@ span{
     font-size: 16px; 
 }
 
-
-@media (min-width: 768px) { 
-    .responsive-font {
-        font-size: 18px;
-    }
-}
-
-
-@media (min-width: 992px) { 
-    .responsive-font {
-        font-size: 20px;
-    }
-}
-
-
-@media (min-width: 1200px) { 
-    .responsive-font {
-        font-size: 22px;
-    }
-}
-@media (min-width: 1200px) { 
-    .responsive-font {
-        font-size: 22px;
-    }
-}
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover; 
-}
-@media (max-width: 1200px) {
-    .img-fluid {
-        max-width: 90%;
-    }
-
-    .card {
-        flex-direction: row;
-    }
-}
-@media (max-width: 992px) {
-    .img-fluid {
-        max-width: 80%;
-    }
-
-    .card {
-        flex-direction: column;
-    }
-}
-@media (max-width: 768px) {
-    .img-fluid {
-        max-width: 70%;
-    }
-
-    .card {
-        flex-direction: row;
-    }
-}
-@media (max-width: 576px) {
-    .img-fluid {
-        max-width: 60%;
-    }
-
-    .card {
-        flex-direction: column;
-    }
-}
 .glitch-font{
     
     font-size: 36px;
@@ -1163,9 +1095,13 @@ span{
   }
   
 .button-glitch, .button-glitch::after {
-    width: 20vw;
-    height: 86px;
-    font-size: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: normal;
+    width: 25vh;
+    height: 7vh;
+    font-size: 1em;
     font-family: 'Bebas Neue', cursive;
     background: linear-gradient(45deg, transparent 5%, #FF013C 5%)!important ;
     border: 0;
@@ -1259,9 +1195,9 @@ span{
   }
   
   .button-glitch2, .button-glitch2::after {
-    width: 190px;
+    width: 13vh;
     height: 43px;
-    font-size: 18px;
+    font-size: 1rem;
     font-family: 'Bebas Neue', cursive;
     background: linear-gradient(45deg, transparent 5%, #FF013C 5%)!important;
    
@@ -1436,3 +1372,6 @@ span{
         flex-direction: column;
         align-items: center;
     }
+
+
+    

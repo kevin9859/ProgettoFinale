@@ -9,7 +9,7 @@
         <!-- Search bar -->
         <div class="d-flex justify-content-center custom-nav-link flex-grow-1 mx-auto">
             <form class="d-flex search-form custom-nav-link" method="GET"
-                style="min-width: 300px; border: 1px solid #ccc; border-radius: 24px; overflow: hidden;"
+                style=" border: 1px solid #ccc; border-radius: 24px; overflow: hidden;"
                 action="{{ route('article.search') }}">
                 <input class="form-control search-input" type="search" name="query" placeholder="Cosa stai cercando?"
                     aria-label="Search" style="flex-grow: 1; border: none; padding: 10px 20px;">
