@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,45 +54,34 @@
                         </div>
                     </div>
                 </div>
-                    <div class="d-flex justify-content-between bg-white flex-lg-row flex-column container-fluid" style="padding: 8vh;">
-                        <div class="col-lg-7 col-md-12 mb-5 d-flex justify-content-end mt-5">
-
-
-                            <div class="min-vh100 mt-5"style="max-width: 600px;">
-                                {{-- <h2 class="font-rounded mb-3 text-center">Benvenuto!</h2> --}}
-                                <p class="lead text-justify font-rounded " style="font-size:1em;margin-bottom:2vh;">
-                                    Benvenuto nella nostra <strong>comunità giornalistica</strong>, dove ogni parola ha
-                                    valore e
-                                    ogni storia trova spazio.</p>
-                                <p class="lead text-justify font-rounded" style="font-size:1em;margin-bottom:2vh;">La
-                                    tua
-                                    voce è fondamentale qui. Scrivi articoli che incantano, stimolano e aprono nuovi
-                                    orizzonti.
-                                </p>
-                                <p class="lead text-justify font-rounded " style="font-size: 1em;margin-bottom:2vh;">
-                                    Prenditi
-                                    un momento per lasciarti trasportare dal potere delle parole mentre esplori, crei e
-                                    condividi il tuo mondo con il nostro.</p>
-                                <p class="lead text-justify font-rounded  " style="font-size: 1em;margin-bottom:2vh;">
-                                    Cosa
-                                    stai aspettando? Crea un articolo adesso!</p>
-                            </div>
-
-
-                        </div>
-
-                        <div class="col-lg-5 col-md-12 d-flex justify-content-center">
-                            <img src="images/hello.gif" class="img-fluid" alt="Responsive image">
+                <div class="d-flex justify-content-between bg-white flex-lg-row flex-column container-fluid" style="padding: 8vh;">
+                    <div class="col-lg-7 col-md-12 mb-5 d-flex justify-content-center mt-5">
+                        <div class="d-flex flex-column justify-content-center align-items-center min-vh100 mt-5 text-center" style="max-width: 600px;">
+                            <p class="lead text-justify font-rounded " style="font-size:1em;margin-bottom:2vh;">
+                                Benvenuto nella nostra <strong>comunità giornalistica</strong>, dove ogni parola ha valore e ogni storia trova spazio.
+                            </p>
+                            <p class="lead text-justify font-rounded" style="font-size:1em;margin-bottom:2vh;">
+                                La tua voce è fondamentale qui. Scrivi articoli che incantano, stimolano e aprono nuovi orizzonti.
+                            </p>
+                            <p class="lead text-justify font-rounded " style="font-size: 1em;margin-bottom:2vh;">
+                                Prenditi un momento per lasciarti trasportare dal potere delle parole mentre esplori, crei e condividi il tuo mondo con il nostro.
+                            </p>
+                            <p class="lead text-justify font-rounded  " style="font-size: 1em;margin-bottom:2vh;">
+                                Cosa stai aspettando? Crea un articolo adesso!
+                            </p>
                         </div>
                     </div>
-
+                    <div class="col-lg-5 col-md-12 d-flex justify-content-center align-items-center">
+                        <img src="images/hello.gif" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
 
                     <div class="d-flex justify-content-center bg-yellow2 container-fluid">
 
                         <a href="{{ route('article.create') }}"><button class="button-glitch align-items-center justify-content-center m-4">CREA UN ARTICOLO</button></a>
                   
                     </div>
-                    <div class="row container-fluid2 custom-flex">
+                    <div class="row row-no-margin container-fluid2 custom-flex">
                         <div class="custom-flex">
                             @foreach ($articles as $article)
                                 <div class="col custom-flex" style="justify-content: center;">
@@ -113,10 +103,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-between bg-white flex-lg-row flex-column container-fluid align-items-center" style="padding: 8vh;">
-                        <div class="d-flex flex-lg-row flex-column justify-content-end mb-5 mt-5">
+                    <div class="d-flex justify-content-center align-items-center bg-white flex-lg-row flex-column container-fluid" style="padding: 8vh; height: 100vh;">
+                        <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center mb-5 mt-5">
                             <div class="d-flex justify-content-center flex-grow-1">
-                                <img src="images/Group.png" class="img-fluid" alt="Responsive image" style="min-width:300px;height:50vh;width:50vh;">
+                                <img src="images/Group.png" class="img-fluid" alt="Responsive image" style="min-width:350px;height:50vh;">
                             </div>
                             <div class="d-flex flex-column justify-content-center mx-md-3 flex-grow-1" style="max-width: 600px;">
                                 <p class="lead text-justify font-rounded mb-4" style="font-size:1em;margin-bottom:2vh;">Siamo sempre alla ricerca di menti curiose e appassionate come la tua per arricchire il nostro sito con punti di vista unici e freschi.</p>
@@ -129,7 +119,6 @@
         </div>
 
         @endif
-
         <x-faq />
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

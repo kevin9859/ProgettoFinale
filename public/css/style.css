@@ -197,6 +197,7 @@ html {
     width:10vw; 
     max-height: 70px;
     min-width:120px;
+    max-width: 145px;
 }
 .logo-container {
     display: flex !important;
@@ -614,7 +615,7 @@ span{
     max-width: 2100px; 
     flex: 1;
     max-width: 100%;
-    width: 40vh;
+    width: 70vh;
     min-width: 200px;
     z-index: 1000!important;
     
@@ -790,11 +791,13 @@ span{
     
 }
 
-.row {
-    margin-left: 0!important;
-    margin-right: 0!important;
-    
-}
+    .row-no-margin {
+        margin-left: 0!important;
+        margin-right: 0!important;
+    }
+
+
+
 .card2 {
     box-sizing: border-box;
     display: flex;
@@ -1044,7 +1047,6 @@ span{
     color: white;
     text-transform: uppercase;
     border: none; 
-    border-radius: 5px;
     padding: 10px; 
     text-decoration: none; 
     font-size: 2vh;

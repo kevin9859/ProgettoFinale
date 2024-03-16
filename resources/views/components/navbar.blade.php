@@ -61,7 +61,7 @@
 </nav>
 <div class="custom-div rounded bg-dark-as-box text-center">
     <a href="">
-        <div class=" text-center text-white alert alert-saturn custom-alert custom-div">
+        <div class=" text-center text-white alert-saturn custom-alert custom-div">
             "ISCRIVITI ALLA NOSTRA
             <b>NEWSLETTER</b>
             PER RESTARE SEMPRE AGGIORNATO SULLE ULTIME NOTIZIE!"
