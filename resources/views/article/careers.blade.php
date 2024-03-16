@@ -1,9 +1,8 @@
 <x-layout-careers>
     <div class="container-fluid">
         <div class="row h-100 justify-content-center align-items-center">
-            <div
-                class="container-fluid  bg-transparent text-center text-white d-flex justify-content-center align-items-center">
-                <h1 class="glitch-font p-1" style="width:1000px; font-size:100px;">
+            <div class="container-fluid bg-transparent text-center text-white d-flex justify-content-center align-items-center">
+                <h1 class="glitch-font p-1" style="max-width:1000px; font-size:10vh;">
                     Lavora con noi
                 </h1>
             </div>
@@ -13,13 +12,9 @@
 
             <div class="d-flex p-3 h50 main-div justify-content-end">
                 <div class="col-lg-5 col-md-12 d-flex px-5">
-                    <div class="welcome-text justify-content-start" style="padding-left: 20px;">
-                        <span class="small-text"
-                            style="font-family:'Roboto', sans-serif; font-size: 1vw; letter-spacing: 1px;">cosa
-                        </span>
-                        <span class="large-text mx-3"
-                            style="font-family: 'Roboto', sans-serif; font-size: 1.2vw; letter-spacing: 1px;">farai?
-                        </span>
+                    <div class="welcome-text justify-content-start pl-5">
+                        <span class="small-text">cosa</span>
+                        <span class="large-text mx-3">farai?</span>
                     </div>
                 </div>
             </div>

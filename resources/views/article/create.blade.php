@@ -16,26 +16,28 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-8 ">
-                <img src="/images/article-create-image.png" alt="Descrizione dell'immagine" class="img-fluid">
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-8 p-3">
-                <form class="p-5 mb-5" action="{{ route('article.store') }}" method="post"
-                    enctype="multipart/form-data">
-                    @csrf
-                    <div>
-                        <label for="title" class="form-label glitch-font">Titolo</label>
-                        <input name="title" type="text" class="form-control" id="title"
-                            value="{{ old('title') }}">
-                    </div>
-            
-                    <div>
-                        <label for="subtitle" class="form-label glitch-font">Sottotitolo</label>
-                        <input name="subtitle" type="text" class="form-control" id="subtitle"
-                            value="{{ old('subtitle') }}">
-                    </div>
-            
-                </form>
+            <div class="d-flex justify-content-center align-items-center flex-column">
+                <div class="col-lg-4 col-md-6 col-sm-8 ">
+                    <img src="/images/article-create-image.png" alt="Descrizione dell'immagine" class="img-fluid">
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8 p-3">
+                    <form class="p-5 mb-5" action="{{ route('article.store') }}" method="post"
+                        enctype="multipart/form-data">
+                        @csrf
+                        <div>
+                            <label for="title" class="form-label glitch-font">Titolo</label>
+                            <input name="title" type="text" class="form-control" id="title"
+                                value="{{ old('title') }}">
+                        </div>
+
+                        <div>
+                            <label for="subtitle" class="form-label glitch-font">Sottotitolo</label>
+                            <input name="subtitle" type="text" class="form-control" id="subtitle"
+                                value="{{ old('subtitle') }}">
+                        </div>
+
+                    </form>
+                </div>
             </div>
             <div class="container-fluid p-0" style="background-color: white;">
                 <div class="row justify-content-center align-items-center">
@@ -51,26 +53,26 @@
                 </div>
             </div>
             <div class="container-fluid p-0" style="">
-                <div class="d-flex h-100 justify-content-center align-items-center flex-wrap">
+                <div class="d-flex h-100 justify-content-center align-items-center flex-nowrap">
                     <div class="d-flex flex-column align-items-center justify-content-center image-container p-3">
                         <img src="/images/category-create.png" alt="Immagine di prova" class="img-fluid mb-3" style="max-height: 500px;" >
-                        <div class="d-flex flex-wrap justify-content-center">
-                            @foreach ($categories as $category)
-                                <div class="col-4">
-                                    <label class="category-label text-decoration-none p-3 text-center d-flex flex-column justify-content-center align-items-center">
-                                        <input type="checkbox" name="category[]" value="{{ $category->id }}"
-                                            class="d-none category-checkbox">
-                                        <div class="rounded-circle d-flex justify-content-center align-items-center bg-white mb-1 icon-fluid"
-                                            style="background-image: url('/images/{{ $category->name }}.png'); background-position: center; background-size: cover; transition: transform .2s;">
-                                        </div>
-                                        <button type="button"
-                                            class="mt-4 category-button button-glitch2 align-items-center justify-content-center icon-fluid"
-                                            onmouseover="this.style.transform='scale(1.1)'"
-                                            onmouseout="this.style.transform='scale(1)'">{{ $category->name }}</button>
-                                    </label>
-                                </div>
-                            @endforeach
-                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-center">
+                        @foreach ($categories as $category)
+                            <div class="col-4">
+                                <label class="category-label text-decoration-none p-3 text-center d-flex flex-column justify-content-center align-items-center">
+                                    <input type="checkbox" name="category[]" value="{{ $category->id }}"
+                                        class="d-none category-checkbox">
+                                    <div class="rounded-circle d-flex justify-content-center align-items-center bg-white mb-1 icon-fluid"
+                                        style="background-image: url('/images/{{ $category->name }}.png'); background-position: center; background-size: cover; transition: transform .2s;">
+                                    </div>
+                                    <button type="button"
+                                        class="mt-4 category-button button-glitch2 align-items-center justify-content-center icon-fluid"
+                                        onmouseover="this.style.transform='scale(1.1)'"
+                                        onmouseout="this.style.transform='scale(1)'">{{ $category->name }}</button>
+                                </label>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -99,11 +101,11 @@
                             <span class="" style="font-size: 36px;font-family: 'Bebas Neue', cursive; ">Dividi
                                 ogni tag con una virgola</span>
                         </div>
-            
+
                         <div>
                             <button class="mt-4  button-glitch2 align-items-center justify-content-center">Crea   </button>
                             <a class="mt-4 button-glitch2 align-items-center justify-content-center ml-4" style="min-width:200px;"href="{{ route('homepage') }}">homepage</a>
-                               
+
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-8">

@@ -15,13 +15,20 @@
 
     @vite(['public/css/app.css', 'public/js/app.js'])
 
+    <style>
+        .no-right-padding-margin {
+            padding-right: 0;
+            margin-right: 0;
+        }
+    </style>
+
     <title>The Aulab Post</title>
 </head>
 
 <body class="bg-create">
     <x-navbar />
 
-    <div class="">
+    <div class="no-right-padding-margin">
         {{ $slot }}
     </div>
     <x-faq />

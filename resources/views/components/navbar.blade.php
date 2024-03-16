@@ -1,27 +1,29 @@
-<nav class="navbar navbar-expand-lg bg-gradiente">
+<nav class="navbar navbar-expand-lg bg-gradiente" style="height: 70px;">
     <div class="container-fluid d-flex ">
         <!-- Logo -->
-        <div class="d-flex justify-content-start">
-            <a class="navbar-brand" href="{{ route('homepage') }}">
+        <div class="d-flex" style="width:20vw;">
+            <a class="navbar-brand logo-container" href="{{ route('homepage') }}">
                 <img src="/logo-home.png" alt="Logo" class="logo">
             </a>
         </div>
         <!-- Search bar -->
-        <div class="d-flex justify-content-center custom-nav-link flex-grow-1 mx-auto">
+        <div class="d-flex justify-content-center align-items-center custom-nav-link mx-auto">
             <form class="d-flex search-form custom-nav-link" method="GET"
-                style=" border: 1px solid #ccc; border-radius: 24px; overflow: hidden;"
+                style="border: 1px solid #ccc; border-radius: 24px; overflow: hidden;"
                 action="{{ route('article.search') }}">
-                <input class="form-control search-input" type="search" name="query" placeholder="Cosa stai cercando?"
-                    aria-label="Search" style="flex-grow: 1; border: none; padding: 10px 20px;">
-                <button class="btn  d-flex align-items-center justify-content-center search-button" type="submit"
-                    style="border: none; padding: 10px 20px; cursor: pointer; width: 50px; height: 50px;">
-                    <i class="fa fa-search" style="font-size: 24px;"></i>
+                <input class="form-control search-input" type="search" name="query"
+                    style="font-size:1vh; flex-grow: 1; border: none; padding: 10px 20px; height: 30px;"
+                    placeholder="Cosa stai cercando?" aria-label="Search">
+                <button class="btn d-flex align-items-center justify-content-center search-button" type="submit"
+                    style="border: none; padding: 10px 20px; cursor: pointer; width: 40px; height: 30px;">
+                    <i class="fa fa-search" style="font-size: 20px;"></i>
                 </button>
             </form>
         </div>
         @auth
             <div id="mySidebar" class="sidebar">
                 <span href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</span>
+                <a href="{{ route('homepage') }}"><i class="menu-item fas fa-home"></i> Home</a>
                 <a href="{{ route('article.careers') }}"><i class="menu-item fas fa-briefcase"></i> Lavora con noi</a>
                 <a href="{{ route('article.create') }}"><i class="menu-item fas fa-plus-circle"></i> Inserisci un
                     articolo</a>
@@ -67,67 +69,69 @@
     </a>
 </div>
 <script>
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "300px";
-    if (sidebar.style.width === "0px" || sidebar.style.width === "") {
-        sidebar.style.width = "350px";
-        document.getElementById("navbarMenuButton").style.marginRight = "250px";
-        document.querySelector(".openbtn").style.display = "none";
-    }
-}
-
-function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("navbarMenuButton").style.marginRight = "0";
-    document.querySelector(".openbtn").style.display = "block"; 
-
-}
-document.addEventListener('DOMContentLoaded', function() {
-    closeNav();
-    const navbarToggler = document.querySelector(".navbar-toggler");
-    const navbarCollapse = document.querySelector(".navbar-collapse");
-    const dropdownMenu = document.getElementById('navbarNavDropdown');
-
-    if (navbarToggler) {
-        navbarToggler.addEventListener("click", function() {
-            document.body.classList.toggle("menu-open");
-        });
-    } else {
-        console.log('Element with class .navbar-toggler not found');
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "300px";
+        if (sidebar.style.width === "0px" || sidebar.style.width === "") {
+            sidebar.style.width = "350px";
+            document.getElementById("navbarMenuButton").style.marginRight = "250px";
+            document.querySelector(".openbtn").style.display = "none";
+        }
     }
 
-    if (dropdownMenu) {
-        window.addEventListener('click', function(event) {
-            if (!event.target.matches('.navbar-toggler') && dropdownMenu && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.classList.remove('show');
-            }
-        });
-    } else {
-        console.log('Element with id navbarNavDropdown not found');
-    }
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("navbarMenuButton").style.marginRight = "0";
+        document.querySelector(".openbtn").style.display = "block";
 
-    var links = document.querySelectorAll('#mySidebar a');
-    links.forEach(function(link) {
-        link.addEventListener('click', function(event) {
-            event.preventDefault(); 
-            closeNav();
-            setTimeout(function() {
-                window.location.href = link.href; 
-            }, 200); 
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        closeNav();
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const dropdownMenu = document.getElementById('navbarNavDropdown');
+
+        if (navbarToggler) {
+            navbarToggler.addEventListener("click", function() {
+                document.body.classList.toggle("menu-open");
+            });
+        } else {
+            console.log('Element with class .navbar-toggler not found');
+        }
+
+        if (dropdownMenu) {
+            window.addEventListener('click', function(event) {
+                if (!event.target.matches('.navbar-toggler') && dropdownMenu && !dropdownMenu.contains(
+                        event.target)) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+        } else {
+            console.log('Element with id navbarNavDropdown not found');
+        }
+
+        var links = document.querySelectorAll('#mySidebar a');
+        links.forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                closeNav();
+                setTimeout(function() {
+                    window.location.href = link.href;
+                }, 200);
+            });
         });
     });
-});
 
-document.addEventListener('click', function(event) {
-    var sidebar = document.getElementById("mySidebar");
-    var openButton = document.querySelector(".openbtn");
-   
-    if (!sidebar || !openButton) {
-        return;
-    }
-   
-    if (!sidebar.contains(event.target) && !openButton.contains(event.target) && sidebar.style.width !== '0px') {
-        closeNav();
-    }
-});
+    document.addEventListener('click', function(event) {
+        var sidebar = document.getElementById("mySidebar");
+        var openButton = document.querySelector(".openbtn");
+
+        if (!sidebar || !openButton) {
+            return;
+        }
+
+        if (!sidebar.contains(event.target) && !openButton.contains(event.target) && sidebar.style.width !==
+            '0px') {
+            closeNav();
+        }
+    });
 </script>
