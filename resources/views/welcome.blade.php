@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +54,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-between bg-white flex-lg-row flex-column container-fluid" style="padding: 8vh;">
-                    <div class="col-lg-7 col-md-12 mb-5 d-flex justify-content-center mt-5">
+                    <div class="col-lg-6 col-md-12 mb-3 d-flex justify-content-center mt-5 mx-auto">
                         <div class="d-flex flex-column justify-content-center align-items-center min-vh100 mt-5 text-center" style="max-width: 600px;">
                             <p class="lead text-justify font-rounded " style="font-size:1em;margin-bottom:2vh;">
                                 Benvenuto nella nostra <strong>comunità giornalistica</strong>, dove ogni parola ha valore e ogni storia trova spazio.
@@ -71,7 +70,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-12 d-flex justify-content-center align-items-center">
+                    <div class="col-lg-4 col-md-12 d-flex justify-content-center align-items-center mx-auto">
                         <img src="images/hello.gif" class="img-fluid" alt="Responsive image">
                     </div>
                 </div>
@@ -81,7 +80,7 @@
                         <a href="{{ route('article.create') }}"><button class="button-glitch align-items-center justify-content-center m-4">CREA UN ARTICOLO</button></a>
                   
                     </div>
-                    <div class="row row-no-margin container-fluid2 custom-flex">
+                    <div class="row row-no-margin container-fluid custom-flex">
                         <div class="custom-flex">
                             @foreach ($articles as $article)
                                 <div class="col custom-flex" style="justify-content: center;">

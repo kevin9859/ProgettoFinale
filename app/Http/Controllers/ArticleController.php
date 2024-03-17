@@ -83,6 +83,8 @@ class ArticleController extends Controller
             'slug' => Str::slug($request->title),
         ]);
     
+        Log::info('Articolo creato: ', ['article' => $article]);
+
         $tags = explode(', ', $request->tags);
     
         foreach ($tags as $tag) {

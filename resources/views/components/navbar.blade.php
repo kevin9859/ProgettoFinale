@@ -24,6 +24,7 @@
             <div id="mySidebar" class="sidebar">
                 <span href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</span>
                 <a href="{{ route('homepage') }}"><i class="menu-item fas fa-home"></i> Home</a>
+                {{-- <a href="{{ route('profile.show') }}"><i class="menu-item fas fa-user"></i> Profilo</a> --}}
                 <a href="{{ route('article.careers') }}"><i class="menu-item fas fa-briefcase"></i> Lavora con noi</a>
                 <a href="{{ route('article.create') }}"><i class="menu-item fas fa-plus-circle"></i> Inserisci un
                     articolo</a>

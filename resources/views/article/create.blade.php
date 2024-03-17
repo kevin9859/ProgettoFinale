@@ -6,7 +6,8 @@
             <div class="d-flex container-fluid p-0" style="background-color: white;">
                 <div class="d-flex justify-content-start align-items-center">
                     <div class="m-3">
-                        <img src="/images/ragazzo-create.gif" alt="Descrizione dell'immagine" style="max-width:30vw;"class="img-fluid">
+                        <img src="/images/ragazzo-create.gif" alt="Descrizione dell'immagine"
+                            style="max-width:30vw;"class="img-fluid">
                     </div>
                     <div class="m-3">
                         <h1 class="glitch-font mt-4 align-items-end justify-content-end p-3"
@@ -36,7 +37,7 @@
                                 value="{{ old('subtitle') }}">
                         </div>
 
-                    </form>
+
                 </div>
             </div>
             <div class="container-fluid p-0" style="background-color: white;">
@@ -55,12 +56,14 @@
             <div class="container-fluid p-0" style="">
                 <div class="d-flex h-100 justify-content-center align-items-center flex-nowrap">
                     <div class="d-flex flex-column align-items-center justify-content-center image-container p-3">
-                        <img src="/images/category-create.png" alt="Immagine di prova" class="img-fluid mb-3" style="max-height: 500px;" >
+                        <img src="/images/category-create.png" alt="Immagine di prova" class="img-fluid mb-3"
+                            style="max-height: 500px;">
                     </div>
                     <div class="d-flex flex-wrap justify-content-center">
                         @foreach ($categories as $category)
                             <div class="col-4">
-                                <label class="category-label text-decoration-none p-3 text-center d-flex flex-column justify-content-center align-items-center">
+                                <label
+                                    class="category-label text-decoration-none p-3 text-center d-flex flex-column justify-content-center align-items-center">
                                     <input type="checkbox" name="category[]" value="{{ $category->id }}"
                                         class="d-none category-checkbox">
                                     <div class="rounded-circle d-flex justify-content-center align-items-center bg-white mb-1 icon-fluid"
@@ -86,7 +89,7 @@
                             <label for="body" class="form-label"
                                 style="margin:0;font-size: 36px;font-family: 'Bebas Neue', cursive; ">Corpo del
                                 testo</label>
-                            <textarea name="body" id="body" cols="30" rows="20" class="form-control">{{ old('body') }}</textarea>
+                            <textarea name="body" id="body" cols="30" rows="20" class="form-control">{!! nl2br(e(old('body'))) !!}</textarea>
                         </div>
                     </div>
                 </div>
@@ -103,9 +106,11 @@
                         </div>
 
                         <div>
-                            <button class="mt-4  button-glitch2 align-items-center justify-content-center">Crea   </button>
-                            <a class="mt-4 button-glitch2 align-items-center justify-content-center ml-4" style="min-width:200px;"href="{{ route('homepage') }}">homepage</a>
-
+                            <button type="submit"
+                                class="mt-4  button-glitch2 align-items-center justify-content-center">Crea
+                            </button>
+                            <a class="mt-4 button-glitch2 align-items-center justify-content-center ml-4"
+                                style="min-width:200px;"href="{{ route('homepage') }}">homepage</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-8">
@@ -115,6 +120,8 @@
             </div>
             </form>
         </div>
+    </div>
+    </div>
     </div>
 
     <script>

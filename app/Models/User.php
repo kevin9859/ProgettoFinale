@@ -25,7 +25,15 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     return $this->hasMany(Post::class,);
 }
+public function followers()
+{
+    return $this->belongsToMany(User::class, 'user_follower', 'user_id', 'follower_id');
+}
 
+public function following()
+{
+    return $this->belongsToMany(User::class, 'user_follower', 'follower_id', 'user_id');
+}
     /**
      * The attributes that are mass assignable.
      *

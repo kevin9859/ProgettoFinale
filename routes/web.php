@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,9 @@ use App\Http\Controllers\CommentController;
 */
 
 Route::get('/', function () {  return view('welcome');});
+Route::get('/profile', [ProfileController::class,'index'])->name('profile.show');
+Route::post('/follow/{user}', [FollowerController::class, 'follow'])->name('follow');
+Route::delete('/unfollow/{user}', [FollowerController::class, 'unfollow'])->name('unfollow');
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
 
