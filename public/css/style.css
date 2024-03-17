@@ -1028,7 +1028,7 @@ footer.body {
 }
 .container-fluid {
     box-sizing: border-box;
-    overflow: auto;
+    overflow: hidden;
     
 }
 
