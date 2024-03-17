@@ -5,8 +5,9 @@
 <p>5.Esegui npm i<p>
 <p>6.Copia il file .env.example e rinominalo in .env o esegui cp .env.example .env nel terminale e modifica le variabili di ambiente in base alla tua configurazione </p>
 <p>7.Genera la chiave dell'applicazione: php artisan key:generate</p>
-<p>8.Esegui le migrazioni del database per creare le tabelle necessarie</p>
-<p>9.Avvia il server di sviluppo</p></p>
+<p>8.Crea il collegamento con storage per leggere le immagini dei post con php artisan storage:link<p>
+<p>9.Esegui le migrazioni del database per creare le tabelle necessarie</p>
+<p>10.Avvia il server di sviluppo</p></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
