@@ -29,12 +29,18 @@
                             <label for="title" class="form-label glitch-font">Titolo</label>
                             <input name="title" type="text" class="form-control" id="title"
                                 value="{{ old('title') }}">
+                            @error('title')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div>
                             <label for="subtitle" class="form-label glitch-font">Sottotitolo</label>
                             <input name="subtitle" type="text" class="form-control" id="subtitle"
                                 value="{{ old('subtitle') }}">
+                            @error('subtitle')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
 
@@ -46,6 +52,9 @@
                         <div>
                             <label for="image" class="form-label glitch-font">Seleziona un immagine</label>
                             <input name="image" type="file" class="form-control" id="image">
+                            @error('image')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-8 col-12">
@@ -76,6 +85,9 @@
                                 </label>
                             </div>
                         @endforeach
+                        @error('category')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -90,6 +102,9 @@
                                 style="margin:0;font-size: 36px;font-family: 'Bebas Neue', cursive; ">Corpo del
                                 testo</label>
                             <textarea name="body" id="body" cols="30" rows="20" class="form-control">{!! nl2br(e(old('body'))) !!}</textarea>
+                            @error('body')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -101,6 +116,9 @@
                             <label for="tags"
                                 class="form-label"style="font-size: 22px;font-family: 'Bebas Neue', cursive; ">Tags</label>
                             <input name="tags" id="tags" class="form-control" value="{{ old('tags') }}">
+                            @error('tags')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <span class="" style="font-size: 36px;font-family: 'Bebas Neue', cursive; ">Dividi
                                 ogni tag con una virgola</span>
                         </div>
