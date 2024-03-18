@@ -8,28 +8,24 @@ use App\Models\Category;
 return new class extends Migration
 {
     public function up()
-   
     {
+        Schema::dropIfExists('categories');
+
+     
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamps();
-    
-            
         });
-    
-    
 
-        $categories = ['politica', 'economia','food&drink', 'sport', 'intrattenimento', 'tech'];
+        $categories = ['politica', 'economia','esteri', 'sport', 'intrattenimento', 'attualità'];
 
         foreach($categories as $category){
             Category::create([
-
                 'name' => $category,
-
             ]);
         }
-}
+    }
 
     /**
      * Reverse the migrations.

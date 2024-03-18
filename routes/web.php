@@ -9,6 +9,7 @@ use App\Http\Controllers\RevisorController;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\CommentController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -16,6 +17,7 @@ use App\Http\Controllers\CommentController;
 |
 | 
 */
+
 
 
 Route::middleware(['auth','verified'])->group(function () {

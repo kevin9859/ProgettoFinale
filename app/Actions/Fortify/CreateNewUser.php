@@ -18,7 +18,12 @@ class CreateNewUser implements CreatesNewUsers
      * @param  array<string, string>  $input
      */
     public function create(array $input): User
-    {
+    {    if ($input === null) {
+        throw new \Exception('Input non può essere null');
+    }
+
+    $userId = $input['userId'] ?? 'default value';
+
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
