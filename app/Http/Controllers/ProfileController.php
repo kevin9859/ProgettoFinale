@@ -3,45 +3,71 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        return view('profile.show');
+        $user = User::findOrFail($id);
+        return view('profile.show', compact('user'));
     }
-//     use Illuminate\Database\Migrations\Migration;
-// use Illuminate\Database\Schema\Blueprint;
-// use Illuminate\Support\Facades\Schema;
 
-// class AddProfileFieldsToUsersTable extends Migration
-// {
-//     public function up()
-//     {
-//         Schema::table('users', function (Blueprint $table) {
-//             $table->string('address')->nullable();
-//             $table->string('gender')->nullable();
-//             $table->string('profile_image')->nullable();
-//             $table->date('date_of_birth')->nullable();
-//             $table->string('phone_number')->nullable();
-//             $table->string('website')->nullable();
-//             $table->text('bio')->nullable();
-//             $table->string('profession')->nullable();
-//             $table->string('interests')->nullable();
-//             $table->string('location')->nullable();
-//             $table->string('facebook')->nullable();
-//             $table->string('twitter')->nullable();
-//             $table->string('instagram')->nullable();
-//             $table->string('linkedin')->nullable();
-//         });
-//     }
+    public function edit()
+{
+    $user = Auth::user();
+    return view('profile.edit', ['user' => $user]);
+}
+public function update(Request $request)
+{
+    $request->validate([
+        'bio' => 'nullable|string',
+        'date_of_birth' => 'nullable|date',
+        'phone_number' => 'nullable|string',
+        'website' => 'nullable|url',
+        'profession' => 'nullable|string',
+        'interests' => 'nullable|string',
+        'location' => 'nullable|string',
+        'facebook' => 'nullable|url',
+        'twitter' => 'nullable|url',
+        'instagram' => 'nullable|url',
+        'linkedin' => 'nullable|url',
+        'profile_photo_path' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
 
-//     public function down()
-//     {
-//         Schema::table('users', function (Blueprint $table) {
-//             $table->dropColumn(['address', 'gender', 'profile_image', 'date_of_birth', 'phone_number', 'website', 'bio', 'profession', 'interests', 'location', 'facebook', 'twitter', 'instagram', 'linkedin']);
-//         });
-//     }
-// }
-// 
+    $user = Auth::user();
+    $user->bio = $request->bio;
+    $user->date_of_birth = $request->date_of_birth;
+    $user->phone_number = $request->phone_number;
+    $user->website = $request->website;
+    $user->profession = $request->profession;
+    $user->interests = $request->interests;
+    $user->location = $request->location;
+    $user->facebook = $request->facebook;
+    $user->twitter = $request->twitter;
+    $user->instagram = $request->instagram;
+    $user->linkedin = $request->linkedin;
+
+    if ($request->hasFile('profile_photo_path')) {
+        $image = $request->file('profile_photo_path');
+        $name = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = public_path('/images');
+        $image->move($destinationPath, $name);
+
+        
+        if ($user->profile_photo_path) {
+            File::delete(public_path('/images/' . $user->profile_photo_path));
+        }
+
+        $user->profile_photo_path = $name;
+    }
+
+    $user->save();
+
+    return redirect()->route('profile.show', $user);
+}
+
+
 }

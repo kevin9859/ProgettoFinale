@@ -37,26 +37,17 @@ html {
     font-size: 2em; 
 }
 .btn-primary {
-    background-color: #007bff; 
+    background-color: #007bff!important; 
+    height:auto;
+    margin-left: 10px;
+}
+.btn-secondary {
+    background-color: #6c757d!important; 
     height:auto;
     margin-left: 10px;
 }
 
-.btn-primary:hover {
-    background-color: #0069d9; 
-}
 
-.btn{
-    
-    
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 1s ease;
-    font-weight: bold; 
-    transition: transform 0.7s ease;
-}
 .btn-card{
     color: black;
     padding: 0.5em 0.5em;
@@ -565,8 +556,9 @@ span{
 }
 
 .search-button {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    margin-top: 3px;
 }
 .navbar-nav {
     display: flex;
@@ -617,6 +609,7 @@ span{
     width: 100%; 
     max-width: 2100px; 
     flex: 1;
+    height:35px;
     max-width: 100%;
     width: 70vh;
     min-width: 200px;
@@ -1032,7 +1025,18 @@ footer.body {
     
 }
 
+/* @media (min-width: 992px) {
+    .text-margin {
+        padding-left: 15vw;
+       padding-bottom: 5vh;
+       flex: 0.6;
+    }
 
+    .image-margin {
+        /* padding-right: 14vw;
+        flex: 0.4;
+    }
+} */
 
 
 

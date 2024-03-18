@@ -20,7 +20,9 @@ use App\Http\Controllers\CommentController;
 
 Route::middleware(['auth','verified'])->group(function () {
 Route::get('/', function () {  return view('welcome');});
-Route::get('/profile', [ProfileController::class,'index'])->name('profile.show');
+Route::get('/profile/{id}', [ProfileController::class,'index'])->name('profile.show');
+Route::get('/profile/{id}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::put('/profile/update', [ProfileController::class,'update'])->name('profile.update');
 Route::post('/follow/{user}', [FollowerController::class, 'follow'])->name('follow');
 Route::delete('/unfollow/{user}', [FollowerController::class, 'unfollow'])->name('unfollow');
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');

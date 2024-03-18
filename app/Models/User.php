@@ -34,6 +34,10 @@ public function following()
 {
     return $this->belongsToMany(User::class, 'user_follower', 'follower_id', 'user_id');
 }
+public function isFollowing(User $user)
+{
+    return $this->following()->where('user_id', $user->id)->exists();
+}
     /**
      * The attributes that are mass assignable.
      *
@@ -46,6 +50,19 @@ public function following()
         'is_admin',
         'is_revisor',
         'is_writer',
+        'profile_photo_path',
+        'bio',
+        'date_of_birth',
+        'phone_number',
+        'website',
+        'profession',
+        'interests',
+        'location',
+        'facebook',
+        'twitter',
+        'instagram',
+        'linkedin',
+        
     ];
 
     /**

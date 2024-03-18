@@ -12,8 +12,8 @@
                 style="border: 1px solid #ccc; border-radius: 24px; overflow: hidden;"
                 action="{{ route('article.search') }}">
                 <input class="form-control search-input" type="search" name="query"
-                    style="font-size:1vh; flex-grow: 1; border: none; padding: 10px 20px; height: 30px;"
-                    placeholder="Cosa stai cercando?" aria-label="Search">
+                    style="font-size:1rem; flex-grow: 1; border: none; padding: 10px 20px; height: 35px;"
+                    placeholder="Cosa cerchi?" aria-label="Search">
                 <button class="btn d-flex align-items-center justify-content-center search-button" type="submit"
                     style="border: none; padding: 10px 20px; cursor: pointer; width: 40px; height: 30px;">
                     <i class="fa fa-search" style="font-size: 20px;"></i>
@@ -24,7 +24,7 @@
             <div id="mySidebar" class="sidebar">
                 <span href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</span>
                 <a href="{{ route('homepage') }}"><i class="menu-item fas fa-home"></i> Home</a>
-                <a href="{{ route('profile.show') }}"><i class="menu-item fas fa-user"></i> Profilo</a>
+                <a href="{{ route('profile.show', ['id' => Auth::id()]) }}" class="menu-item"><i class="fas fa-user"></i> Profilo</a>               
                 <a href="{{ route('article.careers') }}"><i class="menu-item fas fa-briefcase"></i> Lavora con noi</a>
                 <a href="{{ route('article.create') }}"><i class="menu-item fas fa-plus-circle"></i> Inserisci un
                     articolo</a>

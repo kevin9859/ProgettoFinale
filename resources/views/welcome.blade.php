@@ -54,8 +54,8 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-between bg-white flex-lg-row flex-column container-fluid" style="padding: 8vh;">
-                    <div class="col-lg-6 col-md-12 mb-3 d-flex justify-content-center mt-5 mx-auto">
-                        <div class="d-flex flex-column justify-content-center align-items-center min-vh100 mt-5 text-center" style="max-width: 600px;">
+                <div class="col-lg-6 col-md-12 mb-3 d-flex justify-content-center mt-5 mx-auto text-margin">
+                    <div class="d-flex flex-column justify-content-center align-items-center min-vh100 mt-5 text-center" style="max-width: 600px;">
                             <p class="lead text-justify font-rounded " style="font-size:1em;margin-bottom:2vh;">
                                 Benvenuto nella nostra <strong>comunità giornalistica</strong>, dove ogni parola ha valore e ogni storia trova spazio.
                             </p>
@@ -70,7 +70,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12 d-flex justify-content-center align-items-center mx-auto">
+                    <div class="col-lg-4 col-md-12 d-flex justify-content-center align-items-center mx-auto image-margin">
                         <img src="images/hello.gif" class="img-fluid" alt="Responsive image">
                     </div>
                 </div>
